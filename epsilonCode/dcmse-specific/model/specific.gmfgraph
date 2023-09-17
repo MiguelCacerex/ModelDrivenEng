@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="specificPart">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Rhomb">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <descriptors name="PackageMSEFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="PackageMSEFigure" documentURI="platform:/plugin/dcmse-specific.diagram/icons/PackageMSEIcon.svg">
+        <preferredSize dx="100" dy="100"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="1" left="1" bottom="1" right="1"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PackageMSELabelFigure" text="PackageMSE"/>
+      </actualFigure>
+      <accessors accessor="getFigurePackageMSELabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ClassMSEFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ClassMSEFigure" lineWidth="2">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="244" green="208" blue="63"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="252" green="243" blue="207"/>
+        <preferredSize dx="250" dy="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ClassMSELabelFigure" text="ClassMSE">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ClassMSELstAttributesCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ClassMSELstMethodsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureClassMSELabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getClassMSELstAttributesCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors accessor="getClassMSELstMethodsCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="MethodMSEFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MethodMSEFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="252" green="243" blue="207"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="252" green="243" blue="207"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="MethodMSELabelFigure" text="MethodMSE"/>
+      </actualFigure>
+      <accessors accessor="getFigureMethodMSELabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="AttributeMSEFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AttributeMSEFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="252" green="243" blue="207"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="252" green="243" blue="207"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AttributeMSELabelFigure" text="AttributeMSE"/>
+      </actualFigure>
+      <accessors accessor="getFigureAttributeMSELabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="InheritanceMSEFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="InheritanceMSEFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.0"/>
+    </descriptors>
+    <descriptors name="ContainmentMSEFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ContainmentMSEFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.1"/>
+    </descriptors>
+    <descriptors name="ContainmentMSELabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ContainmentMSELabelLabel" text="ContainmentMSE"/>
+    </descriptors>
+    <descriptors name="AgregationMSEFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AgregationMSEFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.2"/>
+    </descriptors>
+    <descriptors name="AgregationMSELabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AgregationMSELabelLabel" text="AgregationMSE"/>
+    </descriptors>
+    <descriptors name="AssociationMSEFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AssociationMSEFigure" lineWidth="3"/>
+    </descriptors>
+    <descriptors name="AssociationMSELabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AssociationMSELabelLabel" text="AssociationMSE"/>
+    </descriptors>
+    <descriptors name="ImplementationMSEFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImplementationMSEFigure" lineWidth="3" lineKind="LINE_DOT"/>
+    </descriptors>
+    <descriptors name="ImplementationMSELabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ImplementationMSELabelLabel" text="ImplementationMSE"/>
+    </descriptors>
+    <descriptors name="AssociationMSESourceLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AssociationMSESourceLabel" text="Source"/>
+    </descriptors>
+    <descriptors name="AssociationMSESourceLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AssociationMSESourceLabel" text="Source"/>
+    </descriptors>
+    <descriptors name="AssociationMSESourceLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AssociationMSESourceLabel" text="Source"/>
+    </descriptors>
+    <descriptors name="AssociationMSETargetLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AssociationMSETargetLabel" text="Target"/>
+    </descriptors>
+  </figures>
+  <nodes name="PackageMSE" figure="PackageMSEFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="100" dy="100"/>
+    </facets>
+  </nodes>
+  <nodes name="ClassMSE" figure="ClassMSEFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="250" dy="200"/>
+    </facets>
+  </nodes>
+  <nodes name="MethodMSE" figure="MethodMSEFigure"/>
+  <nodes name="AttributeMSE" figure="AttributeMSEFigure"/>
+  <connections name="InheritanceMSE" figure="InheritanceMSEFigure"/>
+  <connections name="ContainmentMSE" figure="ContainmentMSEFigure"/>
+  <connections name="AgregationMSE" figure="AgregationMSEFigure"/>
+  <connections name="AssociationMSE" figure="AssociationMSEFigure"/>
+  <connections name="ImplementationMSE" figure="ImplementationMSEFigure"/>
+  <compartments name="ClassMSELstAttributesCompartment" figure="ClassMSEFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments name="ClassMSELstMethodsCompartment" figure="ClassMSEFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <labels name="PackageMSELabel" figure="PackageMSEFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ClassMSELabel" figure="ClassMSEFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="MethodMSELabel" figure="MethodMSEFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="AttributeMSELabel" figure="AttributeMSEFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="ContainmentMSELabel" figure="ContainmentMSELabelFigure" elementIcon="false"/>
+  <labels name="AgregationMSELabel" figure="AgregationMSELabelFigure" elementIcon="false"/>
+  <labels name="AssociationMSELabel" figure="AssociationMSELabelFigure" elementIcon="false"/>
+  <labels name="ImplementationMSELabel" figure="ImplementationMSELabelFigure" elementIcon="false"/>
+  <labels name="AssociationMSESourceLabel" figure="AssociationMSESourceLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="END"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-50" y="5"/>
+  </labels>
+  <labels name="AssociationMSESourceLabel" figure="AssociationMSESourceLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="END"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-50" y="5"/>
+  </labels>
+  <labels name="AssociationMSESourceLabel" figure="AssociationMSESourceLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="END"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-50" y="5"/>
+  </labels>
+  <labels name="AssociationMSETargetLabel" figure="AssociationMSETargetLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-50" y="5"/>
+  </labels>
+</gmfgraph:Canvas>

@@ -1,0 +1,121 @@
+@namespace(uri="specificPart", prefix="specificPart")
+@gmf
+package specificPart;
+
+class ModelFactorySpecific {
+	attr String name;
+    val PackageMSE[*] lstPackages;
+}
+
+@gmf.diagram
+class ClassDiagramMSE {
+	attr String name;
+	attr String state;
+	attr String path;
+	attr String location;
+    attr String documentation;
+    val ClassMSE[*] lstClass;
+    val InheritanceMSE[*] lstInheritances;
+    val RelationMSE[*] lstRelations;
+    val PackageMSE[*] lstPackages;
+}
+
+@gmf.node(label = "name",label.icon="false",figure="svg",size="100,100",svg.uri="platform:/plugin/dcmse-specific.diagram/icons/PackageMSEIcon.svg",label.placement="internal",margin="1")
+class PackageMSE {
+	attr String name;
+	attr String state;
+	attr String path;
+	attr String location;
+	attr String documentation;
+	val ClassDiagramMSE[*] lstDiagrams;	
+}
+
+@gmf.node(label = "name",color="252,243,207",border.color="244,208,63",border.width="2",size="250,200")
+class ClassMSE {
+    attr String name;
+    attr String state;
+    attr String type;
+    attr String modifier;
+    attr boolean absrtact;
+	attr String path;
+	attr String location;
+    attr String documentation;
+    @gmf.compartment(layout="list",collapsible="true")
+    val  AttributeMSE[*] lstAttributes;
+    @gmf.compartment(layout="list",collapsible="true")
+    val  MethodMSE[*] lstMethods;    
+}
+
+class RelationMSE {
+    attr String type;   
+	attr String state;
+    attr String roleA;
+    attr String roleB;
+    attr String multiplicityA;
+    attr String multiplicityB;
+    attr boolean navigabilityA;
+    attr boolean navigabilityB;
+    ref ClassMSE source;
+    ref ClassMSE target;
+	attr String path;
+	attr String location;
+    attr String documentation;
+}
+
+@gmf.link(source="source", target="target",target.decoration="closedarrow", style="solid", width="3")
+class InheritanceMSE  {
+    attr String type;   
+	attr String state;
+    ref ClassMSE source;
+    ref ClassMSE target;
+	attr String path;
+	attr String location;
+    attr String documentation;
+}
+
+
+@gmf.link(source="source", target="target",target.decoration="filledrhomb", style="solid", width="3",label ="roleA",label = "roleB",label = "multiplicityA",label = "multiplicityB")
+class ContainmentMSE extends RelationMSE {
+   
+}
+
+@gmf.link(source="source", target="target",target.decoration="rhomb", style="solid", width="3",label ="roleA",label = "roleB",label = "multiplicityA",label = "multiplicityB")
+class AgregationMSE extends RelationMSE {
+   
+}
+
+@gmf.link(source="source", target="target", style="solid", width="3",label ="roleA",label = "roleB",label = "multiplicityA",label = "multiplicityB")
+class AssociationMSE extends RelationMSE {
+   
+}
+
+@gmf.link(source="source", target="target", style="dot", width="3",label ="roleA",label = "roleB",label = "multiplicityA",label = "multiplicityB")
+class ImplementationMSE extends RelationMSE {
+   
+}
+
+@gmf.node(label = "name",border.color="252,243,207",color="252,243,207")
+class MethodMSE {
+    attr String name;
+    attr  String modifier;
+    attr String body;
+    attr  String typeReturn;
+    attr String state;
+	attr String path;
+	attr String location;
+    attr String documentation;
+    val  AttributeMSE[*] lstArguments;
+}
+
+@gmf.node(label = "name",border.color="252,243,207",color="252,243,207")
+class AttributeMSE {
+    attr String state;
+    attr String modifier;
+    attr String name;
+    attr String type;
+    attr String initialValue;
+	attr String path;
+	attr String location;
+    attr String documentation;
+}
+

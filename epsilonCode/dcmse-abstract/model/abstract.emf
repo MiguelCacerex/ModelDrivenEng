@@ -1,0 +1,136 @@
+@namespace(uri="abstractPart", prefix="abstractPart")
+@gmf
+package abstractPart;
+
+class ModelFactoryAbstract {
+	attr String state;
+	attr String name;
+	attr String path;
+	attr String location;
+    attr String documentation;
+   
+    val PackageMSE[*] lstPackages;
+}
+
+class ClassDiagramMSE {
+	attr String state;
+	attr String name;
+	attr String path;
+	attr String location;
+    attr String documentation;
+    
+    val HashCodeClassMSE[*] lstIdentifierClass;
+}
+
+class PackageMSE {
+	attr String state;
+	attr String name;
+    ref AssociationsMSE associations;
+	attr String path;
+	attr String location;
+	attr String documentation;
+	
+	val ClassMSE[*] lstClass;
+    val PackageMSE[*] lstPackages;
+    val ClassDiagramMSE[*] lstDiagrams; 
+}
+
+class HashCodeClassMSE {
+	attr String state;
+	attr String code;
+	attr String path;
+	attr String location;
+}
+
+class ClassMSE {
+    attr String state;
+    attr String name;
+    attr String type;
+    attr String modifier;
+    attr boolean absrtact;
+	ref  HashCodeClassMSE identifier;
+	attr String path;
+	attr String location;
+    attr String documentation;
+  
+    val  MethodMSE[*] lstMethods;    
+    val  AttributeMSE[*] lstAttributes;
+}
+
+class AssociationsMSE{
+	attr String state;
+	
+	val RelationMSE[*] lstRelations;
+	val InheritanceMSE[*] lstInheritance;
+}
+
+class RelationMSE {
+	attr String state;
+	attr String name;
+    attr String type;   
+    attr String roleA;
+    attr String roleB;
+    attr String multiplicityA;
+    attr String multiplicityB;
+    attr boolean navigabilityA;
+    attr boolean navigabilityB;
+    ref ClassMSE source;
+    ref ClassMSE target;
+	attr String path;
+	attr String location;
+    attr String documentation;
+
+}
+
+class InheritanceMSE  {
+	attr String state;
+    attr String type;   
+    attr String name;
+    ref ClassMSE source;
+    ref ClassMSE target;
+	attr String path;
+	attr String location;
+    attr String documentation;
+}
+
+
+class ContainmentMSE extends RelationMSE {
+   
+}
+
+class AgregationMSE extends RelationMSE {
+   
+}
+
+class AssociationMSE extends RelationMSE {
+   
+}
+
+class ImplementationMSE extends RelationMSE {
+   
+}
+
+class MethodMSE {
+    attr String state;
+    attr  String modifier;
+    attr String name;
+    attr String body;
+    attr  String typeReturn;
+	attr String path;
+	attr String location;
+    attr String documentation;
+
+    val  AttributeMSE[*] lstArguments;
+}
+
+class AttributeMSE {
+    attr String state;
+    attr String modifier;
+    attr String type;
+    attr String name;
+    attr String initialValue;
+    attr String documentation;
+	attr String path;
+	attr String location;
+}
+

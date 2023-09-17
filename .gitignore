@@ -1,0 +1,11 @@
+runtime-EclipseApplication 
+/epsilonCode/dcmse-abstract.edit
+/epsilonCode/dcmse-abstract.editor
+/epsilonCode/dcmse-abstract.tests
+
+/epsilonCode/dcmse-specific.edit
+/epsilonCode/dcmse-specific.diagram
+/epsilonCode/dcmse-specific.editor
+/epsilonCode/dcmse-specific.tests
+
+.metadata
