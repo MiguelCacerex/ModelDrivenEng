@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.ClassMSE#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.ClassMSE#getName <em>Name</em>}</li>
+ *   <li>{@link abstractPart.ClassMSE#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.ClassMSE#getType <em>Type</em>}</li>
  *   <li>{@link abstractPart.ClassMSE#getModifier <em>Modifier</em>}</li>
  *   <li>{@link abstractPart.ClassMSE#isAbsrtact <em>Absrtact</em>}</li>
@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link abstractPart.ClassMSE#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link abstractPart.ClassMSE#getLstMethods <em>Lst Methods</em>}</li>
  *   <li>{@link abstractPart.ClassMSE#getLstAttributes <em>Lst Attributes</em>}</li>
+ *   <li>{@link abstractPart.ClassMSE#getLstAttributesRelations <em>Lst Attributes Relations</em>}</li>
  * </ul>
  *
  * @see abstractPart.AbstractPartPackage#getClassMSE()
@@ -86,136 +87,6 @@ public interface ClassMSE extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Location</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Location</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Location</em>' attribute.
-	 * @see #setLocation(String)
-	 * @see abstractPart.AbstractPartPackage#getClassMSE_Location()
-	 * @model
-	 * @generated
-	 */
-	String getLocation();
-
-	/**
-	 * Sets the value of the '{@link abstractPart.ClassMSE#getLocation <em>Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Location</em>' attribute.
-	 * @see #getLocation()
-	 * @generated
-	 */
-	void setLocation(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Path</em>' attribute.
-	 * @see #setPath(String)
-	 * @see abstractPart.AbstractPartPackage#getClassMSE_Path()
-	 * @model
-	 * @generated
-	 */
-	String getPath();
-
-	/**
-	 * Sets the value of the '{@link abstractPart.ClassMSE#getPath <em>Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Path</em>' attribute.
-	 * @see #getPath()
-	 * @generated
-	 */
-	void setPath(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Absrtact</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Absrtact</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Absrtact</em>' attribute.
-	 * @see #setAbsrtact(boolean)
-	 * @see abstractPart.AbstractPartPackage#getClassMSE_Absrtact()
-	 * @model
-	 * @generated
-	 */
-	boolean isAbsrtact();
-
-	/**
-	 * Sets the value of the '{@link abstractPart.ClassMSE#isAbsrtact <em>Absrtact</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Absrtact</em>' attribute.
-	 * @see #isAbsrtact()
-	 * @generated
-	 */
-	void setAbsrtact(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Identifier</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Identifier</em>' reference.
-	 * @see #setIdentifier(HashCodeClassMSE)
-	 * @see abstractPart.AbstractPartPackage#getClassMSE_Identifier()
-	 * @model
-	 * @generated
-	 */
-	HashCodeClassMSE getIdentifier();
-
-	/**
-	 * Sets the value of the '{@link abstractPart.ClassMSE#getIdentifier <em>Identifier</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifier</em>' reference.
-	 * @see #getIdentifier()
-	 * @generated
-	 */
-	void setIdentifier(HashCodeClassMSE value);
-
-	/**
-	 * Returns the value of the '<em><b>Documentation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Documentation</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Documentation</em>' attribute.
-	 * @see #setDocumentation(String)
-	 * @see abstractPart.AbstractPartPackage#getClassMSE_Documentation()
-	 * @model
-	 * @generated
-	 */
-	String getDocumentation();
-
-	/**
-	 * Sets the value of the '{@link abstractPart.ClassMSE#getDocumentation <em>Documentation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Documentation</em>' attribute.
-	 * @see #getDocumentation()
-	 * @generated
-	 */
-	void setDocumentation(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -268,20 +139,134 @@ public interface ClassMSE extends EObject {
 	void setModifier(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Lst Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link abstractPart.AttributeMSE}.
+	 * Returns the value of the '<em><b>Absrtact</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Lst Attributes</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Absrtact</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst Attributes</em>' containment reference list.
-	 * @see abstractPart.AbstractPartPackage#getClassMSE_LstAttributes()
-	 * @model containment="true"
+	 * @return the value of the '<em>Absrtact</em>' attribute.
+	 * @see #setAbsrtact(boolean)
+	 * @see abstractPart.AbstractPartPackage#getClassMSE_Absrtact()
+	 * @model
 	 * @generated
 	 */
-	EList<AttributeMSE> getLstAttributes();
+	boolean isAbsrtact();
+
+	/**
+	 * Sets the value of the '{@link abstractPart.ClassMSE#isAbsrtact <em>Absrtact</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Absrtact</em>' attribute.
+	 * @see #isAbsrtact()
+	 * @generated
+	 */
+	void setAbsrtact(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Identifier</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Identifier</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Identifier</em>' containment reference.
+	 * @see #setIdentifier(HashCodeClassMSE)
+	 * @see abstractPart.AbstractPartPackage#getClassMSE_Identifier()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	HashCodeClassMSE getIdentifier();
+
+	/**
+	 * Sets the value of the '{@link abstractPart.ClassMSE#getIdentifier <em>Identifier</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Identifier</em>' containment reference.
+	 * @see #getIdentifier()
+	 * @generated
+	 */
+	void setIdentifier(HashCodeClassMSE value);
+
+	/**
+	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Path</em>' attribute.
+	 * @see #setPath(String)
+	 * @see abstractPart.AbstractPartPackage#getClassMSE_Path()
+	 * @model
+	 * @generated
+	 */
+	String getPath();
+
+	/**
+	 * Sets the value of the '{@link abstractPart.ClassMSE#getPath <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Path</em>' attribute.
+	 * @see #getPath()
+	 * @generated
+	 */
+	void setPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Location</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Location</em>' attribute.
+	 * @see #setLocation(String)
+	 * @see abstractPart.AbstractPartPackage#getClassMSE_Location()
+	 * @model
+	 * @generated
+	 */
+	String getLocation();
+
+	/**
+	 * Sets the value of the '{@link abstractPart.ClassMSE#getLocation <em>Location</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Location</em>' attribute.
+	 * @see #getLocation()
+	 * @generated
+	 */
+	void setLocation(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Documentation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Documentation</em>' attribute.
+	 * @see #setDocumentation(String)
+	 * @see abstractPart.AbstractPartPackage#getClassMSE_Documentation()
+	 * @model
+	 * @generated
+	 */
+	String getDocumentation();
+
+	/**
+	 * Sets the value of the '{@link abstractPart.ClassMSE#getDocumentation <em>Documentation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Documentation</em>' attribute.
+	 * @see #getDocumentation()
+	 * @generated
+	 */
+	void setDocumentation(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Lst Methods</b></em>' containment reference list.
@@ -298,5 +283,37 @@ public interface ClassMSE extends EObject {
 	 * @generated
 	 */
 	EList<MethodMSE> getLstMethods();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Attributes</b></em>' containment reference list.
+	 * The list contents are of type {@link abstractPart.AttributeMSE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Attributes</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Attributes</em>' containment reference list.
+	 * @see abstractPart.AbstractPartPackage#getClassMSE_LstAttributes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AttributeMSE> getLstAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Attributes Relations</b></em>' containment reference list.
+	 * The list contents are of type {@link abstractPart.AttributeRelationMSE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Attributes Relations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Attributes Relations</em>' containment reference list.
+	 * @see abstractPart.AbstractPartPackage#getClassMSE_LstAttributesRelations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AttributeRelationMSE> getLstAttributesRelations();
 
 } // ClassMSE

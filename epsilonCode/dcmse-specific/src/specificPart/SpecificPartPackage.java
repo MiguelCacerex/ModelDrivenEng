@@ -84,13 +84,22 @@ public interface SpecificPartPackage extends EPackage {
 	int MODEL_FACTORY_SPECIFIC__LST_PACKAGES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Lst Diagrams</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY_SPECIFIC__LST_DIAGRAMS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Model Factory Specific</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FACTORY_SPECIFIC_FEATURE_COUNT = 2;
+	int MODEL_FACTORY_SPECIFIC_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link specificPart.impl.ClassDiagramMSEImpl <em>Class Diagram MSE</em>}' class.
@@ -403,58 +412,58 @@ public interface SpecificPartPackage extends EPackage {
 	int RELATION_MSE__STATE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Role A</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATION_MSE__ROLE_A = 2;
+	int RELATION_MSE__ROLE_SOURCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Role B</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATION_MSE__ROLE_B = 3;
+	int RELATION_MSE__ROLE_TARGET = 3;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity A</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATION_MSE__MULTIPLICITY_A = 4;
+	int RELATION_MSE__MULTIPLICITY_SOURCE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity B</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATION_MSE__MULTIPLICITY_B = 5;
+	int RELATION_MSE__MULTIPLICITY_TARGET = 5;
 
 	/**
-	 * The feature id for the '<em><b>Navigability A</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATION_MSE__NAVIGABILITY_A = 6;
+	int RELATION_MSE__NAVIGABILITY_SOURCE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Navigability B</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATION_MSE__NAVIGABILITY_B = 7;
+	int RELATION_MSE__NAVIGABILITY_TARGET = 7;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -539,22 +548,22 @@ public interface SpecificPartPackage extends EPackage {
 	int INHERITANCE_MSE__STATE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>Child</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INHERITANCE_MSE__SOURCE = 2;
+	int INHERITANCE_MSE__CHILD = 2;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INHERITANCE_MSE__TARGET = 3;
+	int INHERITANCE_MSE__PARENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -621,58 +630,58 @@ public interface SpecificPartPackage extends EPackage {
 	int CONTAINMENT_MSE__STATE = RELATION_MSE__STATE;
 
 	/**
-	 * The feature id for the '<em><b>Role A</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINMENT_MSE__ROLE_A = RELATION_MSE__ROLE_A;
+	int CONTAINMENT_MSE__ROLE_SOURCE = RELATION_MSE__ROLE_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Role B</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINMENT_MSE__ROLE_B = RELATION_MSE__ROLE_B;
+	int CONTAINMENT_MSE__ROLE_TARGET = RELATION_MSE__ROLE_TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity A</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINMENT_MSE__MULTIPLICITY_A = RELATION_MSE__MULTIPLICITY_A;
+	int CONTAINMENT_MSE__MULTIPLICITY_SOURCE = RELATION_MSE__MULTIPLICITY_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity B</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINMENT_MSE__MULTIPLICITY_B = RELATION_MSE__MULTIPLICITY_B;
+	int CONTAINMENT_MSE__MULTIPLICITY_TARGET = RELATION_MSE__MULTIPLICITY_TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Navigability A</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINMENT_MSE__NAVIGABILITY_A = RELATION_MSE__NAVIGABILITY_A;
+	int CONTAINMENT_MSE__NAVIGABILITY_SOURCE = RELATION_MSE__NAVIGABILITY_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Navigability B</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINMENT_MSE__NAVIGABILITY_B = RELATION_MSE__NAVIGABILITY_B;
+	int CONTAINMENT_MSE__NAVIGABILITY_TARGET = RELATION_MSE__NAVIGABILITY_TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -757,58 +766,58 @@ public interface SpecificPartPackage extends EPackage {
 	int AGREGATION_MSE__STATE = RELATION_MSE__STATE;
 
 	/**
-	 * The feature id for the '<em><b>Role A</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGREGATION_MSE__ROLE_A = RELATION_MSE__ROLE_A;
+	int AGREGATION_MSE__ROLE_SOURCE = RELATION_MSE__ROLE_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Role B</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGREGATION_MSE__ROLE_B = RELATION_MSE__ROLE_B;
+	int AGREGATION_MSE__ROLE_TARGET = RELATION_MSE__ROLE_TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity A</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGREGATION_MSE__MULTIPLICITY_A = RELATION_MSE__MULTIPLICITY_A;
+	int AGREGATION_MSE__MULTIPLICITY_SOURCE = RELATION_MSE__MULTIPLICITY_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity B</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGREGATION_MSE__MULTIPLICITY_B = RELATION_MSE__MULTIPLICITY_B;
+	int AGREGATION_MSE__MULTIPLICITY_TARGET = RELATION_MSE__MULTIPLICITY_TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Navigability A</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGREGATION_MSE__NAVIGABILITY_A = RELATION_MSE__NAVIGABILITY_A;
+	int AGREGATION_MSE__NAVIGABILITY_SOURCE = RELATION_MSE__NAVIGABILITY_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Navigability B</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGREGATION_MSE__NAVIGABILITY_B = RELATION_MSE__NAVIGABILITY_B;
+	int AGREGATION_MSE__NAVIGABILITY_TARGET = RELATION_MSE__NAVIGABILITY_TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -893,58 +902,58 @@ public interface SpecificPartPackage extends EPackage {
 	int ASSOCIATION_MSE__STATE = RELATION_MSE__STATE;
 
 	/**
-	 * The feature id for the '<em><b>Role A</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_MSE__ROLE_A = RELATION_MSE__ROLE_A;
+	int ASSOCIATION_MSE__ROLE_SOURCE = RELATION_MSE__ROLE_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Role B</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_MSE__ROLE_B = RELATION_MSE__ROLE_B;
+	int ASSOCIATION_MSE__ROLE_TARGET = RELATION_MSE__ROLE_TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity A</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_MSE__MULTIPLICITY_A = RELATION_MSE__MULTIPLICITY_A;
+	int ASSOCIATION_MSE__MULTIPLICITY_SOURCE = RELATION_MSE__MULTIPLICITY_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity B</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_MSE__MULTIPLICITY_B = RELATION_MSE__MULTIPLICITY_B;
+	int ASSOCIATION_MSE__MULTIPLICITY_TARGET = RELATION_MSE__MULTIPLICITY_TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Navigability A</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_MSE__NAVIGABILITY_A = RELATION_MSE__NAVIGABILITY_A;
+	int ASSOCIATION_MSE__NAVIGABILITY_SOURCE = RELATION_MSE__NAVIGABILITY_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Navigability B</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_MSE__NAVIGABILITY_B = RELATION_MSE__NAVIGABILITY_B;
+	int ASSOCIATION_MSE__NAVIGABILITY_TARGET = RELATION_MSE__NAVIGABILITY_TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -1029,58 +1038,58 @@ public interface SpecificPartPackage extends EPackage {
 	int IMPLEMENTATION_MSE__STATE = RELATION_MSE__STATE;
 
 	/**
-	 * The feature id for the '<em><b>Role A</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_MSE__ROLE_A = RELATION_MSE__ROLE_A;
+	int IMPLEMENTATION_MSE__ROLE_SOURCE = RELATION_MSE__ROLE_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Role B</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_MSE__ROLE_B = RELATION_MSE__ROLE_B;
+	int IMPLEMENTATION_MSE__ROLE_TARGET = RELATION_MSE__ROLE_TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity A</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_MSE__MULTIPLICITY_A = RELATION_MSE__MULTIPLICITY_A;
+	int IMPLEMENTATION_MSE__MULTIPLICITY_SOURCE = RELATION_MSE__MULTIPLICITY_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity B</b></em>' attribute.
+	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_MSE__MULTIPLICITY_B = RELATION_MSE__MULTIPLICITY_B;
+	int IMPLEMENTATION_MSE__MULTIPLICITY_TARGET = RELATION_MSE__MULTIPLICITY_TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Navigability A</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_MSE__NAVIGABILITY_A = RELATION_MSE__NAVIGABILITY_A;
+	int IMPLEMENTATION_MSE__NAVIGABILITY_SOURCE = RELATION_MSE__NAVIGABILITY_SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Navigability B</b></em>' attribute.
+	 * The feature id for the '<em><b>Navigability Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_MSE__NAVIGABILITY_B = RELATION_MSE__NAVIGABILITY_B;
+	int IMPLEMENTATION_MSE__NAVIGABILITY_TARGET = RELATION_MSE__NAVIGABILITY_TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -1361,6 +1370,17 @@ public interface SpecificPartPackage extends EPackage {
 	EReference getModelFactorySpecific_LstPackages();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link specificPart.ModelFactorySpecific#getLstDiagrams <em>Lst Diagrams</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Diagrams</em>'.
+	 * @see specificPart.ModelFactorySpecific#getLstDiagrams()
+	 * @see #getModelFactorySpecific()
+	 * @generated
+	 */
+	EReference getModelFactorySpecific_LstDiagrams();
+
+	/**
 	 * Returns the meta object for class '{@link specificPart.ClassDiagramMSE <em>Class Diagram MSE</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1437,17 +1457,6 @@ public interface SpecificPartPackage extends EPackage {
 	EReference getClassDiagramMSE_LstClass();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link specificPart.ClassDiagramMSE#getLstRelations <em>Lst Relations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lst Relations</em>'.
-	 * @see specificPart.ClassDiagramMSE#getLstRelations()
-	 * @see #getClassDiagramMSE()
-	 * @generated
-	 */
-	EReference getClassDiagramMSE_LstRelations();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link specificPart.ClassDiagramMSE#getLstInheritances <em>Lst Inheritances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1457,6 +1466,17 @@ public interface SpecificPartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getClassDiagramMSE_LstInheritances();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link specificPart.ClassDiagramMSE#getLstRelations <em>Lst Relations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Relations</em>'.
+	 * @see specificPart.ClassDiagramMSE#getLstRelations()
+	 * @see #getClassDiagramMSE()
+	 * @generated
+	 */
+	EReference getClassDiagramMSE_LstRelations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link specificPart.ClassDiagramMSE#getLstPackages <em>Lst Packages</em>}'.
@@ -1698,70 +1718,70 @@ public interface SpecificPartPackage extends EPackage {
 	EAttribute getRelationMSE_State();
 
 	/**
-	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#getRoleA <em>Role A</em>}'.
+	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#getRoleSource <em>Role Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role A</em>'.
-	 * @see specificPart.RelationMSE#getRoleA()
+	 * @return the meta object for the attribute '<em>Role Source</em>'.
+	 * @see specificPart.RelationMSE#getRoleSource()
 	 * @see #getRelationMSE()
 	 * @generated
 	 */
-	EAttribute getRelationMSE_RoleA();
+	EAttribute getRelationMSE_RoleSource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#getRoleB <em>Role B</em>}'.
+	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#getRoleTarget <em>Role Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role B</em>'.
-	 * @see specificPart.RelationMSE#getRoleB()
+	 * @return the meta object for the attribute '<em>Role Target</em>'.
+	 * @see specificPart.RelationMSE#getRoleTarget()
 	 * @see #getRelationMSE()
 	 * @generated
 	 */
-	EAttribute getRelationMSE_RoleB();
+	EAttribute getRelationMSE_RoleTarget();
 
 	/**
-	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#getMultiplicityA <em>Multiplicity A</em>}'.
+	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#getMultiplicitySource <em>Multiplicity Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Multiplicity A</em>'.
-	 * @see specificPart.RelationMSE#getMultiplicityA()
+	 * @return the meta object for the attribute '<em>Multiplicity Source</em>'.
+	 * @see specificPart.RelationMSE#getMultiplicitySource()
 	 * @see #getRelationMSE()
 	 * @generated
 	 */
-	EAttribute getRelationMSE_MultiplicityA();
+	EAttribute getRelationMSE_MultiplicitySource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#getMultiplicityB <em>Multiplicity B</em>}'.
+	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#getMultiplicityTarget <em>Multiplicity Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Multiplicity B</em>'.
-	 * @see specificPart.RelationMSE#getMultiplicityB()
+	 * @return the meta object for the attribute '<em>Multiplicity Target</em>'.
+	 * @see specificPart.RelationMSE#getMultiplicityTarget()
 	 * @see #getRelationMSE()
 	 * @generated
 	 */
-	EAttribute getRelationMSE_MultiplicityB();
+	EAttribute getRelationMSE_MultiplicityTarget();
 
 	/**
-	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#isNavigabilityA <em>Navigability A</em>}'.
+	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#isNavigabilitySource <em>Navigability Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Navigability A</em>'.
-	 * @see specificPart.RelationMSE#isNavigabilityA()
+	 * @return the meta object for the attribute '<em>Navigability Source</em>'.
+	 * @see specificPart.RelationMSE#isNavigabilitySource()
 	 * @see #getRelationMSE()
 	 * @generated
 	 */
-	EAttribute getRelationMSE_NavigabilityA();
+	EAttribute getRelationMSE_NavigabilitySource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#isNavigabilityB <em>Navigability B</em>}'.
+	 * Returns the meta object for the attribute '{@link specificPart.RelationMSE#isNavigabilityTarget <em>Navigability Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Navigability B</em>'.
-	 * @see specificPart.RelationMSE#isNavigabilityB()
+	 * @return the meta object for the attribute '<em>Navigability Target</em>'.
+	 * @see specificPart.RelationMSE#isNavigabilityTarget()
 	 * @see #getRelationMSE()
 	 * @generated
 	 */
-	EAttribute getRelationMSE_NavigabilityB();
+	EAttribute getRelationMSE_NavigabilityTarget();
 
 	/**
 	 * Returns the meta object for the reference '{@link specificPart.RelationMSE#getSource <em>Source</em>}'.
@@ -1851,26 +1871,26 @@ public interface SpecificPartPackage extends EPackage {
 	EAttribute getInheritanceMSE_State();
 
 	/**
-	 * Returns the meta object for the reference '{@link specificPart.InheritanceMSE#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link specificPart.InheritanceMSE#getChild <em>Child</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see specificPart.InheritanceMSE#getSource()
+	 * @return the meta object for the reference '<em>Child</em>'.
+	 * @see specificPart.InheritanceMSE#getChild()
 	 * @see #getInheritanceMSE()
 	 * @generated
 	 */
-	EReference getInheritanceMSE_Source();
+	EReference getInheritanceMSE_Child();
 
 	/**
-	 * Returns the meta object for the reference '{@link specificPart.InheritanceMSE#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link specificPart.InheritanceMSE#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see specificPart.InheritanceMSE#getTarget()
+	 * @return the meta object for the reference '<em>Parent</em>'.
+	 * @see specificPart.InheritanceMSE#getParent()
 	 * @see #getInheritanceMSE()
 	 * @generated
 	 */
-	EReference getInheritanceMSE_Target();
+	EReference getInheritanceMSE_Parent();
 
 	/**
 	 * Returns the meta object for the attribute '{@link specificPart.InheritanceMSE#getPath <em>Path</em>}'.
@@ -2201,6 +2221,14 @@ public interface SpecificPartPackage extends EPackage {
 		EReference MODEL_FACTORY_SPECIFIC__LST_PACKAGES = eINSTANCE.getModelFactorySpecific_LstPackages();
 
 		/**
+		 * The meta object literal for the '<em><b>Lst Diagrams</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL_FACTORY_SPECIFIC__LST_DIAGRAMS = eINSTANCE.getModelFactorySpecific_LstDiagrams();
+
+		/**
 		 * The meta object literal for the '{@link specificPart.impl.ClassDiagramMSEImpl <em>Class Diagram MSE</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2259,20 +2287,20 @@ public interface SpecificPartPackage extends EPackage {
 		EReference CLASS_DIAGRAM_MSE__LST_CLASS = eINSTANCE.getClassDiagramMSE_LstClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Lst Relations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLASS_DIAGRAM_MSE__LST_RELATIONS = eINSTANCE.getClassDiagramMSE_LstRelations();
-
-		/**
 		 * The meta object literal for the '<em><b>Lst Inheritances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CLASS_DIAGRAM_MSE__LST_INHERITANCES = eINSTANCE.getClassDiagramMSE_LstInheritances();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Relations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS_DIAGRAM_MSE__LST_RELATIONS = eINSTANCE.getClassDiagramMSE_LstRelations();
 
 		/**
 		 * The meta object literal for the '<em><b>Lst Packages</b></em>' containment reference list feature.
@@ -2457,52 +2485,52 @@ public interface SpecificPartPackage extends EPackage {
 		EAttribute RELATION_MSE__STATE = eINSTANCE.getRelationMSE_State();
 
 		/**
-		 * The meta object literal for the '<em><b>Role A</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Source</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RELATION_MSE__ROLE_A = eINSTANCE.getRelationMSE_RoleA();
+		EAttribute RELATION_MSE__ROLE_SOURCE = eINSTANCE.getRelationMSE_RoleSource();
 
 		/**
-		 * The meta object literal for the '<em><b>Role B</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Target</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RELATION_MSE__ROLE_B = eINSTANCE.getRelationMSE_RoleB();
+		EAttribute RELATION_MSE__ROLE_TARGET = eINSTANCE.getRelationMSE_RoleTarget();
 
 		/**
-		 * The meta object literal for the '<em><b>Multiplicity A</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Multiplicity Source</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RELATION_MSE__MULTIPLICITY_A = eINSTANCE.getRelationMSE_MultiplicityA();
+		EAttribute RELATION_MSE__MULTIPLICITY_SOURCE = eINSTANCE.getRelationMSE_MultiplicitySource();
 
 		/**
-		 * The meta object literal for the '<em><b>Multiplicity B</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Multiplicity Target</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RELATION_MSE__MULTIPLICITY_B = eINSTANCE.getRelationMSE_MultiplicityB();
+		EAttribute RELATION_MSE__MULTIPLICITY_TARGET = eINSTANCE.getRelationMSE_MultiplicityTarget();
 
 		/**
-		 * The meta object literal for the '<em><b>Navigability A</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Navigability Source</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RELATION_MSE__NAVIGABILITY_A = eINSTANCE.getRelationMSE_NavigabilityA();
+		EAttribute RELATION_MSE__NAVIGABILITY_SOURCE = eINSTANCE.getRelationMSE_NavigabilitySource();
 
 		/**
-		 * The meta object literal for the '<em><b>Navigability B</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Navigability Target</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RELATION_MSE__NAVIGABILITY_B = eINSTANCE.getRelationMSE_NavigabilityB();
+		EAttribute RELATION_MSE__NAVIGABILITY_TARGET = eINSTANCE.getRelationMSE_NavigabilityTarget();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -2571,20 +2599,20 @@ public interface SpecificPartPackage extends EPackage {
 		EAttribute INHERITANCE_MSE__STATE = eINSTANCE.getInheritanceMSE_State();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Child</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INHERITANCE_MSE__SOURCE = eINSTANCE.getInheritanceMSE_Source();
+		EReference INHERITANCE_MSE__CHILD = eINSTANCE.getInheritanceMSE_Child();
 
 		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INHERITANCE_MSE__TARGET = eINSTANCE.getInheritanceMSE_Target();
+		EReference INHERITANCE_MSE__PARENT = eINSTANCE.getInheritanceMSE_Parent();
 
 		/**
 		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.

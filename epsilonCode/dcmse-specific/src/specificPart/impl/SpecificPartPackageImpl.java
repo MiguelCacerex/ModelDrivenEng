@@ -208,6 +208,15 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getModelFactorySpecific_LstDiagrams() {
+		return (EReference)modelFactorySpecificEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getClassDiagramMSE() {
 		return classDiagramMSEEClass;
 	}
@@ -271,8 +280,8 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClassDiagramMSE_LstRelations() {
-		return (EReference)classDiagramMSEEClass.getEStructuralFeatures().get(7);
+	public EReference getClassDiagramMSE_LstInheritances() {
+		return (EReference)classDiagramMSEEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -280,8 +289,8 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClassDiagramMSE_LstInheritances() {
-		return (EReference)classDiagramMSEEClass.getEStructuralFeatures().get(6);
+	public EReference getClassDiagramMSE_LstRelations() {
+		return (EReference)classDiagramMSEEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -487,7 +496,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationMSE_RoleA() {
+	public EAttribute getRelationMSE_RoleSource() {
 		return (EAttribute)relationMSEEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -496,7 +505,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationMSE_RoleB() {
+	public EAttribute getRelationMSE_RoleTarget() {
 		return (EAttribute)relationMSEEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -505,7 +514,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationMSE_MultiplicityA() {
+	public EAttribute getRelationMSE_MultiplicitySource() {
 		return (EAttribute)relationMSEEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -514,7 +523,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationMSE_MultiplicityB() {
+	public EAttribute getRelationMSE_MultiplicityTarget() {
 		return (EAttribute)relationMSEEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -523,7 +532,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationMSE_NavigabilityA() {
+	public EAttribute getRelationMSE_NavigabilitySource() {
 		return (EAttribute)relationMSEEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -532,7 +541,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationMSE_NavigabilityB() {
+	public EAttribute getRelationMSE_NavigabilityTarget() {
 		return (EAttribute)relationMSEEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -613,7 +622,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInheritanceMSE_Source() {
+	public EReference getInheritanceMSE_Child() {
 		return (EReference)inheritanceMSEEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -622,7 +631,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInheritanceMSE_Target() {
+	public EReference getInheritanceMSE_Parent() {
 		return (EReference)inheritanceMSEEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -891,6 +900,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		modelFactorySpecificEClass = createEClass(MODEL_FACTORY_SPECIFIC);
 		createEAttribute(modelFactorySpecificEClass, MODEL_FACTORY_SPECIFIC__NAME);
 		createEReference(modelFactorySpecificEClass, MODEL_FACTORY_SPECIFIC__LST_PACKAGES);
+		createEReference(modelFactorySpecificEClass, MODEL_FACTORY_SPECIFIC__LST_DIAGRAMS);
 
 		classDiagramMSEEClass = createEClass(CLASS_DIAGRAM_MSE);
 		createEAttribute(classDiagramMSEEClass, CLASS_DIAGRAM_MSE__NAME);
@@ -926,12 +936,12 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		relationMSEEClass = createEClass(RELATION_MSE);
 		createEAttribute(relationMSEEClass, RELATION_MSE__TYPE);
 		createEAttribute(relationMSEEClass, RELATION_MSE__STATE);
-		createEAttribute(relationMSEEClass, RELATION_MSE__ROLE_A);
-		createEAttribute(relationMSEEClass, RELATION_MSE__ROLE_B);
-		createEAttribute(relationMSEEClass, RELATION_MSE__MULTIPLICITY_A);
-		createEAttribute(relationMSEEClass, RELATION_MSE__MULTIPLICITY_B);
-		createEAttribute(relationMSEEClass, RELATION_MSE__NAVIGABILITY_A);
-		createEAttribute(relationMSEEClass, RELATION_MSE__NAVIGABILITY_B);
+		createEAttribute(relationMSEEClass, RELATION_MSE__ROLE_SOURCE);
+		createEAttribute(relationMSEEClass, RELATION_MSE__ROLE_TARGET);
+		createEAttribute(relationMSEEClass, RELATION_MSE__MULTIPLICITY_SOURCE);
+		createEAttribute(relationMSEEClass, RELATION_MSE__MULTIPLICITY_TARGET);
+		createEAttribute(relationMSEEClass, RELATION_MSE__NAVIGABILITY_SOURCE);
+		createEAttribute(relationMSEEClass, RELATION_MSE__NAVIGABILITY_TARGET);
 		createEReference(relationMSEEClass, RELATION_MSE__SOURCE);
 		createEReference(relationMSEEClass, RELATION_MSE__TARGET);
 		createEAttribute(relationMSEEClass, RELATION_MSE__PATH);
@@ -941,8 +951,8 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		inheritanceMSEEClass = createEClass(INHERITANCE_MSE);
 		createEAttribute(inheritanceMSEEClass, INHERITANCE_MSE__TYPE);
 		createEAttribute(inheritanceMSEEClass, INHERITANCE_MSE__STATE);
-		createEReference(inheritanceMSEEClass, INHERITANCE_MSE__SOURCE);
-		createEReference(inheritanceMSEEClass, INHERITANCE_MSE__TARGET);
+		createEReference(inheritanceMSEEClass, INHERITANCE_MSE__CHILD);
+		createEReference(inheritanceMSEEClass, INHERITANCE_MSE__PARENT);
 		createEAttribute(inheritanceMSEEClass, INHERITANCE_MSE__PATH);
 		createEAttribute(inheritanceMSEEClass, INHERITANCE_MSE__LOCATION);
 		createEAttribute(inheritanceMSEEClass, INHERITANCE_MSE__DOCUMENTATION);
@@ -1014,6 +1024,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		initEClass(modelFactorySpecificEClass, ModelFactorySpecific.class, "ModelFactorySpecific", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getModelFactorySpecific_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelFactorySpecific.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModelFactorySpecific_LstPackages(), this.getPackageMSE(), null, "lstPackages", null, 0, -1, ModelFactorySpecific.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelFactorySpecific_LstDiagrams(), this.getClassDiagramMSE(), null, "lstDiagrams", null, 0, -1, ModelFactorySpecific.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classDiagramMSEEClass, ClassDiagramMSE.class, "ClassDiagramMSE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getClassDiagramMSE_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassDiagramMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1049,12 +1060,12 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		initEClass(relationMSEEClass, RelationMSE.class, "RelationMSE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRelationMSE_Type(), ecorePackage.getEString(), "type", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationMSE_State(), ecorePackage.getEString(), "state", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationMSE_RoleA(), ecorePackage.getEString(), "roleA", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationMSE_RoleB(), ecorePackage.getEString(), "roleB", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationMSE_MultiplicityA(), ecorePackage.getEString(), "multiplicityA", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationMSE_MultiplicityB(), ecorePackage.getEString(), "multiplicityB", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationMSE_NavigabilityA(), ecorePackage.getEBoolean(), "navigabilityA", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationMSE_NavigabilityB(), ecorePackage.getEBoolean(), "navigabilityB", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationMSE_RoleSource(), ecorePackage.getEString(), "roleSource", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationMSE_RoleTarget(), ecorePackage.getEString(), "roleTarget", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationMSE_MultiplicitySource(), ecorePackage.getEString(), "multiplicitySource", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationMSE_MultiplicityTarget(), ecorePackage.getEString(), "multiplicityTarget", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationMSE_NavigabilitySource(), ecorePackage.getEBoolean(), "navigabilitySource", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationMSE_NavigabilityTarget(), ecorePackage.getEBoolean(), "navigabilityTarget", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationMSE_Source(), this.getClassMSE(), null, "source", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationMSE_Target(), this.getClassMSE(), null, "target", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationMSE_Path(), ecorePackage.getEString(), "path", null, 0, 1, RelationMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1064,8 +1075,8 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		initEClass(inheritanceMSEEClass, InheritanceMSE.class, "InheritanceMSE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInheritanceMSE_Type(), ecorePackage.getEString(), "type", null, 0, 1, InheritanceMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInheritanceMSE_State(), ecorePackage.getEString(), "state", null, 0, 1, InheritanceMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInheritanceMSE_Source(), this.getClassMSE(), null, "source", null, 0, 1, InheritanceMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInheritanceMSE_Target(), this.getClassMSE(), null, "target", null, 0, 1, InheritanceMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInheritanceMSE_Child(), this.getClassMSE(), null, "child", null, 0, 1, InheritanceMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInheritanceMSE_Parent(), this.getClassMSE(), null, "parent", null, 0, 1, InheritanceMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInheritanceMSE_Path(), ecorePackage.getEString(), "path", null, 0, 1, InheritanceMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInheritanceMSE_Location(), ecorePackage.getEString(), "location", null, 0, 1, InheritanceMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInheritanceMSE_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, InheritanceMSE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1187,9 +1198,10 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		  (attributeMSEEClass, 
 		   source, 
 		   new String[] {
-			 "label", "name",
+			 "label", "name,type",
 			 "border.color", "252,243,207",
-			 "color", "252,243,207"
+			 "color", "252,243,207",
+			 "label.pattern", "{0}  [ {1} ]"
 		   });
 	}
 
@@ -1206,7 +1218,8 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		   source, 
 		   new String[] {
 			 "layout", "list",
-			 "collapsible", "true"
+			 "collapsible", "true",
+			 "label.view.pattern", "true"
 		   });	
 		addAnnotation
 		  (getClassMSE_LstMethods(), 
@@ -1229,8 +1242,8 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		  (inheritanceMSEEClass, 
 		   source, 
 		   new String[] {
-			 "source", "source",
-			 "target", "target",
+			 "source", "child",
+			 "target", "parent",
 			 "target.decoration", "closedarrow",
 			 "style", "solid",
 			 "width", "3"
@@ -1243,8 +1256,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 			 "target", "target",
 			 "target.decoration", "filledrhomb",
 			 "style", "solid",
-			 "width", "3",
-			 "label", "multiplicityB"
+			 "width", "3"
 		   });	
 		addAnnotation
 		  (agregationMSEEClass, 
@@ -1254,8 +1266,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 			 "target", "target",
 			 "target.decoration", "rhomb",
 			 "style", "solid",
-			 "width", "3",
-			 "label", "multiplicityB"
+			 "width", "3"
 		   });	
 		addAnnotation
 		  (associationMSEEClass, 
@@ -1264,8 +1275,7 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 			 "source", "source",
 			 "target", "target",
 			 "style", "solid",
-			 "width", "3",
-			 "label", "multiplicityB"
+			 "width", "3"
 		   });	
 		addAnnotation
 		  (implementationMSEEClass, 
@@ -1273,9 +1283,9 @@ public class SpecificPartPackageImpl extends EPackageImpl implements SpecificPar
 		   new String[] {
 			 "source", "source",
 			 "target", "target",
+			 "target.decoration", "closedarrow",
 			 "style", "dot",
-			 "width", "3",
-			 "label", "multiplicityB"
+			 "width", "3"
 		   });
 	}
 

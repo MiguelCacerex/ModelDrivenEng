@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import specificPart.ClassDiagramMSE;
 import specificPart.ModelFactorySpecific;
 import specificPart.PackageMSE;
 import specificPart.SpecificPartPackage;
@@ -32,6 +33,7 @@ import specificPart.SpecificPartPackage;
  * <ul>
  *   <li>{@link specificPart.impl.ModelFactorySpecificImpl#getName <em>Name</em>}</li>
  *   <li>{@link specificPart.impl.ModelFactorySpecificImpl#getLstPackages <em>Lst Packages</em>}</li>
+ *   <li>{@link specificPart.impl.ModelFactorySpecificImpl#getLstDiagrams <em>Lst Diagrams</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class ModelFactorySpecificImpl extends EObjectImpl implements ModelFactor
 	 * @ordered
 	 */
 	protected EList<PackageMSE> lstPackages;
+
+	/**
+	 * The cached value of the '{@link #getLstDiagrams() <em>Lst Diagrams</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstDiagrams()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ClassDiagramMSE> lstDiagrams;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +136,25 @@ public class ModelFactorySpecificImpl extends EObjectImpl implements ModelFactor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ClassDiagramMSE> getLstDiagrams() {
+		if (lstDiagrams == null) {
+			lstDiagrams = new EObjectContainmentEList<ClassDiagramMSE>(ClassDiagramMSE.class, this, SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_DIAGRAMS);
+		}
+		return lstDiagrams;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_PACKAGES:
 				return ((InternalEList<?>)getLstPackages()).basicRemove(otherEnd, msgs);
+			case SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_DIAGRAMS:
+				return ((InternalEList<?>)getLstDiagrams()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,6 +171,8 @@ public class ModelFactorySpecificImpl extends EObjectImpl implements ModelFactor
 				return getName();
 			case SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_PACKAGES:
 				return getLstPackages();
+			case SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_DIAGRAMS:
+				return getLstDiagrams();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +193,10 @@ public class ModelFactorySpecificImpl extends EObjectImpl implements ModelFactor
 				getLstPackages().clear();
 				getLstPackages().addAll((Collection<? extends PackageMSE>)newValue);
 				return;
+			case SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_DIAGRAMS:
+				getLstDiagrams().clear();
+				getLstDiagrams().addAll((Collection<? extends ClassDiagramMSE>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +215,9 @@ public class ModelFactorySpecificImpl extends EObjectImpl implements ModelFactor
 			case SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_PACKAGES:
 				getLstPackages().clear();
 				return;
+			case SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_DIAGRAMS:
+				getLstDiagrams().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +234,8 @@ public class ModelFactorySpecificImpl extends EObjectImpl implements ModelFactor
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_PACKAGES:
 				return lstPackages != null && !lstPackages.isEmpty();
+			case SpecificPartPackage.MODEL_FACTORY_SPECIFIC__LST_DIAGRAMS:
+				return lstDiagrams != null && !lstDiagrams.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

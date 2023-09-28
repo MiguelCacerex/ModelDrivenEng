@@ -7,7 +7,6 @@ import abstractPart.AssociationsMSE;
 import abstractPart.ClassDiagramMSE;
 import abstractPart.ClassMSE;
 import abstractPart.PackageMSE;
-import abstractPart.RelationMSE;
 
 import java.util.Collection;
 
@@ -33,8 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.impl.PackageMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.PackageMSEImpl#getName <em>Name</em>}</li>
+ *   <li>{@link abstractPart.impl.PackageMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.PackageMSEImpl#getAssociations <em>Associations</em>}</li>
  *   <li>{@link abstractPart.impl.PackageMSEImpl#getPath <em>Path</em>}</li>
  *   <li>{@link abstractPart.impl.PackageMSEImpl#getLocation <em>Location</em>}</li>
@@ -47,26 +46,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
-	/**
-	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected String state = STATE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,7 +67,27 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAssociations() <em>Associations</em>}' reference.
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected String state = STATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAssociations() <em>Associations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAssociations()
@@ -254,14 +253,6 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	 * @generated
 	 */
 	public AssociationsMSE getAssociations() {
-		if (associations != null && associations.eIsProxy()) {
-			InternalEObject oldAssociations = (InternalEObject)associations;
-			associations = (AssociationsMSE)eResolveProxy(oldAssociations);
-			if (associations != oldAssociations) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS, oldAssociations, associations));
-			}
-		}
 		return associations;
 	}
 
@@ -270,8 +261,14 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssociationsMSE basicGetAssociations() {
-		return associations;
+	public NotificationChain basicSetAssociations(AssociationsMSE newAssociations, NotificationChain msgs) {
+		AssociationsMSE oldAssociations = associations;
+		associations = newAssociations;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS, oldAssociations, newAssociations);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -280,10 +277,38 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	 * @generated
 	 */
 	public void setAssociations(AssociationsMSE newAssociations) {
-		AssociationsMSE oldAssociations = associations;
-		associations = newAssociations;
+		if (newAssociations != associations) {
+			NotificationChain msgs = null;
+			if (associations != null)
+				msgs = ((InternalEObject)associations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS, null, msgs);
+			if (newAssociations != null)
+				msgs = ((InternalEObject)newAssociations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS, null, msgs);
+			msgs = basicSetAssociations(newAssociations, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS, newAssociations, newAssociations));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS, oldAssociations, associations));
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.PACKAGE_MSE__PATH, oldPath, path));
 	}
 
 	/**
@@ -333,27 +358,6 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPath() {
-		return path;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.PACKAGE_MSE__PATH, oldPath, path));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ClassMSE> getLstClass() {
 		if (lstClass == null) {
 			lstClass = new EObjectContainmentEList<ClassMSE>(ClassMSE.class, this, AbstractPartPackage.PACKAGE_MSE__LST_CLASS);
@@ -393,6 +397,8 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS:
+				return basicSetAssociations(null, msgs);
 			case AbstractPartPackage.PACKAGE_MSE__LST_CLASS:
 				return ((InternalEList<?>)getLstClass()).basicRemove(otherEnd, msgs);
 			case AbstractPartPackage.PACKAGE_MSE__LST_PACKAGES:
@@ -411,13 +417,12 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AbstractPartPackage.PACKAGE_MSE__STATE:
-				return getState();
 			case AbstractPartPackage.PACKAGE_MSE__NAME:
 				return getName();
+			case AbstractPartPackage.PACKAGE_MSE__STATE:
+				return getState();
 			case AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS:
-				if (resolve) return getAssociations();
-				return basicGetAssociations();
+				return getAssociations();
 			case AbstractPartPackage.PACKAGE_MSE__PATH:
 				return getPath();
 			case AbstractPartPackage.PACKAGE_MSE__LOCATION:
@@ -443,11 +448,11 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AbstractPartPackage.PACKAGE_MSE__STATE:
-				setState((String)newValue);
-				return;
 			case AbstractPartPackage.PACKAGE_MSE__NAME:
 				setName((String)newValue);
+				return;
+			case AbstractPartPackage.PACKAGE_MSE__STATE:
+				setState((String)newValue);
 				return;
 			case AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS:
 				setAssociations((AssociationsMSE)newValue);
@@ -485,11 +490,11 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.PACKAGE_MSE__STATE:
-				setState(STATE_EDEFAULT);
-				return;
 			case AbstractPartPackage.PACKAGE_MSE__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case AbstractPartPackage.PACKAGE_MSE__STATE:
+				setState(STATE_EDEFAULT);
 				return;
 			case AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS:
 				setAssociations((AssociationsMSE)null);
@@ -524,10 +529,10 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.PACKAGE_MSE__STATE:
-				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.PACKAGE_MSE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AbstractPartPackage.PACKAGE_MSE__STATE:
+				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.PACKAGE_MSE__ASSOCIATIONS:
 				return associations != null;
 			case AbstractPartPackage.PACKAGE_MSE__PATH:
@@ -556,10 +561,10 @@ public class PackageMSEImpl extends EObjectImpl implements PackageMSE {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (state: ");
-		result.append(state);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
+		result.append(", state: ");
+		result.append(state);
 		result.append(", path: ");
 		result.append(path);
 		result.append(", location: ");

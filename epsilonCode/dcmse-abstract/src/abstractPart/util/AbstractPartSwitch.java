@@ -72,27 +72,45 @@ public class AbstractPartSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AbstractPartPackage.CLASS_DIAGRAM_MSE: {
-				ClassDiagramMSE classDiagramMSE = (ClassDiagramMSE)theEObject;
-				T result = caseClassDiagramMSE(classDiagramMSE);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case AbstractPartPackage.PACKAGE_MSE: {
 				PackageMSE packageMSE = (PackageMSE)theEObject;
 				T result = casePackageMSE(packageMSE);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AbstractPartPackage.HASH_CODE_CLASS_MSE: {
-				HashCodeClassMSE hashCodeClassMSE = (HashCodeClassMSE)theEObject;
-				T result = caseHashCodeClassMSE(hashCodeClassMSE);
+			case AbstractPartPackage.CLASS_DIAGRAM_MSE: {
+				ClassDiagramMSE classDiagramMSE = (ClassDiagramMSE)theEObject;
+				T result = caseClassDiagramMSE(classDiagramMSE);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AbstractPartPackage.CLASS_MSE: {
 				ClassMSE classMSE = (ClassMSE)theEObject;
 				T result = caseClassMSE(classMSE);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AbstractPartPackage.METHOD_MSE: {
+				MethodMSE methodMSE = (MethodMSE)theEObject;
+				T result = caseMethodMSE(methodMSE);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AbstractPartPackage.ATTRIBUTE_MSE: {
+				AttributeMSE attributeMSE = (AttributeMSE)theEObject;
+				T result = caseAttributeMSE(attributeMSE);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AbstractPartPackage.ATTRIBUTE_RELATION_MSE: {
+				AttributeRelationMSE attributeRelationMSE = (AttributeRelationMSE)theEObject;
+				T result = caseAttributeRelationMSE(attributeRelationMSE);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AbstractPartPackage.HASH_CODE_CLASS_MSE: {
+				HashCodeClassMSE hashCodeClassMSE = (HashCodeClassMSE)theEObject;
+				T result = caseHashCodeClassMSE(hashCodeClassMSE);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,18 +160,6 @@ public class AbstractPartSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AbstractPartPackage.METHOD_MSE: {
-				MethodMSE methodMSE = (MethodMSE)theEObject;
-				T result = caseMethodMSE(methodMSE);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AbstractPartPackage.ATTRIBUTE_MSE: {
-				AttributeMSE attributeMSE = (AttributeMSE)theEObject;
-				T result = caseAttributeMSE(attributeMSE);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -174,21 +180,6 @@ public class AbstractPartSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Class Diagram MSE</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Class Diagram MSE</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseClassDiagramMSE(ClassDiagramMSE object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Package MSE</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -204,17 +195,17 @@ public class AbstractPartSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hash Code Class MSE</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Class Diagram MSE</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hash Code Class MSE</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Class Diagram MSE</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseHashCodeClassMSE(HashCodeClassMSE object) {
+	public T caseClassDiagramMSE(ClassDiagramMSE object) {
 		return null;
 	}
 
@@ -230,6 +221,66 @@ public class AbstractPartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseClassMSE(ClassMSE object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Method MSE</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Method MSE</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMethodMSE(MethodMSE object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute MSE</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute MSE</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeMSE(AttributeMSE object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Relation MSE</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Relation MSE</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeRelationMSE(AttributeRelationMSE object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hash Code Class MSE</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hash Code Class MSE</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHashCodeClassMSE(HashCodeClassMSE object) {
 		return null;
 	}
 
@@ -335,36 +386,6 @@ public class AbstractPartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseImplementationMSE(ImplementationMSE object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Method MSE</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Method MSE</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMethodMSE(MethodMSE object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Attribute MSE</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Attribute MSE</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAttributeMSE(AttributeMSE object) {
 		return null;
 	}
 

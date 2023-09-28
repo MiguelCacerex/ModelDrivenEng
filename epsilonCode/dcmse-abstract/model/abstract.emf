@@ -3,8 +3,8 @@
 package abstractPart;
 
 class ModelFactoryAbstract {
-	attr String state;
 	attr String name;
+	attr String state;
 	attr String path;
 	attr String location;
     attr String documentation;
@@ -12,20 +12,11 @@ class ModelFactoryAbstract {
     val PackageMSE[*] lstPackages;
 }
 
-class ClassDiagramMSE {
-	attr String state;
-	attr String name;
-	attr String path;
-	attr String location;
-    attr String documentation;
-    
-    val HashCodeClassMSE[*] lstIdentifierClass;
-}
 
 class PackageMSE {
-	attr String state;
 	attr String name;
-    ref AssociationsMSE associations;
+	attr String state;
+    val AssociationsMSE[1] associations;
 	attr String path;
 	attr String location;
 	attr String documentation;
@@ -35,59 +26,107 @@ class PackageMSE {
     val ClassDiagramMSE[*] lstDiagrams; 
 }
 
-class HashCodeClassMSE {
+class ClassDiagramMSE {
+	attr String name;
 	attr String state;
-	attr String code;
+	attr String path;
+	attr String location;
+    attr String documentation;
+    ref HashCodeClassMSE[*] lstIdentifierClass;
+}
+
+class ClassMSE {
+    attr String name;
+    attr String state;
+    attr String type;
+    attr String modifier;
+    attr boolean absrtact;
+	val  HashCodeClassMSE[1] identifier;
+	attr String path;
+	attr String location;
+    attr String documentation;
+    val  MethodMSE[*] lstMethods;    
+    val  AttributeMSE[*] lstAttributes;
+    val  AttributeRelationMSE[*] lstAttributesRelations;
+}
+
+class MethodMSE {
+    attr String name;
+    attr String state;
+    attr  String modifier;
+    attr String body;
+    attr  String typeReturn;
+	attr String path;
+	attr String location;
+    attr String documentation;
+    val  AttributeMSE[*] lstArguments;
+}
+
+class AttributeMSE {
+    attr String name;
+    attr String state;
+    attr String modifier;
+    attr String type;
+    attr String initialValue;
+    attr String documentation;
 	attr String path;
 	attr String location;
 }
 
-class ClassMSE {
-    attr String state;
+class AttributeRelationMSE {
     attr String name;
-    attr String type;
+    attr String state;
     attr String modifier;
-    attr boolean absrtact;
-	ref  HashCodeClassMSE identifier;
+    attr String type;
+    attr String initialValue;
+    attr String documentation;
 	attr String path;
 	attr String location;
-    attr String documentation;
-  
-    val  MethodMSE[*] lstMethods;    
-    val  AttributeMSE[*] lstAttributes;
+	attr String typeParent;
+}
+
+
+class HashCodeClassMSE {
+	attr String code;
+	attr String state;
+	attr String path;
+	attr String location;
 }
 
 class AssociationsMSE{
 	attr String state;
-	
-	val RelationMSE[*] lstRelations;
+	attr String path;
+	attr String location;
+	val ContainmentMSE[*] lstContainments;
+	val AgregationMSE[*] lstAgregations;
+	val AssociationMSE[*] lstAssociations;
+	val ImplementationMSE[*] lstImplementations;
 	val InheritanceMSE[*] lstInheritance;
 }
 
 class RelationMSE {
-	attr String state;
 	attr String name;
+	attr String state;
     attr String type;   
-    attr String roleA;
-    attr String roleB;
-    attr String multiplicityA;
-    attr String multiplicityB;
-    attr boolean navigabilityA;
-    attr boolean navigabilityB;
+    attr String roleSource;
+    attr String roleTarget;
+    attr String multiplicitySource;
+    attr String multiplicityTarget;
+    attr boolean navigabilitySource;
+    attr boolean navigabilityTarget;
     ref ClassMSE source;
     ref ClassMSE target;
 	attr String path;
 	attr String location;
     attr String documentation;
-
 }
 
 class InheritanceMSE  {
+    attr String name;
 	attr String state;
     attr String type;   
-    attr String name;
-    ref ClassMSE source;
-    ref ClassMSE target;
+    ref ClassMSE child;
+    ref ClassMSE parent;
 	attr String path;
 	attr String location;
     attr String documentation;
@@ -110,27 +149,4 @@ class ImplementationMSE extends RelationMSE {
    
 }
 
-class MethodMSE {
-    attr String state;
-    attr  String modifier;
-    attr String name;
-    attr String body;
-    attr  String typeReturn;
-	attr String path;
-	attr String location;
-    attr String documentation;
-
-    val  AttributeMSE[*] lstArguments;
-}
-
-class AttributeMSE {
-    attr String state;
-    attr String modifier;
-    attr String type;
-    attr String name;
-    attr String initialValue;
-    attr String documentation;
-	attr String path;
-	attr String location;
-}
 

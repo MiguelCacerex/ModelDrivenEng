@@ -178,22 +178,6 @@ public interface ClassDiagramMSE extends EObject {
 	EList<ClassMSE> getLstClass();
 
 	/**
-	 * Returns the value of the '<em><b>Lst Relations</b></em>' containment reference list.
-	 * The list contents are of type {@link specificPart.RelationMSE}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Lst Relations</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst Relations</em>' containment reference list.
-	 * @see specificPart.SpecificPartPackage#getClassDiagramMSE_LstRelations()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<RelationMSE> getLstRelations();
-
-	/**
 	 * Returns the value of the '<em><b>Lst Inheritances</b></em>' containment reference list.
 	 * The list contents are of type {@link specificPart.InheritanceMSE}.
 	 * <!-- begin-user-doc -->
@@ -208,6 +192,22 @@ public interface ClassDiagramMSE extends EObject {
 	 * @generated
 	 */
 	EList<InheritanceMSE> getLstInheritances();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Relations</b></em>' containment reference list.
+	 * The list contents are of type {@link specificPart.RelationMSE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Relations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Relations</em>' containment reference list.
+	 * @see specificPart.SpecificPartPackage#getClassDiagramMSE_LstRelations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RelationMSE> getLstRelations();
 
 	/**
 	 * Returns the value of the '<em><b>Lst Packages</b></em>' containment reference list.

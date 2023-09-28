@@ -60,6 +60,7 @@ public class Generator extends ViewPart {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				ModelFactoryModel mfm = ModelFactoryModel.getInstance();
+				mfm.transformationM2M();
 			}
 		});
 		btnNewButton.setBounds(149, 43, 266, 64);
@@ -70,6 +71,8 @@ public class Generator extends ViewPart {
 		btnTransformationMt.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				ModelFactoryModel mfm = ModelFactoryModel.getInstance();
+				mfm.transformationM2T();
 			}
 		});
 		btnTransformationMt.setText("Transformation M2T");

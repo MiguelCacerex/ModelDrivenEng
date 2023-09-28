@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link abstractPart.impl.AttributeMSEImpl#getName <em>Name</em>}</li>
  *   <li>{@link abstractPart.impl.AttributeMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.AttributeMSEImpl#getModifier <em>Modifier</em>}</li>
  *   <li>{@link abstractPart.impl.AttributeMSEImpl#getType <em>Type</em>}</li>
- *   <li>{@link abstractPart.impl.AttributeMSEImpl#getName <em>Name</em>}</li>
  *   <li>{@link abstractPart.impl.AttributeMSEImpl#getInitialValue <em>Initial Value</em>}</li>
  *   <li>{@link abstractPart.impl.AttributeMSEImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link abstractPart.impl.AttributeMSEImpl#getPath <em>Path</em>}</li>
@@ -33,6 +33,26 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @generated
  */
 public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -92,26 +112,6 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	 * @ordered
 	 */
 	protected String type = TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInitialValue() <em>Initial Value</em>}' attribute.
@@ -217,69 +217,6 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getLocation() {
-		return location;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLocation(String newLocation) {
-		String oldLocation = location;
-		location = newLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__LOCATION, oldLocation, location));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPath() {
-		return path;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__PATH, oldPath, path));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getState() {
 		return state;
 	}
@@ -294,6 +231,69 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 		state = newState;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__STATE, oldState, state));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getModifier() {
+		return modifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setModifier(String newModifier) {
+		String oldModifier = modifier;
+		modifier = newModifier;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__MODIFIER, oldModifier, modifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__NAME, oldName, name));
 	}
 
 	/**
@@ -343,8 +343,8 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getType() {
-		return type;
+	public String getPath() {
+		return path;
 	}
 
 	/**
@@ -352,11 +352,11 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__PATH, oldPath, path));
 	}
 
 	/**
@@ -364,8 +364,8 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getModifier() {
-		return modifier;
+	public String getLocation() {
+		return location;
 	}
 
 	/**
@@ -373,11 +373,11 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModifier(String newModifier) {
-		String oldModifier = modifier;
-		modifier = newModifier;
+	public void setLocation(String newLocation) {
+		String oldLocation = location;
+		location = newLocation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__MODIFIER, oldModifier, modifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.ATTRIBUTE_MSE__LOCATION, oldLocation, location));
 	}
 
 	/**
@@ -388,14 +388,14 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AbstractPartPackage.ATTRIBUTE_MSE__NAME:
+				return getName();
 			case AbstractPartPackage.ATTRIBUTE_MSE__STATE:
 				return getState();
 			case AbstractPartPackage.ATTRIBUTE_MSE__MODIFIER:
 				return getModifier();
 			case AbstractPartPackage.ATTRIBUTE_MSE__TYPE:
 				return getType();
-			case AbstractPartPackage.ATTRIBUTE_MSE__NAME:
-				return getName();
 			case AbstractPartPackage.ATTRIBUTE_MSE__INITIAL_VALUE:
 				return getInitialValue();
 			case AbstractPartPackage.ATTRIBUTE_MSE__DOCUMENTATION:
@@ -416,6 +416,9 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AbstractPartPackage.ATTRIBUTE_MSE__NAME:
+				setName((String)newValue);
+				return;
 			case AbstractPartPackage.ATTRIBUTE_MSE__STATE:
 				setState((String)newValue);
 				return;
@@ -424,9 +427,6 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 				return;
 			case AbstractPartPackage.ATTRIBUTE_MSE__TYPE:
 				setType((String)newValue);
-				return;
-			case AbstractPartPackage.ATTRIBUTE_MSE__NAME:
-				setName((String)newValue);
 				return;
 			case AbstractPartPackage.ATTRIBUTE_MSE__INITIAL_VALUE:
 				setInitialValue((String)newValue);
@@ -452,6 +452,9 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AbstractPartPackage.ATTRIBUTE_MSE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case AbstractPartPackage.ATTRIBUTE_MSE__STATE:
 				setState(STATE_EDEFAULT);
 				return;
@@ -460,9 +463,6 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 				return;
 			case AbstractPartPackage.ATTRIBUTE_MSE__TYPE:
 				setType(TYPE_EDEFAULT);
-				return;
-			case AbstractPartPackage.ATTRIBUTE_MSE__NAME:
-				setName(NAME_EDEFAULT);
 				return;
 			case AbstractPartPackage.ATTRIBUTE_MSE__INITIAL_VALUE:
 				setInitialValue(INITIAL_VALUE_EDEFAULT);
@@ -488,14 +488,14 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AbstractPartPackage.ATTRIBUTE_MSE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AbstractPartPackage.ATTRIBUTE_MSE__STATE:
 				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.ATTRIBUTE_MSE__MODIFIER:
 				return MODIFIER_EDEFAULT == null ? modifier != null : !MODIFIER_EDEFAULT.equals(modifier);
 			case AbstractPartPackage.ATTRIBUTE_MSE__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case AbstractPartPackage.ATTRIBUTE_MSE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AbstractPartPackage.ATTRIBUTE_MSE__INITIAL_VALUE:
 				return INITIAL_VALUE_EDEFAULT == null ? initialValue != null : !INITIAL_VALUE_EDEFAULT.equals(initialValue);
 			case AbstractPartPackage.ATTRIBUTE_MSE__DOCUMENTATION:
@@ -518,14 +518,14 @@ public class AttributeMSEImpl extends EObjectImpl implements AttributeMSE {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (state: ");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", state: ");
 		result.append(state);
 		result.append(", modifier: ");
 		result.append(modifier);
 		result.append(", type: ");
 		result.append(type);
-		result.append(", name: ");
-		result.append(name);
 		result.append(", initialValue: ");
 		result.append(initialValue);
 		result.append(", documentation: ");

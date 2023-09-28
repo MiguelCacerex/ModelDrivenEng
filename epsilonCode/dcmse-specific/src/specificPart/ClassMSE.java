@@ -252,7 +252,7 @@ public interface ClassMSE extends EObject {
 	 * @return the value of the '<em>Lst Attributes</em>' containment reference list.
 	 * @see specificPart.SpecificPartPackage#getClassMSE_LstAttributes()
 	 * @model containment="true"
-	 *        annotation="gmf.compartment layout='list' collapsible='true'"
+	 *        annotation="gmf.compartment layout='list' collapsible='true' label.view.pattern='true'"
 	 * @generated
 	 */
 	EList<AttributeMSE> getLstAttributes();

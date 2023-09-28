@@ -3,7 +3,6 @@
 package abstractPart;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.ClassDiagramMSE#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.ClassDiagramMSE#getName <em>Name</em>}</li>
+ *   <li>{@link abstractPart.ClassDiagramMSE#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.ClassDiagramMSE#getPath <em>Path</em>}</li>
  *   <li>{@link abstractPart.ClassDiagramMSE#getLocation <em>Location</em>}</li>
  *   <li>{@link abstractPart.ClassDiagramMSE#getDocumentation <em>Documentation</em>}</li>
@@ -81,6 +80,32 @@ public interface ClassDiagramMSE extends EObject {
 	void setName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Path</em>' attribute.
+	 * @see #setPath(String)
+	 * @see abstractPart.AbstractPartPackage#getClassDiagramMSE_Path()
+	 * @model
+	 * @generated
+	 */
+	String getPath();
+
+	/**
+	 * Sets the value of the '{@link abstractPart.ClassDiagramMSE#getPath <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Path</em>' attribute.
+	 * @see #getPath()
+	 * @generated
+	 */
+	void setPath(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -133,45 +158,19 @@ public interface ClassDiagramMSE extends EObject {
 	void setDocumentation(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Lst Identifier Class</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Lst Identifier Class</b></em>' reference list.
 	 * The list contents are of type {@link abstractPart.HashCodeClassMSE}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Lst Identifier Class</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Lst Identifier Class</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst Identifier Class</em>' containment reference list.
+	 * @return the value of the '<em>Lst Identifier Class</em>' reference list.
 	 * @see abstractPart.AbstractPartPackage#getClassDiagramMSE_LstIdentifierClass()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<HashCodeClassMSE> getLstIdentifierClass();
-
-	/**
-	 * Returns the value of the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Path</em>' attribute.
-	 * @see #setPath(String)
-	 * @see abstractPart.AbstractPartPackage#getClassDiagramMSE_Path()
 	 * @model
 	 * @generated
 	 */
-	String getPath();
-
-	/**
-	 * Sets the value of the '{@link abstractPart.ClassDiagramMSE#getPath <em>Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Path</em>' attribute.
-	 * @see #getPath()
-	 * @generated
-	 */
-	void setPath(String value);
+	EList<HashCodeClassMSE> getLstIdentifierClass();
 
 } // ClassDiagramMSE

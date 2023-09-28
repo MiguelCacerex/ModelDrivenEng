@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="specificpart_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="specificpart_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="specificPart.diagram.part.SpecificPartDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/SpecificPartDiagramFile.gif"
+         extensions="specificpart_diagram"
+         default="true"
+         class="specificPart.diagram.part.SpecificPartDiagramEditor"
+         matchingStrategy="specificPart.diagram.part.SpecificPartMatchingStrategy"
+         contributorClass="specificPart.diagram.part.SpecificPartDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="specificPart.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/SpecificPartDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="specificPart.diagram.part.SpecificPartCreationWizard"
+  	     id="specificPart.diagram.part.SpecificPartCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="dcmse-specific.diagram.InitDiagram"
+            nameFilter="*.specificpart"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="specificPart.diagram.part.SpecificPartInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="dcmse-specific.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="SpecificPartPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="specificPart.diagram.part.SpecificPartDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="SpecificPartPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="specificPart.diagram.part.SpecificPartDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="SpecificPartPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="specificPart.diagram.part.SpecificPartDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="SpecificPartRender">
+         <Priority name="Lowest"/>
+         <ViewId id="specificPart.diagram.part.SpecificPartDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="specificPart.diagram.providers.SpecificPartMarkerNavigationProvider">
+         <MarkerType name="dcmse-specific.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="SpecificPart Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="specificPart.diagram.providers.SpecificPartValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="specificPart.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="dcmse-specific.diagram.general"
+            name="%prefpage.dcmse-specific.diagram.general"
+            class="specificPart.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="dcmse-specific.diagram.appearance"
+            name="%prefpage.dcmse-specific.diagram.appearance"
+            category="dcmse-specific.diagram.general"
+            class="specificPart.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="dcmse-specific.diagram.connections"
+            name="%prefpage.dcmse-specific.diagram.connections"
+            category="dcmse-specific.diagram.general"
+            class="specificPart.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="dcmse-specific.diagram.printing"
+            name="%prefpage.dcmse-specific.diagram.printing"
+            category="dcmse-specific.diagram.general"
+            class="specificPart.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="dcmse-specific.diagram.rulersAndGrid"
+            name="%prefpage.dcmse-specific.diagram.rulersAndGrid"
+            category="dcmse-specific.diagram.general"
+            class="specificPart.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="dcmse-specific.diagram"
+            labelProvider="specificPart.diagram.sheet.SpecificPartSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="dcmse-specific.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="dcmse-specific.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="specificPart.diagram.sheet.SpecificPartPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="specificPart.diagram.navigator.SpecificPartAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="specificPart.diagram.providers.SpecificPartViewProvider">
+         <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="specificPart"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="SpecificPart"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,3001,3002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="specificPart.diagram.providers.SpecificPartEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="SpecificPart"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,3001,3002"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003,4004,4005"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5003,5004,5001,5002"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="specificPart.diagram.providers.assistants.SpecificPartModelingAssistantProviderOfClassDiagramMSEEditPart">
+         <Priority name="Lowest"/>
+         <object class="specificPart.diagram.edit.parts.ClassDiagramMSEEditPart" id="ClassDiagramMSE_1000"/>
+         <context elements="ClassDiagramMSE_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="specificPart.diagram.providers.assistants.SpecificPartModelingAssistantProviderOfClassMSEEditPart">
+         <Priority name="Lowest"/>
+         <object class="specificPart.diagram.edit.parts.ClassMSEEditPart" id="ClassMSE_2001"/>
+         <context elements="ClassMSE_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="specificPart.diagram.providers.assistants.SpecificPartModelingAssistantProviderOfPackageMSEEditPart">
+         <Priority name="Lowest"/>
+         <object class="specificPart.diagram.edit.parts.PackageMSEEditPart" id="PackageMSE_2002"/>
+         <context elements="PackageMSE_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="specificPart.diagram.providers.assistants.SpecificPartModelingAssistantProviderOfAttributeMSEEditPart">
+         <Priority name="Lowest"/>
+         <object class="specificPart.diagram.edit.parts.AttributeMSEEditPart" id="AttributeMSE_3001"/>
+         <context elements="AttributeMSE_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="specificPart.diagram.providers.assistants.SpecificPartModelingAssistantProviderOfMethodMSEEditPart">
+         <Priority name="Lowest"/>
+         <object class="specificPart.diagram.edit.parts.MethodMSEEditPart" id="MethodMSE_3002"/>
+         <context elements="MethodMSE_3002"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="specificPart.diagram.providers.SpecificPartIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="specificPart.diagram.providers.SpecificPartParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="specificPart.diagram.providers.SpecificPartShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2001,2002"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.ClassDiagramMSE_1000"
+               name="%metatype.name.ClassDiagramMSE_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ClassDiagramMSE"
+               edithelper="specificPart.diagram.edit.helpers.ClassDiagramMSEEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.ClassMSE_2001"
+               name="%metatype.name.ClassMSE_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ClassMSE"
+               edithelper="specificPart.diagram.edit.helpers.ClassMSEEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.PackageMSE_2002"
+               name="%metatype.name.PackageMSE_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PackageMSE"
+               edithelper="specificPart.diagram.edit.helpers.PackageMSEEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.AttributeMSE_3001"
+               name="%metatype.name.AttributeMSE_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AttributeMSE"
+               edithelper="specificPart.diagram.edit.helpers.AttributeMSEEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.MethodMSE_3002"
+               name="%metatype.name.MethodMSE_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MethodMSE"
+               edithelper="specificPart.diagram.edit.helpers.MethodMSEEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.ContainmentMSE_4001"
+               name="%metatype.name.ContainmentMSE_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ContainmentMSE"
+               edithelper="specificPart.diagram.edit.helpers.ContainmentMSEEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.AgregationMSE_4002"
+               name="%metatype.name.AgregationMSE_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AgregationMSE"
+               edithelper="specificPart.diagram.edit.helpers.AgregationMSEEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.AssociationMSE_4003"
+               name="%metatype.name.AssociationMSE_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AssociationMSE"
+               edithelper="specificPart.diagram.edit.helpers.AssociationMSEEditHelper">
+            <param name="semanticHint" value="4003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.ImplementationMSE_4004"
+               name="%metatype.name.ImplementationMSE_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ImplementationMSE"
+               edithelper="specificPart.diagram.edit.helpers.ImplementationMSEEditHelper">
+            <param name="semanticHint" value="4004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="specificPart">
+         <metamodelType
+               id="dcmse-specific.diagram.InheritanceMSE_4005"
+               name="%metatype.name.InheritanceMSE_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InheritanceMSE"
+               edithelper="specificPart.diagram.edit.helpers.InheritanceMSEEditHelper">
+            <param name="semanticHint" value="4005"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="dcmse-specific.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="dcmse-specific.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="dcmse-specific.diagram.TypeContext">
+         <elementType ref="dcmse-specific.diagram.ClassDiagramMSE_1000"/>
+         <elementType ref="dcmse-specific.diagram.ClassMSE_2001"/>
+         <elementType ref="dcmse-specific.diagram.PackageMSE_2002"/>
+         <elementType ref="dcmse-specific.diagram.AttributeMSE_3001"/>
+         <elementType ref="dcmse-specific.diagram.MethodMSE_3002"/>
+         <elementType ref="dcmse-specific.diagram.ContainmentMSE_4001"/>
+         <elementType ref="dcmse-specific.diagram.AgregationMSE_4002"/>
+         <elementType ref="dcmse-specific.diagram.AssociationMSE_4003"/>
+         <elementType ref="dcmse-specific.diagram.ImplementationMSE_4004"/>
+         <elementType ref="dcmse-specific.diagram.InheritanceMSE_4005"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="dcmse-specific.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="dcmse-specific.diagram"
+           properties="isURIEditorInput"
+           class="specificPart.diagram.part.SpecificPartUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="dcmse-specific.diagram.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="dcmse-specific.diagram"
+           properties="isShortcut"
+           class="specificPart.diagram.part.SpecificPartShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="dcmse-specific.diagram.resourceContent"/>
+			<contentExtension pattern="dcmse-specific.diagram.domainResourceContent"/>
+            <contentExtension pattern="dcmse-specific.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="dcmse-specific.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="dcmse-specific.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="specificPart.diagram.navigator.SpecificPartNavigatorContentProvider" 
+            labelProvider="specificPart.diagram.navigator.SpecificPartNavigatorLabelProvider"
+            icon="icons/obj16/SpecificPartDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="specificpart_diagram"/>
+               </and>
+               <instanceof value="specificPart.diagram.navigator.SpecificPartAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="dcmse-specific.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="specificPart.diagram.navigator.SpecificPartAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="dcmse-specific.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="dcmse-specific.diagram.navigatorSorter" 
+               class="specificPart.diagram.navigator.SpecificPartNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="specificpart_diagram"/>
+                  </and>
+                  <instanceof value="specificPart.diagram.navigator.SpecificPartAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="dcmse-specific.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="specificPart.diagram.navigator.SpecificPartDomainNavigatorContentProvider" 
+            labelProvider="specificPart.diagram.navigator.SpecificPartDomainNavigatorLabelProvider"
+            icon="icons/obj16/SpecificPartDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="specificpart"/>
+               </and>
+               <instanceof value="specificPart.diagram.navigator.SpecificPartDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="specificPart.diagram.navigator.SpecificPartDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="dcmse-specific.diagram.navigatorActionProvider"
+            class="specificPart.diagram.navigator.SpecificPartNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="specificPart.diagram.navigator.SpecificPartAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="dcmse-specific.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="dcmse-specific.diagram.navigatorLinkHelper"
+            class="specificPart.diagram.navigator.SpecificPartNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="dcmse-specific.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="specificPart.diagram.navigator.SpecificPartAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="specificPart.diagram.part.SpecificPartDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="specificPart.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="specificPart.diagram.updateDiagram"
+         contextId="specificPart.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="dcmse-specific.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="specificPart.diagram.part.SpecificPartDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="specificPart.diagram.edit.parts.ClassDiagramMSEEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="specificPart.diagram.part.SpecificPartDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="dcmse-specific.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="specificPart.diagram.part.SpecificPartDiagramEditorID"
+         defaultHandler="specificPart.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated specific -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="specificPart.presentation.SpecificPartModelWizardID"
+            name="%_UI_SpecificPartModelWizard_label"
+            class="specificPart.presentation.SpecificPartModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SpecificPartModelFile.gif">
+         <description>%_UI_SpecificPartModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated specific -->
+      <editor
+            id="specificPart.presentation.SpecificPartEditorID"
+            name="%_UI_SpecificPartEditor_label"
+            icon="icons/full/obj16/SpecificPartModelFile.gif"
+            extensions="specificpart"
+            class="specificPart.presentation.SpecificPartEditor"
+            contributorClass="specificPart.presentation.SpecificPartActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

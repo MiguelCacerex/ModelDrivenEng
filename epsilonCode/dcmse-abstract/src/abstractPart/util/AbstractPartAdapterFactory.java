@@ -72,20 +72,32 @@ public class AbstractPartAdapterFactory extends AdapterFactoryImpl {
 				return createModelFactoryAbstractAdapter();
 			}
 			@Override
-			public Adapter caseClassDiagramMSE(ClassDiagramMSE object) {
-				return createClassDiagramMSEAdapter();
-			}
-			@Override
 			public Adapter casePackageMSE(PackageMSE object) {
 				return createPackageMSEAdapter();
 			}
 			@Override
-			public Adapter caseHashCodeClassMSE(HashCodeClassMSE object) {
-				return createHashCodeClassMSEAdapter();
+			public Adapter caseClassDiagramMSE(ClassDiagramMSE object) {
+				return createClassDiagramMSEAdapter();
 			}
 			@Override
 			public Adapter caseClassMSE(ClassMSE object) {
 				return createClassMSEAdapter();
+			}
+			@Override
+			public Adapter caseMethodMSE(MethodMSE object) {
+				return createMethodMSEAdapter();
+			}
+			@Override
+			public Adapter caseAttributeMSE(AttributeMSE object) {
+				return createAttributeMSEAdapter();
+			}
+			@Override
+			public Adapter caseAttributeRelationMSE(AttributeRelationMSE object) {
+				return createAttributeRelationMSEAdapter();
+			}
+			@Override
+			public Adapter caseHashCodeClassMSE(HashCodeClassMSE object) {
+				return createHashCodeClassMSEAdapter();
 			}
 			@Override
 			public Adapter caseAssociationsMSE(AssociationsMSE object) {
@@ -114,14 +126,6 @@ public class AbstractPartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseImplementationMSE(ImplementationMSE object) {
 				return createImplementationMSEAdapter();
-			}
-			@Override
-			public Adapter caseMethodMSE(MethodMSE object) {
-				return createMethodMSEAdapter();
-			}
-			@Override
-			public Adapter caseAttributeMSE(AttributeMSE object) {
-				return createAttributeMSEAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -158,20 +162,6 @@ public class AbstractPartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link abstractPart.ClassDiagramMSE <em>Class Diagram MSE</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see abstractPart.ClassDiagramMSE
-	 * @generated
-	 */
-	public Adapter createClassDiagramMSEAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link abstractPart.PackageMSE <em>Package MSE</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -186,16 +176,16 @@ public class AbstractPartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link abstractPart.HashCodeClassMSE <em>Hash Code Class MSE</em>}'.
+	 * Creates a new adapter for an object of class '{@link abstractPart.ClassDiagramMSE <em>Class Diagram MSE</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see abstractPart.HashCodeClassMSE
+	 * @see abstractPart.ClassDiagramMSE
 	 * @generated
 	 */
-	public Adapter createHashCodeClassMSEAdapter() {
+	public Adapter createClassDiagramMSEAdapter() {
 		return null;
 	}
 
@@ -210,6 +200,62 @@ public class AbstractPartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClassMSEAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link abstractPart.MethodMSE <em>Method MSE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see abstractPart.MethodMSE
+	 * @generated
+	 */
+	public Adapter createMethodMSEAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link abstractPart.AttributeMSE <em>Attribute MSE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see abstractPart.AttributeMSE
+	 * @generated
+	 */
+	public Adapter createAttributeMSEAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link abstractPart.AttributeRelationMSE <em>Attribute Relation MSE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see abstractPart.AttributeRelationMSE
+	 * @generated
+	 */
+	public Adapter createAttributeRelationMSEAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link abstractPart.HashCodeClassMSE <em>Hash Code Class MSE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see abstractPart.HashCodeClassMSE
+	 * @generated
+	 */
+	public Adapter createHashCodeClassMSEAdapter() {
 		return null;
 	}
 
@@ -308,34 +354,6 @@ public class AbstractPartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createImplementationMSEAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link abstractPart.MethodMSE <em>Method MSE</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see abstractPart.MethodMSE
-	 * @generated
-	 */
-	public Adapter createMethodMSEAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link abstractPart.AttributeMSE <em>Attribute MSE</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see abstractPart.AttributeMSE
-	 * @generated
-	 */
-	public Adapter createAttributeMSEAdapter() {
 		return null;
 	}
 

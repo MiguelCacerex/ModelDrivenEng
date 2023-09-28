@@ -1,0 +1,7 @@
+# Tracing options for the dcmse-specific.diagram plug-in
+
+# Common issues
+dcmse-specific.diagram/debug=false
+
+# Visual IDs
+dcmse-specific.diagram/debug/visualID=false

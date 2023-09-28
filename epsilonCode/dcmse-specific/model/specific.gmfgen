@@ -18,11 +18,12 @@
         <containmentMetaFeature href="specific.genmodel#//specificPart/ClassMSE/lstAttributes"/>
         <childMetaFeature href="specific.genmodel#//specificPart/ClassMSE/lstAttributes"/>
       </modelFacet>
-      <labels visualID="5001" editPartClassName="AttributeMSENameEditPart" itemSemanticEditPolicyClassName="AttributeMSENameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5001" editPartClassName="AttributeMSENameTypeEditPart" itemSemanticEditPolicyClassName="AttributeMSENameTypeItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureAttributeMSELabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="{0}  [ {1} ]" editorPattern="{0}  [ {1} ]" editPattern="{0}  [ {1} ]">
           <metaFeatures href="specific.genmodel#//specificPart/AttributeMSE/name"/>
+          <metaFeatures href="specific.genmodel#//specificPart/AttributeMSE/type"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -96,13 +97,40 @@
         <sourceMetaFeature href="specific.genmodel#//specificPart/RelationMSE/source"/>
         <targetMetaFeature href="specific.genmodel#//specificPart/RelationMSE/target"/>
       </modelFacet>
-      <labels visualID="6001" editPartClassName="ContainmentMSEMultiplicityBEditPart" itemSemanticEditPolicyClassName="ContainmentMSEMultiplicityBItemSemanticEditPolicy">
+      <labels visualID="6009" editPartClassName="ContainmentMSERoleSourceEditPart" itemSemanticEditPolicyClassName="ContainmentMSERoleSourceItemSemanticEditPolicy" alignment="TARGET">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContainmentMSELabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContainmentMSELabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContainmentMSELabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;ContainmentMSE&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContainmentMSEroleSourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContainmentMSEroleSourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContainmentMSEroleSourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;roleSource&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="12"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityB"/>
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleSource"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6010" editPartClassName="ContainmentMSEMultiplicitySourceEditPart" itemSemanticEditPolicyClassName="ContainmentMSEMultiplicitySourceItemSemanticEditPolicy" alignment="TARGET">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContainmentMSEmultiplicitySourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContainmentMSEmultiplicitySourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContainmentMSEmultiplicitySourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multiplicitySource&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicitySource"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6011" editPartClassName="ContainmentMSERoleTargetEditPart" itemSemanticEditPolicyClassName="ContainmentMSERoleTargetItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContainmentMSEroleTargetLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContainmentMSEroleTargetLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContainmentMSEroleTargetLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;roleTarget&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="3" y="12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleTarget"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6012" editPartClassName="ContainmentMSEMultiplicityTargetEditPart" itemSemanticEditPolicyClassName="ContainmentMSEMultiplicityTargetItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContainmentMSEmultiplicityTargetLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContainmentMSEmultiplicityTargetLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContainmentMSEmultiplicityTargetLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multiplicityTarget&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityTarget"/>
         </modelFacet>
       </labels>
     </links>
@@ -117,13 +145,40 @@
         <sourceMetaFeature href="specific.genmodel#//specificPart/RelationMSE/source"/>
         <targetMetaFeature href="specific.genmodel#//specificPart/RelationMSE/target"/>
       </modelFacet>
-      <labels visualID="6002" editPartClassName="AgregationMSEMultiplicityBEditPart" itemSemanticEditPolicyClassName="AgregationMSEMultiplicityBItemSemanticEditPolicy">
+      <labels visualID="6013" editPartClassName="AgregationMSERoleSourceEditPart" itemSemanticEditPolicyClassName="AgregationMSERoleSourceItemSemanticEditPolicy" alignment="TARGET">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AgregationMSELabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgregationMSELabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgregationMSELabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;AgregationMSE&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AgregationMSEroleSourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgregationMSEroleSourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgregationMSEroleSourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;roleSource&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="12"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityB"/>
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleSource"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6014" editPartClassName="AgregationMSEMultiplicitySourceEditPart" itemSemanticEditPolicyClassName="AgregationMSEMultiplicitySourceItemSemanticEditPolicy" alignment="TARGET">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AgregationMSEmultiplicitySourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgregationMSEmultiplicitySourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgregationMSEmultiplicitySourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multiplicitySource&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicitySource"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6015" editPartClassName="AgregationMSERoleTargetEditPart" itemSemanticEditPolicyClassName="AgregationMSERoleTargetItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AgregationMSEroleTargetLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgregationMSEroleTargetLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgregationMSEroleTargetLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;roleTarget&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="3" y="12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleTarget"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6016" editPartClassName="AgregationMSEMultiplicityTargetEditPart" itemSemanticEditPolicyClassName="AgregationMSEMultiplicityTargetItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AgregationMSEmultiplicityTargetLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgregationMSEmultiplicityTargetLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgregationMSEmultiplicityTargetLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multiplicityTarget&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityTarget"/>
         </modelFacet>
       </labels>
     </links>
@@ -138,56 +193,47 @@
         <sourceMetaFeature href="specific.genmodel#//specificPart/RelationMSE/source"/>
         <targetMetaFeature href="specific.genmodel#//specificPart/RelationMSE/target"/>
       </modelFacet>
-      <labels visualID="6003" editPartClassName="AssociationMSEMultiplicityBEditPart" itemSemanticEditPolicyClassName="AssociationMSEMultiplicityBItemSemanticEditPolicy">
+      <labels visualID="6005" editPartClassName="AssociationMSERoleSourceEditPart" itemSemanticEditPolicyClassName="AssociationMSERoleSourceItemSemanticEditPolicy" alignment="TARGET">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationMSELabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationMSELabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationMSELabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;AssociationMSE&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationMSEroleSourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationMSEroleSourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationMSEroleSourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;roleSource&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="12"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityB"/>
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleSource"/>
         </modelFacet>
       </labels>
-      <labels visualID="6005" editPartClassName="AssociationMSERoleAEditPart" itemSemanticEditPolicyClassName="AssociationMSERoleAItemSemanticEditPolicy" alignment="TARGET">
+      <labels visualID="6006" editPartClassName="AssociationMSEMultiplicitySourceEditPart" itemSemanticEditPolicyClassName="AssociationMSEMultiplicitySourceItemSemanticEditPolicy" alignment="TARGET">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationMSESourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationMSESourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationMSESourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Source&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-50" y="5"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationMSEmultiplicitySourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationMSEmultiplicitySourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationMSEmultiplicitySourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multiplicitySource&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-20" y="-12"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleA"/>
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicitySource"/>
         </modelFacet>
       </labels>
-      <labels visualID="6006" editPartClassName="AssociationMSERoleBEditPart" itemSemanticEditPolicyClassName="AssociationMSERoleBItemSemanticEditPolicy" alignment="TARGET">
+      <labels visualID="6007" editPartClassName="AssociationMSERoleTargetEditPart" itemSemanticEditPolicyClassName="AssociationMSERoleTargetItemSemanticEditPolicy" alignment="SOURCE">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationMSESourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationMSESourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationMSESourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Source&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-50" y="5"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationMSEroleTargetLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationMSEroleTargetLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationMSEroleTargetLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;roleTarget&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="3" y="12"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleB"/>
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleTarget"/>
         </modelFacet>
       </labels>
-      <labels visualID="6007" editPartClassName="AssociationMSEMultiplicityAEditPart" itemSemanticEditPolicyClassName="AssociationMSEMultiplicityAItemSemanticEditPolicy" alignment="TARGET">
+      <labels visualID="6008" editPartClassName="AssociationMSEMultiplicityTargetEditPart" itemSemanticEditPolicyClassName="AssociationMSEMultiplicityTargetItemSemanticEditPolicy" alignment="SOURCE">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationMSESourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationMSESourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationMSESourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Source&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-50" y="5"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationMSEmultiplicityTargetLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationMSEmultiplicityTargetLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationMSEmultiplicityTargetLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multiplicityTarget&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="20" y="-12"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityA"/>
-        </modelFacet>
-      </labels>
-      <labels visualID="6008" editPartClassName="AssociationMSEMultiplicityB2EditPart" itemSemanticEditPolicyClassName="AssociationMSEMultiplicityB2ItemSemanticEditPolicy" alignment="SOURCE">
-        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationMSETargetLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationMSETargetLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationMSETargetLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Target&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-50" y="5"/>
-        </viewmap>
-        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityB"/>
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityTarget"/>
         </modelFacet>
       </labels>
     </links>
     <links visualID="4004" editPartClassName="ImplementationMSEEditPart" itemSemanticEditPolicyClassName="ImplementationMSEItemSemanticEditPolicy" createCommandClassName="ImplementationMSECreateCommand" reorientCommandClassName="ImplementationMSEReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ImplementationMSEEditHelper"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ImplementationMSEFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ImplementationMSEFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ImplementationMSEFigure() {&#xA;&#x9;&#x9;this.setLineWidth(3);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DOT);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ImplementationMSEFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ImplementationMSEFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ImplementationMSEFigure() {&#xA;&#x9;&#x9;this.setLineWidth(3);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DOT);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;&#x9;df.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass href="specific.genmodel#//specificPart/ImplementationMSE"/>
         <containmentMetaFeature href="specific.genmodel#//specificPart/ClassDiagramMSE/lstRelations"/>
@@ -195,13 +241,40 @@
         <sourceMetaFeature href="specific.genmodel#//specificPart/RelationMSE/source"/>
         <targetMetaFeature href="specific.genmodel#//specificPart/RelationMSE/target"/>
       </modelFacet>
-      <labels visualID="6004" editPartClassName="ImplementationMSEMultiplicityBEditPart" itemSemanticEditPolicyClassName="ImplementationMSEMultiplicityBItemSemanticEditPolicy">
+      <labels visualID="6017" editPartClassName="ImplementationMSERoleSourceEditPart" itemSemanticEditPolicyClassName="ImplementationMSERoleSourceItemSemanticEditPolicy" alignment="TARGET">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ImplementationMSELabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ImplementationMSELabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ImplementationMSELabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;ImplementationMSE&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ImplementationMSEroleSourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ImplementationMSEroleSourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ImplementationMSEroleSourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;roleSource&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="12"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityB"/>
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleSource"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6018" editPartClassName="ImplementationMSEMultiplicitySourceEditPart" itemSemanticEditPolicyClassName="ImplementationMSEMultiplicitySourceItemSemanticEditPolicy" alignment="TARGET">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ImplementationMSEmultiplicitySourceLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ImplementationMSEmultiplicitySourceLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ImplementationMSEmultiplicitySourceLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multiplicitySource&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicitySource"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6019" editPartClassName="ImplementationMSERoleTargetEditPart" itemSemanticEditPolicyClassName="ImplementationMSERoleTargetItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ImplementationMSEroleTargetLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ImplementationMSEroleTargetLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ImplementationMSEroleTargetLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;roleTarget&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="3" y="12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/roleTarget"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6020" editPartClassName="ImplementationMSEMultiplicityTargetEditPart" itemSemanticEditPolicyClassName="ImplementationMSEMultiplicityTargetItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ImplementationMSEmultiplicityTargetLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ImplementationMSEmultiplicityTargetLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ImplementationMSEmultiplicityTargetLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multiplicityTarget&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="specific.genmodel#//specificPart/RelationMSE/multiplicityTarget"/>
         </modelFacet>
       </labels>
     </links>
@@ -213,8 +286,8 @@
         <metaClass href="specific.genmodel#//specificPart/InheritanceMSE"/>
         <containmentMetaFeature href="specific.genmodel#//specificPart/ClassDiagramMSE/lstInheritances"/>
         <childMetaFeature href="specific.genmodel#//specificPart/ClassDiagramMSE/lstInheritances"/>
-        <sourceMetaFeature href="specific.genmodel#//specificPart/InheritanceMSE/source"/>
-        <targetMetaFeature href="specific.genmodel#//specificPart/InheritanceMSE/target"/>
+        <sourceMetaFeature href="specific.genmodel#//specificPart/InheritanceMSE/child"/>
+        <targetMetaFeature href="specific.genmodel#//specificPart/InheritanceMSE/parent"/>
       </modelFacet>
     </links>
     <compartments visualID="7001" editPartClassName="ClassMSEClassMSELstAttributesCompartmentEditPart" itemSemanticEditPolicyClassName="ClassMSEClassMSELstAttributesCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ClassMSEClassMSELstAttributesCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ClassMSELstAttributesCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.0">
@@ -300,7 +373,7 @@
   </propertySheet>
   <domainGenModel href="specific.genmodel#/"/>
   <labelParsers extensibleViaService="true">
-    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet //@diagram/@links.2/@labels.1/@modelFacet //@diagram/@links.2/@labels.2/@modelFacet //@diagram/@links.2/@labels.3/@modelFacet //@diagram/@links.2/@labels.4/@modelFacet //@diagram/@links.3/@labels.0/@modelFacet"/>
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.0/@labels.2/@modelFacet //@diagram/@links.0/@labels.3/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.1/@labels.1/@modelFacet //@diagram/@links.1/@labels.2/@modelFacet //@diagram/@links.1/@labels.3/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet //@diagram/@links.2/@labels.1/@modelFacet //@diagram/@links.2/@labels.2/@modelFacet //@diagram/@links.2/@labels.3/@modelFacet //@diagram/@links.3/@labels.0/@modelFacet //@diagram/@links.3/@labels.1/@modelFacet //@diagram/@links.3/@labels.2/@modelFacet //@diagram/@links.3/@labels.3/@modelFacet"/>
   </labelParsers>
   <contextMenus context="//@diagram">
     <items xsi:type="gmfgen:LoadResourceAction"/>

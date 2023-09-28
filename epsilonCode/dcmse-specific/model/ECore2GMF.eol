@@ -1,40 +1,43 @@
 var association = ECore!EClass.all.selectOne(c|c.name = "AssociationMSE");
-association.createLinkEndLabel("roleA", true);
-association.createLinkEndLabel("roleB", true);
+association.createLinkEndLabel("roleSource", true,true);
+association.createLinkEndLabel("multiplicitySource", true, false);
 
-association.createLinkEndLabel("multiplicityA", true);
-association.createLinkEndLabel("multiplicityB", false);
+association.createLinkEndLabel("roleTarget", false,false);
+association.createLinkEndLabel("multiplicityTarget",false, true);
+
 
 var containment = ECore!EClass.all.selectOne(c|c.name = "ContainmentMSE");
-containment.createLinkEndLabel("roleA", true);
-containment.createLinkEndLabel("roleB", true);
+containment.createLinkEndLabel("roleSource", true,true);
+containment.createLinkEndLabel("multiplicitySource", true, false);
 
-containment.createLinkEndLabel("multiplicityA", true);
-containment.createLinkEndLabel("multiplicityB", false);
+containment.createLinkEndLabel("roleTarget", false,false);
+containment.createLinkEndLabel("multiplicityTarget",false, true);
 
 var agregation = ECore!EClass.all.selectOne(c|c.name = "AgregationMSE");
-agregation.createLinkEndLabel("roleA", true);
-agregation.createLinkEndLabel("roleB", true);
+agregation.createLinkEndLabel("roleSource", true,true);
+agregation.createLinkEndLabel("multiplicitySource", true, false);
 
-agregation.createLinkEndLabel("multiplicityA", true);
-agregation.createLinkEndLabel("multiplicityB", false);
+agregation.createLinkEndLabel("roleTarget", false,false);
+agregation.createLinkEndLabel("multiplicityTarget",false, true);
 
 var implementation = ECore!EClass.all.selectOne(c|c.name = "ImplementationMSE");
-implementation.createLinkEndLabel("roleA", true);
-implementation.createLinkEndLabel("roleB", true);
+implementation.createLinkEndLabel("roleSource", true,true);
+implementation.createLinkEndLabel("multiplicitySource", true, false);
 
-implementation.createLinkEndLabel("multiplicityA", true);
-implementation.createLinkEndLabel("multiplicityB", false);
+implementation.createLinkEndLabel("roleTarget", false,false);
+implementation.createLinkEndLabel("multiplicityTarget",false, true);
 
 
-operation ECore!EClass createLinkEndLabel(attribute:String, source:Boolean){
+
+
+operation ECore!EClass createLinkEndLabel(attribute:String, source:Boolean, up:Boolean){
 	var endName;
 	if (source) {
-		endName = "Source";
+		endName = attribute;
 	}
 	else {
-		endName = "Target";
-	}
+		endName = attribute;
+	} 
 	
 	var labelName = self.name + endName + "Label";
 	
@@ -65,8 +68,23 @@ operation ECore!EClass createLinkEndLabel(attribute:String, source:Boolean){
 	
 	// Specify how far the label should be from the line
 	var labelOffsetFacet = new GmfGraph!LabelOffsetFacet;
-	labelOffsetFacet.x = -50;
-	labelOffsetFacet.y = 5;
+	if(source){
+		if(up){
+			labelOffsetFacet.x =  0;
+			labelOffsetFacet.y =  12;
+		}else{
+			labelOffsetFacet.x =  -20;
+			labelOffsetFacet.y = -12;
+		}
+	}else{
+		if(up){
+			labelOffsetFacet.x =  20;
+			labelOffsetFacet.y = -12;
+		}else{
+			labelOffsetFacet.x =  3;
+			labelOffsetFacet.y =  12;
+		}
+	}
 	diagramLabel.facets.add(labelOffsetFacet);
 	
 	// Create the label/attribute mapping in the .gmfmap model

@@ -10,7 +10,7 @@ package specificPart;
  *
  *
  * @see specificPart.SpecificPartPackage#getImplementationMSE()
- * @model annotation="gmf.link source='source' target='target' style='dot' width='3' label='multiplicityB'"
+ * @model annotation="gmf.link source='source' target='target' target.decoration='closedarrow' style='dot' width='3'"
  * @generated
  */
 public interface ImplementationMSE extends RelationMSE {

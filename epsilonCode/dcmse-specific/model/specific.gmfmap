@@ -33,11 +33,16 @@
           <domainMetaElement
               href="specific.ecore#//AttributeMSE"/>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="{0}  [ {1} ]"
+              editorPattern="{0}  [ {1} ]"
+              editPattern="{0}  [ {1} ]">
             <diagramLabel
                 href="specific.gmfgraph#AttributeMSELabel"/>
             <features
                 href="specific.ecore#//AttributeMSE/name"/>
+            <features
+                href="specific.ecore#//AttributeMSE/type"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -105,9 +110,30 @@
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="specific.gmfgraph#ContainmentMSELabel"/>
+          href="specific.gmfgraph#ContainmentMSEroleSourceLabel"/>
       <features
-          href="specific.ecore#//RelationMSE/multiplicityB"/>
+          href="specific.ecore#//RelationMSE/roleSource"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="specific.gmfgraph#ContainmentMSEmultiplicitySourceLabel"/>
+      <features
+          href="specific.ecore#//RelationMSE/multiplicitySource"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="specific.gmfgraph#ContainmentMSEroleTargetLabel"/>
+      <features
+          href="specific.ecore#//RelationMSE/roleTarget"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="specific.gmfgraph#ContainmentMSEmultiplicityTargetLabel"/>
+      <features
+          href="specific.ecore#//RelationMSE/multiplicityTarget"/>
     </labelMappings>
     <containmentFeature
         href="specific.ecore#//ClassDiagramMSE/lstRelations"/>
@@ -129,9 +155,30 @@
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="specific.gmfgraph#AgregationMSELabel"/>
+          href="specific.gmfgraph#AgregationMSEroleSourceLabel"/>
       <features
-          href="specific.ecore#//RelationMSE/multiplicityB"/>
+          href="specific.ecore#//RelationMSE/roleSource"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="specific.gmfgraph#AgregationMSEmultiplicitySourceLabel"/>
+      <features
+          href="specific.ecore#//RelationMSE/multiplicitySource"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="specific.gmfgraph#AgregationMSEroleTargetLabel"/>
+      <features
+          href="specific.ecore#//RelationMSE/roleTarget"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="specific.gmfgraph#AgregationMSEmultiplicityTargetLabel"/>
+      <features
+          href="specific.ecore#//RelationMSE/multiplicityTarget"/>
     </labelMappings>
     <containmentFeature
         href="specific.ecore#//ClassDiagramMSE/lstRelations"/>
@@ -153,37 +200,30 @@
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="specific.gmfgraph#AssociationMSELabel"/>
+          href="specific.gmfgraph#AssociationMSEroleSourceLabel"/>
       <features
-          href="specific.ecore#//RelationMSE/multiplicityB"/>
+          href="specific.ecore#//RelationMSE/roleSource"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="specific.gmfgraph#AssociationMSESourceLabel"/>
+          href="specific.gmfgraph#AssociationMSEmultiplicitySourceLabel"/>
       <features
-          href="specific.ecore#//RelationMSE/roleA"/>
+          href="specific.ecore#//RelationMSE/multiplicitySource"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="specific.gmfgraph#AssociationMSESourceLabel"/>
+          href="specific.gmfgraph#AssociationMSEroleTargetLabel"/>
       <features
-          href="specific.ecore#//RelationMSE/roleB"/>
+          href="specific.ecore#//RelationMSE/roleTarget"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="specific.gmfgraph#AssociationMSESourceLabel"/>
+          href="specific.gmfgraph#AssociationMSEmultiplicityTargetLabel"/>
       <features
-          href="specific.ecore#//RelationMSE/multiplicityA"/>
-    </labelMappings>
-    <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
-      <diagramLabel
-          href="specific.gmfgraph#AssociationMSETargetLabel"/>
-      <features
-          href="specific.ecore#//RelationMSE/multiplicityB"/>
+          href="specific.ecore#//RelationMSE/multiplicityTarget"/>
     </labelMappings>
     <containmentFeature
         href="specific.ecore#//ClassDiagramMSE/lstRelations"/>
@@ -205,9 +245,30 @@
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="specific.gmfgraph#ImplementationMSELabel"/>
+          href="specific.gmfgraph#ImplementationMSEroleSourceLabel"/>
       <features
-          href="specific.ecore#//RelationMSE/multiplicityB"/>
+          href="specific.ecore#//RelationMSE/roleSource"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="specific.gmfgraph#ImplementationMSEmultiplicitySourceLabel"/>
+      <features
+          href="specific.ecore#//RelationMSE/multiplicitySource"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="specific.gmfgraph#ImplementationMSEroleTargetLabel"/>
+      <features
+          href="specific.ecore#//RelationMSE/roleTarget"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="specific.gmfgraph#ImplementationMSEmultiplicityTargetLabel"/>
+      <features
+          href="specific.ecore#//RelationMSE/multiplicityTarget"/>
     </labelMappings>
     <containmentFeature
         href="specific.ecore#//ClassDiagramMSE/lstRelations"/>
@@ -235,10 +296,10 @@
         href="specific.gmfgraph#InheritanceMSE"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="specific.ecore#//InheritanceMSE/source"/>
+        href="specific.ecore#//InheritanceMSE/child"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="specific.ecore#//InheritanceMSE/target"/>
+        href="specific.ecore#//InheritanceMSE/parent"/>
   </links>
   <diagram>
     <diagramCanvas

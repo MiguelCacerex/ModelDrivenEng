@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.impl.HashCodeClassMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.HashCodeClassMSEImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link abstractPart.impl.HashCodeClassMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.HashCodeClassMSEImpl#getPath <em>Path</em>}</li>
  *   <li>{@link abstractPart.impl.HashCodeClassMSEImpl#getLocation <em>Location</em>}</li>
  * </ul>
@@ -29,26 +29,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @generated
  */
 public class HashCodeClassMSEImpl extends EObjectImpl implements HashCodeClassMSE {
-	/**
-	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected String state = STATE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,6 +48,26 @@ public class HashCodeClassMSEImpl extends EObjectImpl implements HashCodeClassMS
 	 * @ordered
 	 */
 	protected String code = CODE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected String state = STATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
@@ -220,10 +220,10 @@ public class HashCodeClassMSEImpl extends EObjectImpl implements HashCodeClassMS
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AbstractPartPackage.HASH_CODE_CLASS_MSE__STATE:
-				return getState();
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__CODE:
 				return getCode();
+			case AbstractPartPackage.HASH_CODE_CLASS_MSE__STATE:
+				return getState();
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__PATH:
 				return getPath();
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__LOCATION:
@@ -240,11 +240,11 @@ public class HashCodeClassMSEImpl extends EObjectImpl implements HashCodeClassMS
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AbstractPartPackage.HASH_CODE_CLASS_MSE__STATE:
-				setState((String)newValue);
-				return;
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__CODE:
 				setCode((String)newValue);
+				return;
+			case AbstractPartPackage.HASH_CODE_CLASS_MSE__STATE:
+				setState((String)newValue);
 				return;
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__PATH:
 				setPath((String)newValue);
@@ -264,11 +264,11 @@ public class HashCodeClassMSEImpl extends EObjectImpl implements HashCodeClassMS
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.HASH_CODE_CLASS_MSE__STATE:
-				setState(STATE_EDEFAULT);
-				return;
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__CODE:
 				setCode(CODE_EDEFAULT);
+				return;
+			case AbstractPartPackage.HASH_CODE_CLASS_MSE__STATE:
+				setState(STATE_EDEFAULT);
 				return;
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__PATH:
 				setPath(PATH_EDEFAULT);
@@ -288,10 +288,10 @@ public class HashCodeClassMSEImpl extends EObjectImpl implements HashCodeClassMS
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.HASH_CODE_CLASS_MSE__STATE:
-				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__CODE:
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+			case AbstractPartPackage.HASH_CODE_CLASS_MSE__STATE:
+				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case AbstractPartPackage.HASH_CODE_CLASS_MSE__LOCATION:
@@ -310,10 +310,10 @@ public class HashCodeClassMSEImpl extends EObjectImpl implements HashCodeClassMS
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (state: ");
-		result.append(state);
-		result.append(", code: ");
+		result.append(" (code: ");
 		result.append(code);
+		result.append(", state: ");
+		result.append(state);
 		result.append(", path: ");
 		result.append(path);
 		result.append(", location: ");

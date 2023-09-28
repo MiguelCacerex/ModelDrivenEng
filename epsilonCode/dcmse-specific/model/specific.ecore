@@ -6,6 +6,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstPackages" upperBound="-1"
         eType="#//PackageMSE" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lstDiagrams" upperBound="-1"
+        eType="#//ClassDiagramMSE" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassDiagramMSE">
     <eAnnotations source="gmf.diagram"/>
@@ -62,6 +64,7 @@
       <eAnnotations source="gmf.compartment">
         <details key="layout" value="list"/>
         <details key="collapsible" value="true"/>
+        <details key="label.view.pattern" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstMethods" upperBound="-1"
@@ -75,12 +78,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="RelationMSE">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleB" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicityA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicityB" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="navigabilityA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="navigabilityB" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicitySource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicityTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="navigabilitySource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="navigabilityTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//ClassMSE"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//ClassMSE"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -89,16 +92,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InheritanceMSE">
     <eAnnotations source="gmf.link">
-      <details key="source" value="source"/>
-      <details key="target" value="target"/>
+      <details key="source" value="child"/>
+      <details key="target" value="parent"/>
       <details key="target.decoration" value="closedarrow"/>
       <details key="style" value="solid"/>
       <details key="width" value="3"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//ClassMSE"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//ClassMSE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="child" eType="#//ClassMSE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//ClassMSE"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -110,7 +113,6 @@
       <details key="target.decoration" value="filledrhomb"/>
       <details key="style" value="solid"/>
       <details key="width" value="3"/>
-      <details key="label" value="multiplicityB"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AgregationMSE" eSuperTypes="#//RelationMSE">
@@ -120,7 +122,6 @@
       <details key="target.decoration" value="rhomb"/>
       <details key="style" value="solid"/>
       <details key="width" value="3"/>
-      <details key="label" value="multiplicityB"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssociationMSE" eSuperTypes="#//RelationMSE">
@@ -129,16 +130,15 @@
       <details key="target" value="target"/>
       <details key="style" value="solid"/>
       <details key="width" value="3"/>
-      <details key="label" value="multiplicityB"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplementationMSE" eSuperTypes="#//RelationMSE">
     <eAnnotations source="gmf.link">
       <details key="source" value="source"/>
       <details key="target" value="target"/>
+      <details key="target.decoration" value="closedarrow"/>
       <details key="style" value="dot"/>
       <details key="width" value="3"/>
-      <details key="label" value="multiplicityB"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodMSE">
@@ -160,9 +160,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeMSE">
     <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
+      <details key="label" value="name,type"/>
       <details key="border.color" value="252,243,207"/>
       <details key="color" value="252,243,207"/>
+      <details key="label.pattern" value="{0}  [ {1} ]"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

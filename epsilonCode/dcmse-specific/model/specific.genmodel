@@ -8,6 +8,7 @@
     <genClasses ecoreClass="specific.ecore#//ModelFactorySpecific">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//ModelFactorySpecific/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specific.ecore#//ModelFactorySpecific/lstPackages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specific.ecore#//ModelFactorySpecific/lstDiagrams"/>
     </genClasses>
     <genClasses ecoreClass="specific.ecore#//ClassDiagramMSE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//ClassDiagramMSE/name"/>
@@ -43,12 +44,12 @@
     <genClasses ecoreClass="specific.ecore#//RelationMSE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/state"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/roleA"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/roleB"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/multiplicityA"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/multiplicityB"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/navigabilityA"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/navigabilityB"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/roleSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/roleTarget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/multiplicitySource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/multiplicityTarget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/navigabilitySource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/navigabilityTarget"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specific.ecore#//RelationMSE/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specific.ecore#//RelationMSE/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//RelationMSE/path"/>
@@ -58,8 +59,8 @@
     <genClasses ecoreClass="specific.ecore#//InheritanceMSE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//InheritanceMSE/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//InheritanceMSE/state"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specific.ecore#//InheritanceMSE/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specific.ecore#//InheritanceMSE/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specific.ecore#//InheritanceMSE/child"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specific.ecore#//InheritanceMSE/parent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//InheritanceMSE/path"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//InheritanceMSE/location"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specific.ecore#//InheritanceMSE/documentation"/>

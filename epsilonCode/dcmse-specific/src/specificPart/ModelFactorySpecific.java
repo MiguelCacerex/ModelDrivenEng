@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link specificPart.ModelFactorySpecific#getName <em>Name</em>}</li>
  *   <li>{@link specificPart.ModelFactorySpecific#getLstPackages <em>Lst Packages</em>}</li>
+ *   <li>{@link specificPart.ModelFactorySpecific#getLstDiagrams <em>Lst Diagrams</em>}</li>
  * </ul>
  *
  * @see specificPart.SpecificPartPackage#getModelFactorySpecific()
@@ -65,5 +66,21 @@ public interface ModelFactorySpecific extends EObject {
 	 * @generated
 	 */
 	EList<PackageMSE> getLstPackages();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Diagrams</b></em>' containment reference list.
+	 * The list contents are of type {@link specificPart.ClassDiagramMSE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Diagrams</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Diagrams</em>' containment reference list.
+	 * @see specificPart.SpecificPartPackage#getModelFactorySpecific_LstDiagrams()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ClassDiagramMSE> getLstDiagrams();
 
 } // ModelFactorySpecific

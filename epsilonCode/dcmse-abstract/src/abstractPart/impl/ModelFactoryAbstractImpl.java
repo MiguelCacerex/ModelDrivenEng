@@ -3,7 +3,6 @@
 package abstractPart.impl;
 
 import abstractPart.AbstractPartPackage;
-import abstractPart.ClassDiagramMSE;
 import abstractPart.ModelFactoryAbstract;
 import abstractPart.PackageMSE;
 
@@ -31,8 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.impl.ModelFactoryAbstractImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.ModelFactoryAbstractImpl#getName <em>Name</em>}</li>
+ *   <li>{@link abstractPart.impl.ModelFactoryAbstractImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.ModelFactoryAbstractImpl#getPath <em>Path</em>}</li>
  *   <li>{@link abstractPart.impl.ModelFactoryAbstractImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link abstractPart.impl.ModelFactoryAbstractImpl#getDocumentation <em>Documentation</em>}</li>
@@ -42,26 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ModelFactoryAbstractImpl extends EObjectImpl implements ModelFactoryAbstract {
-	/**
-	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected String state = STATE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,6 +60,26 @@ public class ModelFactoryAbstractImpl extends EObjectImpl implements ModelFactor
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected String state = STATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
@@ -310,10 +309,10 @@ public class ModelFactoryAbstractImpl extends EObjectImpl implements ModelFactor
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__STATE:
-				return getState();
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__NAME:
 				return getName();
+			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__STATE:
+				return getState();
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__PATH:
 				return getPath();
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__LOCATION:
@@ -335,11 +334,11 @@ public class ModelFactoryAbstractImpl extends EObjectImpl implements ModelFactor
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__STATE:
-				setState((String)newValue);
-				return;
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__NAME:
 				setName((String)newValue);
+				return;
+			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__STATE:
+				setState((String)newValue);
 				return;
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__PATH:
 				setPath((String)newValue);
@@ -366,11 +365,11 @@ public class ModelFactoryAbstractImpl extends EObjectImpl implements ModelFactor
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__STATE:
-				setState(STATE_EDEFAULT);
-				return;
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__STATE:
+				setState(STATE_EDEFAULT);
 				return;
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__PATH:
 				setPath(PATH_EDEFAULT);
@@ -396,10 +395,10 @@ public class ModelFactoryAbstractImpl extends EObjectImpl implements ModelFactor
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__STATE:
-				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__STATE:
+				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT__LOCATION:
@@ -422,10 +421,10 @@ public class ModelFactoryAbstractImpl extends EObjectImpl implements ModelFactor
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (state: ");
-		result.append(state);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
+		result.append(", state: ");
+		result.append(state);
 		result.append(", path: ");
 		result.append(path);
 		result.append(", location: ");

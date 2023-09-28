@@ -16,7 +16,12 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link abstractPart.AssociationsMSE#getState <em>State</em>}</li>
- *   <li>{@link abstractPart.AssociationsMSE#getLstRelations <em>Lst Relations</em>}</li>
+ *   <li>{@link abstractPart.AssociationsMSE#getPath <em>Path</em>}</li>
+ *   <li>{@link abstractPart.AssociationsMSE#getLocation <em>Location</em>}</li>
+ *   <li>{@link abstractPart.AssociationsMSE#getLstContainments <em>Lst Containments</em>}</li>
+ *   <li>{@link abstractPart.AssociationsMSE#getLstAgregations <em>Lst Agregations</em>}</li>
+ *   <li>{@link abstractPart.AssociationsMSE#getLstAssociations <em>Lst Associations</em>}</li>
+ *   <li>{@link abstractPart.AssociationsMSE#getLstImplementations <em>Lst Implementations</em>}</li>
  *   <li>{@link abstractPart.AssociationsMSE#getLstInheritance <em>Lst Inheritance</em>}</li>
  * </ul>
  *
@@ -52,20 +57,120 @@ public interface AssociationsMSE extends EObject {
 	void setState(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Lst Relations</b></em>' containment reference list.
-	 * The list contents are of type {@link abstractPart.RelationMSE}.
+	 * Returns the value of the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Lst Relations</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst Relations</em>' containment reference list.
-	 * @see abstractPart.AbstractPartPackage#getAssociationsMSE_LstRelations()
+	 * @return the value of the '<em>Path</em>' attribute.
+	 * @see #setPath(String)
+	 * @see abstractPart.AbstractPartPackage#getAssociationsMSE_Path()
+	 * @model
+	 * @generated
+	 */
+	String getPath();
+
+	/**
+	 * Sets the value of the '{@link abstractPart.AssociationsMSE#getPath <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Path</em>' attribute.
+	 * @see #getPath()
+	 * @generated
+	 */
+	void setPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Location</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Location</em>' attribute.
+	 * @see #setLocation(String)
+	 * @see abstractPart.AbstractPartPackage#getAssociationsMSE_Location()
+	 * @model
+	 * @generated
+	 */
+	String getLocation();
+
+	/**
+	 * Sets the value of the '{@link abstractPart.AssociationsMSE#getLocation <em>Location</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Location</em>' attribute.
+	 * @see #getLocation()
+	 * @generated
+	 */
+	void setLocation(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Lst Containments</b></em>' containment reference list.
+	 * The list contents are of type {@link abstractPart.ContainmentMSE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Containments</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Containments</em>' containment reference list.
+	 * @see abstractPart.AbstractPartPackage#getAssociationsMSE_LstContainments()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RelationMSE> getLstRelations();
+	EList<ContainmentMSE> getLstContainments();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Agregations</b></em>' containment reference list.
+	 * The list contents are of type {@link abstractPart.AgregationMSE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Agregations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Agregations</em>' containment reference list.
+	 * @see abstractPart.AbstractPartPackage#getAssociationsMSE_LstAgregations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AgregationMSE> getLstAgregations();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Associations</b></em>' containment reference list.
+	 * The list contents are of type {@link abstractPart.AssociationMSE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Associations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Associations</em>' containment reference list.
+	 * @see abstractPart.AbstractPartPackage#getAssociationsMSE_LstAssociations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AssociationMSE> getLstAssociations();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Implementations</b></em>' containment reference list.
+	 * The list contents are of type {@link abstractPart.ImplementationMSE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Implementations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Implementations</em>' containment reference list.
+	 * @see abstractPart.AbstractPartPackage#getAssociationsMSE_LstImplementations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ImplementationMSE> getLstImplementations();
 
 	/**
 	 * Returns the value of the '<em><b>Lst Inheritance</b></em>' containment reference list.

@@ -328,11 +328,11 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RelationMSE> getLstRelations() {
-		if (lstRelations == null) {
-			lstRelations = new EObjectContainmentEList<RelationMSE>(RelationMSE.class, this, SpecificPartPackage.CLASS_DIAGRAM_MSE__LST_RELATIONS);
+	public EList<InheritanceMSE> getLstInheritances() {
+		if (lstInheritances == null) {
+			lstInheritances = new EObjectContainmentEList<InheritanceMSE>(InheritanceMSE.class, this, SpecificPartPackage.CLASS_DIAGRAM_MSE__LST_INHERITANCES);
 		}
-		return lstRelations;
+		return lstInheritances;
 	}
 
 	/**
@@ -340,11 +340,11 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<InheritanceMSE> getLstInheritances() {
-		if (lstInheritances == null) {
-			lstInheritances = new EObjectContainmentEList<InheritanceMSE>(InheritanceMSE.class, this, SpecificPartPackage.CLASS_DIAGRAM_MSE__LST_INHERITANCES);
+	public EList<RelationMSE> getLstRelations() {
+		if (lstRelations == null) {
+			lstRelations = new EObjectContainmentEList<RelationMSE>(RelationMSE.class, this, SpecificPartPackage.CLASS_DIAGRAM_MSE__LST_RELATIONS);
 		}
-		return lstInheritances;
+		return lstRelations;
 	}
 
 	/**

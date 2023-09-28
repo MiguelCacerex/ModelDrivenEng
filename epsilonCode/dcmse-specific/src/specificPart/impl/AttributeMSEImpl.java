@@ -1,5 +1,3 @@
-/**
- */
 package specificPart.impl;
 
 import org.eclipse.emf.common.notify.Notification;

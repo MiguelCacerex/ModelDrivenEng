@@ -4,7 +4,7 @@ package abstractPart.impl;
 
 import abstractPart.AbstractPartPackage;
 import abstractPart.AttributeMSE;
-import abstractPart.ClassDiagramMSE;
+import abstractPart.AttributeRelationMSE;
 import abstractPart.ClassMSE;
 import abstractPart.HashCodeClassMSE;
 import abstractPart.MethodMSE;
@@ -33,8 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.impl.ClassMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.ClassMSEImpl#getName <em>Name</em>}</li>
+ *   <li>{@link abstractPart.impl.ClassMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.ClassMSEImpl#getType <em>Type</em>}</li>
  *   <li>{@link abstractPart.impl.ClassMSEImpl#getModifier <em>Modifier</em>}</li>
  *   <li>{@link abstractPart.impl.ClassMSEImpl#isAbsrtact <em>Absrtact</em>}</li>
@@ -44,31 +44,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link abstractPart.impl.ClassMSEImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link abstractPart.impl.ClassMSEImpl#getLstMethods <em>Lst Methods</em>}</li>
  *   <li>{@link abstractPart.impl.ClassMSEImpl#getLstAttributes <em>Lst Attributes</em>}</li>
+ *   <li>{@link abstractPart.impl.ClassMSEImpl#getLstAttributesRelations <em>Lst Attributes Relations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
-	/**
-	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected String state = STATE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,6 +69,26 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected String state = STATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -150,7 +151,7 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	protected boolean absrtact = ABSRTACT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' reference.
+	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIdentifier()
@@ -240,6 +241,16 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	protected EList<AttributeMSE> lstAttributes;
 
 	/**
+	 * The cached value of the '{@link #getLstAttributesRelations() <em>Lst Attributes Relations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstAttributesRelations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AttributeRelationMSE> lstAttributesRelations;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -305,128 +316,6 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLocation() {
-		return location;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLocation(String newLocation) {
-		String oldLocation = location;
-		location = newLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__LOCATION, oldLocation, location));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPath() {
-		return path;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__PATH, oldPath, path));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isAbsrtact() {
-		return absrtact;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAbsrtact(boolean newAbsrtact) {
-		boolean oldAbsrtact = absrtact;
-		absrtact = newAbsrtact;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__ABSRTACT, oldAbsrtact, absrtact));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HashCodeClassMSE getIdentifier() {
-		if (identifier != null && identifier.eIsProxy()) {
-			InternalEObject oldIdentifier = (InternalEObject)identifier;
-			identifier = (HashCodeClassMSE)eResolveProxy(oldIdentifier);
-			if (identifier != oldIdentifier) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbstractPartPackage.CLASS_MSE__IDENTIFIER, oldIdentifier, identifier));
-			}
-		}
-		return identifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HashCodeClassMSE basicGetIdentifier() {
-		return identifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIdentifier(HashCodeClassMSE newIdentifier) {
-		HashCodeClassMSE oldIdentifier = identifier;
-		identifier = newIdentifier;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__IDENTIFIER, oldIdentifier, identifier));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDocumentation() {
-		return documentation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDocumentation(String newDocumentation) {
-		String oldDocumentation = documentation;
-		documentation = newDocumentation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__DOCUMENTATION, oldDocumentation, documentation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getType() {
 		return type;
 	}
@@ -469,11 +358,126 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AttributeMSE> getLstAttributes() {
-		if (lstAttributes == null) {
-			lstAttributes = new EObjectContainmentEList<AttributeMSE>(AttributeMSE.class, this, AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES);
+	public boolean isAbsrtact() {
+		return absrtact;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAbsrtact(boolean newAbsrtact) {
+		boolean oldAbsrtact = absrtact;
+		absrtact = newAbsrtact;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__ABSRTACT, oldAbsrtact, absrtact));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HashCodeClassMSE getIdentifier() {
+		return identifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIdentifier(HashCodeClassMSE newIdentifier, NotificationChain msgs) {
+		HashCodeClassMSE oldIdentifier = identifier;
+		identifier = newIdentifier;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__IDENTIFIER, oldIdentifier, newIdentifier);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return lstAttributes;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIdentifier(HashCodeClassMSE newIdentifier) {
+		if (newIdentifier != identifier) {
+			NotificationChain msgs = null;
+			if (identifier != null)
+				msgs = ((InternalEObject)identifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AbstractPartPackage.CLASS_MSE__IDENTIFIER, null, msgs);
+			if (newIdentifier != null)
+				msgs = ((InternalEObject)newIdentifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AbstractPartPackage.CLASS_MSE__IDENTIFIER, null, msgs);
+			msgs = basicSetIdentifier(newIdentifier, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__IDENTIFIER, newIdentifier, newIdentifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__PATH, oldPath, path));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLocation(String newLocation) {
+		String oldLocation = location;
+		location = newLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__LOCATION, oldLocation, location));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDocumentation() {
+		return documentation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDocumentation(String newDocumentation) {
+		String oldDocumentation = documentation;
+		documentation = newDocumentation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_MSE__DOCUMENTATION, oldDocumentation, documentation));
 	}
 
 	/**
@@ -493,13 +497,41 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<AttributeMSE> getLstAttributes() {
+		if (lstAttributes == null) {
+			lstAttributes = new EObjectContainmentEList<AttributeMSE>(AttributeMSE.class, this, AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES);
+		}
+		return lstAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AttributeRelationMSE> getLstAttributesRelations() {
+		if (lstAttributesRelations == null) {
+			lstAttributesRelations = new EObjectContainmentEList<AttributeRelationMSE>(AttributeRelationMSE.class, this, AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES_RELATIONS);
+		}
+		return lstAttributesRelations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case AbstractPartPackage.CLASS_MSE__IDENTIFIER:
+				return basicSetIdentifier(null, msgs);
 			case AbstractPartPackage.CLASS_MSE__LST_METHODS:
 				return ((InternalEList<?>)getLstMethods()).basicRemove(otherEnd, msgs);
 			case AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES:
 				return ((InternalEList<?>)getLstAttributes()).basicRemove(otherEnd, msgs);
+			case AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES_RELATIONS:
+				return ((InternalEList<?>)getLstAttributesRelations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -512,10 +544,10 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AbstractPartPackage.CLASS_MSE__STATE:
-				return getState();
 			case AbstractPartPackage.CLASS_MSE__NAME:
 				return getName();
+			case AbstractPartPackage.CLASS_MSE__STATE:
+				return getState();
 			case AbstractPartPackage.CLASS_MSE__TYPE:
 				return getType();
 			case AbstractPartPackage.CLASS_MSE__MODIFIER:
@@ -523,8 +555,7 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 			case AbstractPartPackage.CLASS_MSE__ABSRTACT:
 				return isAbsrtact();
 			case AbstractPartPackage.CLASS_MSE__IDENTIFIER:
-				if (resolve) return getIdentifier();
-				return basicGetIdentifier();
+				return getIdentifier();
 			case AbstractPartPackage.CLASS_MSE__PATH:
 				return getPath();
 			case AbstractPartPackage.CLASS_MSE__LOCATION:
@@ -535,6 +566,8 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 				return getLstMethods();
 			case AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES:
 				return getLstAttributes();
+			case AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES_RELATIONS:
+				return getLstAttributesRelations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -548,11 +581,11 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AbstractPartPackage.CLASS_MSE__STATE:
-				setState((String)newValue);
-				return;
 			case AbstractPartPackage.CLASS_MSE__NAME:
 				setName((String)newValue);
+				return;
+			case AbstractPartPackage.CLASS_MSE__STATE:
+				setState((String)newValue);
 				return;
 			case AbstractPartPackage.CLASS_MSE__TYPE:
 				setType((String)newValue);
@@ -583,6 +616,10 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 				getLstAttributes().clear();
 				getLstAttributes().addAll((Collection<? extends AttributeMSE>)newValue);
 				return;
+			case AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES_RELATIONS:
+				getLstAttributesRelations().clear();
+				getLstAttributesRelations().addAll((Collection<? extends AttributeRelationMSE>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -595,11 +632,11 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.CLASS_MSE__STATE:
-				setState(STATE_EDEFAULT);
-				return;
 			case AbstractPartPackage.CLASS_MSE__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case AbstractPartPackage.CLASS_MSE__STATE:
+				setState(STATE_EDEFAULT);
 				return;
 			case AbstractPartPackage.CLASS_MSE__TYPE:
 				setType(TYPE_EDEFAULT);
@@ -628,6 +665,9 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 			case AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES:
 				getLstAttributes().clear();
 				return;
+			case AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES_RELATIONS:
+				getLstAttributesRelations().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -640,10 +680,10 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.CLASS_MSE__STATE:
-				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.CLASS_MSE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AbstractPartPackage.CLASS_MSE__STATE:
+				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.CLASS_MSE__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case AbstractPartPackage.CLASS_MSE__MODIFIER:
@@ -662,6 +702,8 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 				return lstMethods != null && !lstMethods.isEmpty();
 			case AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES:
 				return lstAttributes != null && !lstAttributes.isEmpty();
+			case AbstractPartPackage.CLASS_MSE__LST_ATTRIBUTES_RELATIONS:
+				return lstAttributesRelations != null && !lstAttributesRelations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -676,10 +718,10 @@ public class ClassMSEImpl extends EObjectImpl implements ClassMSE {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (state: ");
-		result.append(state);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
+		result.append(", state: ");
+		result.append(state);
 		result.append(", type: ");
 		result.append(type);
 		result.append(", modifier: ");

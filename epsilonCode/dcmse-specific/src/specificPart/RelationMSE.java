@@ -15,12 +15,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link specificPart.RelationMSE#getType <em>Type</em>}</li>
  *   <li>{@link specificPart.RelationMSE#getState <em>State</em>}</li>
- *   <li>{@link specificPart.RelationMSE#getRoleA <em>Role A</em>}</li>
- *   <li>{@link specificPart.RelationMSE#getRoleB <em>Role B</em>}</li>
- *   <li>{@link specificPart.RelationMSE#getMultiplicityA <em>Multiplicity A</em>}</li>
- *   <li>{@link specificPart.RelationMSE#getMultiplicityB <em>Multiplicity B</em>}</li>
- *   <li>{@link specificPart.RelationMSE#isNavigabilityA <em>Navigability A</em>}</li>
- *   <li>{@link specificPart.RelationMSE#isNavigabilityB <em>Navigability B</em>}</li>
+ *   <li>{@link specificPart.RelationMSE#getRoleSource <em>Role Source</em>}</li>
+ *   <li>{@link specificPart.RelationMSE#getRoleTarget <em>Role Target</em>}</li>
+ *   <li>{@link specificPart.RelationMSE#getMultiplicitySource <em>Multiplicity Source</em>}</li>
+ *   <li>{@link specificPart.RelationMSE#getMultiplicityTarget <em>Multiplicity Target</em>}</li>
+ *   <li>{@link specificPart.RelationMSE#isNavigabilitySource <em>Navigability Source</em>}</li>
+ *   <li>{@link specificPart.RelationMSE#isNavigabilityTarget <em>Navigability Target</em>}</li>
  *   <li>{@link specificPart.RelationMSE#getSource <em>Source</em>}</li>
  *   <li>{@link specificPart.RelationMSE#getTarget <em>Target</em>}</li>
  *   <li>{@link specificPart.RelationMSE#getPath <em>Path</em>}</li>
@@ -86,160 +86,160 @@ public interface RelationMSE extends EObject {
 	void setState(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Role A</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Role A</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Role Source</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role A</em>' attribute.
-	 * @see #setRoleA(String)
-	 * @see specificPart.SpecificPartPackage#getRelationMSE_RoleA()
+	 * @return the value of the '<em>Role Source</em>' attribute.
+	 * @see #setRoleSource(String)
+	 * @see specificPart.SpecificPartPackage#getRelationMSE_RoleSource()
 	 * @model
 	 * @generated
 	 */
-	String getRoleA();
+	String getRoleSource();
 
 	/**
-	 * Sets the value of the '{@link specificPart.RelationMSE#getRoleA <em>Role A</em>}' attribute.
+	 * Sets the value of the '{@link specificPart.RelationMSE#getRoleSource <em>Role Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role A</em>' attribute.
-	 * @see #getRoleA()
+	 * @param value the new value of the '<em>Role Source</em>' attribute.
+	 * @see #getRoleSource()
 	 * @generated
 	 */
-	void setRoleA(String value);
+	void setRoleSource(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Role B</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Role B</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Role Target</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role B</em>' attribute.
-	 * @see #setRoleB(String)
-	 * @see specificPart.SpecificPartPackage#getRelationMSE_RoleB()
+	 * @return the value of the '<em>Role Target</em>' attribute.
+	 * @see #setRoleTarget(String)
+	 * @see specificPart.SpecificPartPackage#getRelationMSE_RoleTarget()
 	 * @model
 	 * @generated
 	 */
-	String getRoleB();
+	String getRoleTarget();
 
 	/**
-	 * Sets the value of the '{@link specificPart.RelationMSE#getRoleB <em>Role B</em>}' attribute.
+	 * Sets the value of the '{@link specificPart.RelationMSE#getRoleTarget <em>Role Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role B</em>' attribute.
-	 * @see #getRoleB()
+	 * @param value the new value of the '<em>Role Target</em>' attribute.
+	 * @see #getRoleTarget()
 	 * @generated
 	 */
-	void setRoleB(String value);
+	void setRoleTarget(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Multiplicity A</b></em>' attribute.
+	 * Returns the value of the '<em><b>Multiplicity Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Multiplicity A</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Multiplicity Source</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Multiplicity A</em>' attribute.
-	 * @see #setMultiplicityA(String)
-	 * @see specificPart.SpecificPartPackage#getRelationMSE_MultiplicityA()
+	 * @return the value of the '<em>Multiplicity Source</em>' attribute.
+	 * @see #setMultiplicitySource(String)
+	 * @see specificPart.SpecificPartPackage#getRelationMSE_MultiplicitySource()
 	 * @model
 	 * @generated
 	 */
-	String getMultiplicityA();
+	String getMultiplicitySource();
 
 	/**
-	 * Sets the value of the '{@link specificPart.RelationMSE#getMultiplicityA <em>Multiplicity A</em>}' attribute.
+	 * Sets the value of the '{@link specificPart.RelationMSE#getMultiplicitySource <em>Multiplicity Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Multiplicity A</em>' attribute.
-	 * @see #getMultiplicityA()
+	 * @param value the new value of the '<em>Multiplicity Source</em>' attribute.
+	 * @see #getMultiplicitySource()
 	 * @generated
 	 */
-	void setMultiplicityA(String value);
+	void setMultiplicitySource(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Multiplicity B</b></em>' attribute.
+	 * Returns the value of the '<em><b>Multiplicity Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Multiplicity B</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Multiplicity Target</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Multiplicity B</em>' attribute.
-	 * @see #setMultiplicityB(String)
-	 * @see specificPart.SpecificPartPackage#getRelationMSE_MultiplicityB()
+	 * @return the value of the '<em>Multiplicity Target</em>' attribute.
+	 * @see #setMultiplicityTarget(String)
+	 * @see specificPart.SpecificPartPackage#getRelationMSE_MultiplicityTarget()
 	 * @model
 	 * @generated
 	 */
-	String getMultiplicityB();
+	String getMultiplicityTarget();
 
 	/**
-	 * Sets the value of the '{@link specificPart.RelationMSE#getMultiplicityB <em>Multiplicity B</em>}' attribute.
+	 * Sets the value of the '{@link specificPart.RelationMSE#getMultiplicityTarget <em>Multiplicity Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Multiplicity B</em>' attribute.
-	 * @see #getMultiplicityB()
+	 * @param value the new value of the '<em>Multiplicity Target</em>' attribute.
+	 * @see #getMultiplicityTarget()
 	 * @generated
 	 */
-	void setMultiplicityB(String value);
+	void setMultiplicityTarget(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Navigability A</b></em>' attribute.
+	 * Returns the value of the '<em><b>Navigability Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Navigability A</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Navigability Source</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Navigability A</em>' attribute.
-	 * @see #setNavigabilityA(boolean)
-	 * @see specificPart.SpecificPartPackage#getRelationMSE_NavigabilityA()
+	 * @return the value of the '<em>Navigability Source</em>' attribute.
+	 * @see #setNavigabilitySource(boolean)
+	 * @see specificPart.SpecificPartPackage#getRelationMSE_NavigabilitySource()
 	 * @model
 	 * @generated
 	 */
-	boolean isNavigabilityA();
+	boolean isNavigabilitySource();
 
 	/**
-	 * Sets the value of the '{@link specificPart.RelationMSE#isNavigabilityA <em>Navigability A</em>}' attribute.
+	 * Sets the value of the '{@link specificPart.RelationMSE#isNavigabilitySource <em>Navigability Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Navigability A</em>' attribute.
-	 * @see #isNavigabilityA()
+	 * @param value the new value of the '<em>Navigability Source</em>' attribute.
+	 * @see #isNavigabilitySource()
 	 * @generated
 	 */
-	void setNavigabilityA(boolean value);
+	void setNavigabilitySource(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Navigability B</b></em>' attribute.
+	 * Returns the value of the '<em><b>Navigability Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Navigability B</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Navigability Target</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Navigability B</em>' attribute.
-	 * @see #setNavigabilityB(boolean)
-	 * @see specificPart.SpecificPartPackage#getRelationMSE_NavigabilityB()
+	 * @return the value of the '<em>Navigability Target</em>' attribute.
+	 * @see #setNavigabilityTarget(boolean)
+	 * @see specificPart.SpecificPartPackage#getRelationMSE_NavigabilityTarget()
 	 * @model
 	 * @generated
 	 */
-	boolean isNavigabilityB();
+	boolean isNavigabilityTarget();
 
 	/**
-	 * Sets the value of the '{@link specificPart.RelationMSE#isNavigabilityB <em>Navigability B</em>}' attribute.
+	 * Sets the value of the '{@link specificPart.RelationMSE#isNavigabilityTarget <em>Navigability Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Navigability B</em>' attribute.
-	 * @see #isNavigabilityB()
+	 * @param value the new value of the '<em>Navigability Target</em>' attribute.
+	 * @see #isNavigabilityTarget()
 	 * @generated
 	 */
-	void setNavigabilityB(boolean value);
+	void setNavigabilityTarget(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.

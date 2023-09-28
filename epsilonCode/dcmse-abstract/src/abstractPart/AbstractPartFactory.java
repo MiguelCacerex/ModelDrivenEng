@@ -31,15 +31,6 @@ public interface AbstractPartFactory extends EFactory {
 	ModelFactoryAbstract createModelFactoryAbstract();
 
 	/**
-	 * Returns a new object of class '<em>Class Diagram MSE</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Class Diagram MSE</em>'.
-	 * @generated
-	 */
-	ClassDiagramMSE createClassDiagramMSE();
-
-	/**
 	 * Returns a new object of class '<em>Package MSE</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,13 +40,13 @@ public interface AbstractPartFactory extends EFactory {
 	PackageMSE createPackageMSE();
 
 	/**
-	 * Returns a new object of class '<em>Hash Code Class MSE</em>'.
+	 * Returns a new object of class '<em>Class Diagram MSE</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hash Code Class MSE</em>'.
+	 * @return a new object of class '<em>Class Diagram MSE</em>'.
 	 * @generated
 	 */
-	HashCodeClassMSE createHashCodeClassMSE();
+	ClassDiagramMSE createClassDiagramMSE();
 
 	/**
 	 * Returns a new object of class '<em>Class MSE</em>'.
@@ -65,6 +56,42 @@ public interface AbstractPartFactory extends EFactory {
 	 * @generated
 	 */
 	ClassMSE createClassMSE();
+
+	/**
+	 * Returns a new object of class '<em>Method MSE</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Method MSE</em>'.
+	 * @generated
+	 */
+	MethodMSE createMethodMSE();
+
+	/**
+	 * Returns a new object of class '<em>Attribute MSE</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute MSE</em>'.
+	 * @generated
+	 */
+	AttributeMSE createAttributeMSE();
+
+	/**
+	 * Returns a new object of class '<em>Attribute Relation MSE</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Relation MSE</em>'.
+	 * @generated
+	 */
+	AttributeRelationMSE createAttributeRelationMSE();
+
+	/**
+	 * Returns a new object of class '<em>Hash Code Class MSE</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hash Code Class MSE</em>'.
+	 * @generated
+	 */
+	HashCodeClassMSE createHashCodeClassMSE();
 
 	/**
 	 * Returns a new object of class '<em>Associations MSE</em>'.
@@ -128,24 +155,6 @@ public interface AbstractPartFactory extends EFactory {
 	 * @generated
 	 */
 	ImplementationMSE createImplementationMSE();
-
-	/**
-	 * Returns a new object of class '<em>Method MSE</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Method MSE</em>'.
-	 * @generated
-	 */
-	MethodMSE createMethodMSE();
-
-	/**
-	 * Returns a new object of class '<em>Attribute MSE</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute MSE</em>'.
-	 * @generated
-	 */
-	AttributeMSE createAttributeMSE();
 
 	/**
 	 * Returns the package supported by this factory.

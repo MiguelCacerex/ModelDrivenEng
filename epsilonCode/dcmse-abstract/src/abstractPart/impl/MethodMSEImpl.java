@@ -30,9 +30,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link abstractPart.impl.MethodMSEImpl#getName <em>Name</em>}</li>
  *   <li>{@link abstractPart.impl.MethodMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.MethodMSEImpl#getModifier <em>Modifier</em>}</li>
- *   <li>{@link abstractPart.impl.MethodMSEImpl#getName <em>Name</em>}</li>
  *   <li>{@link abstractPart.impl.MethodMSEImpl#getBody <em>Body</em>}</li>
  *   <li>{@link abstractPart.impl.MethodMSEImpl#getTypeReturn <em>Type Return</em>}</li>
  *   <li>{@link abstractPart.impl.MethodMSEImpl#getPath <em>Path</em>}</li>
@@ -44,6 +44,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -83,26 +103,6 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 	 * @ordered
 	 */
 	protected String modifier = MODIFIER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
@@ -259,6 +259,27 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getModifier() {
+		return modifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setModifier(String newModifier) {
+		String oldModifier = modifier;
+		modifier = newModifier;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__MODIFIER, oldModifier, modifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
@@ -273,48 +294,6 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getLocation() {
-		return location;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLocation(String newLocation) {
-		String oldLocation = location;
-		location = newLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__LOCATION, oldLocation, location));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPath() {
-		return path;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__PATH, oldPath, path));
 	}
 
 	/**
@@ -343,48 +322,6 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDocumentation() {
-		return documentation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDocumentation(String newDocumentation) {
-		String oldDocumentation = documentation;
-		documentation = newDocumentation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__DOCUMENTATION, oldDocumentation, documentation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getModifier() {
-		return modifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setModifier(String newModifier) {
-		String oldModifier = modifier;
-		modifier = newModifier;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__MODIFIER, oldModifier, modifier));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getTypeReturn() {
 		return typeReturn;
 	}
@@ -399,6 +336,69 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 		typeReturn = newTypeReturn;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__TYPE_RETURN, oldTypeReturn, typeReturn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__PATH, oldPath, path));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLocation(String newLocation) {
+		String oldLocation = location;
+		location = newLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__LOCATION, oldLocation, location));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDocumentation() {
+		return documentation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDocumentation(String newDocumentation) {
+		String oldDocumentation = documentation;
+		documentation = newDocumentation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.METHOD_MSE__DOCUMENTATION, oldDocumentation, documentation));
 	}
 
 	/**
@@ -435,12 +435,12 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AbstractPartPackage.METHOD_MSE__NAME:
+				return getName();
 			case AbstractPartPackage.METHOD_MSE__STATE:
 				return getState();
 			case AbstractPartPackage.METHOD_MSE__MODIFIER:
 				return getModifier();
-			case AbstractPartPackage.METHOD_MSE__NAME:
-				return getName();
 			case AbstractPartPackage.METHOD_MSE__BODY:
 				return getBody();
 			case AbstractPartPackage.METHOD_MSE__TYPE_RETURN:
@@ -466,14 +466,14 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AbstractPartPackage.METHOD_MSE__NAME:
+				setName((String)newValue);
+				return;
 			case AbstractPartPackage.METHOD_MSE__STATE:
 				setState((String)newValue);
 				return;
 			case AbstractPartPackage.METHOD_MSE__MODIFIER:
 				setModifier((String)newValue);
-				return;
-			case AbstractPartPackage.METHOD_MSE__NAME:
-				setName((String)newValue);
 				return;
 			case AbstractPartPackage.METHOD_MSE__BODY:
 				setBody((String)newValue);
@@ -506,14 +506,14 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AbstractPartPackage.METHOD_MSE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case AbstractPartPackage.METHOD_MSE__STATE:
 				setState(STATE_EDEFAULT);
 				return;
 			case AbstractPartPackage.METHOD_MSE__MODIFIER:
 				setModifier(MODIFIER_EDEFAULT);
-				return;
-			case AbstractPartPackage.METHOD_MSE__NAME:
-				setName(NAME_EDEFAULT);
 				return;
 			case AbstractPartPackage.METHOD_MSE__BODY:
 				setBody(BODY_EDEFAULT);
@@ -545,12 +545,12 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AbstractPartPackage.METHOD_MSE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AbstractPartPackage.METHOD_MSE__STATE:
 				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.METHOD_MSE__MODIFIER:
 				return MODIFIER_EDEFAULT == null ? modifier != null : !MODIFIER_EDEFAULT.equals(modifier);
-			case AbstractPartPackage.METHOD_MSE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AbstractPartPackage.METHOD_MSE__BODY:
 				return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
 			case AbstractPartPackage.METHOD_MSE__TYPE_RETURN:
@@ -577,12 +577,12 @@ public class MethodMSEImpl extends EObjectImpl implements MethodMSE {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (state: ");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", state: ");
 		result.append(state);
 		result.append(", modifier: ");
 		result.append(modifier);
-		result.append(", name: ");
-		result.append(name);
 		result.append(", body: ");
 		result.append(body);
 		result.append(", typeReturn: ");

@@ -24,12 +24,12 @@ import specificPart.SpecificPartPackage;
  * <ul>
  *   <li>{@link specificPart.impl.RelationMSEImpl#getType <em>Type</em>}</li>
  *   <li>{@link specificPart.impl.RelationMSEImpl#getState <em>State</em>}</li>
- *   <li>{@link specificPart.impl.RelationMSEImpl#getRoleA <em>Role A</em>}</li>
- *   <li>{@link specificPart.impl.RelationMSEImpl#getRoleB <em>Role B</em>}</li>
- *   <li>{@link specificPart.impl.RelationMSEImpl#getMultiplicityA <em>Multiplicity A</em>}</li>
- *   <li>{@link specificPart.impl.RelationMSEImpl#getMultiplicityB <em>Multiplicity B</em>}</li>
- *   <li>{@link specificPart.impl.RelationMSEImpl#isNavigabilityA <em>Navigability A</em>}</li>
- *   <li>{@link specificPart.impl.RelationMSEImpl#isNavigabilityB <em>Navigability B</em>}</li>
+ *   <li>{@link specificPart.impl.RelationMSEImpl#getRoleSource <em>Role Source</em>}</li>
+ *   <li>{@link specificPart.impl.RelationMSEImpl#getRoleTarget <em>Role Target</em>}</li>
+ *   <li>{@link specificPart.impl.RelationMSEImpl#getMultiplicitySource <em>Multiplicity Source</em>}</li>
+ *   <li>{@link specificPart.impl.RelationMSEImpl#getMultiplicityTarget <em>Multiplicity Target</em>}</li>
+ *   <li>{@link specificPart.impl.RelationMSEImpl#isNavigabilitySource <em>Navigability Source</em>}</li>
+ *   <li>{@link specificPart.impl.RelationMSEImpl#isNavigabilityTarget <em>Navigability Target</em>}</li>
  *   <li>{@link specificPart.impl.RelationMSEImpl#getSource <em>Source</em>}</li>
  *   <li>{@link specificPart.impl.RelationMSEImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link specificPart.impl.RelationMSEImpl#getPath <em>Path</em>}</li>
@@ -81,124 +81,124 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	protected String state = STATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRoleA() <em>Role A</em>}' attribute.
+	 * The default value of the '{@link #getRoleSource() <em>Role Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoleA()
+	 * @see #getRoleSource()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_A_EDEFAULT = null;
+	protected static final String ROLE_SOURCE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getRoleA() <em>Role A</em>}' attribute.
+	 * The cached value of the '{@link #getRoleSource() <em>Role Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoleA()
+	 * @see #getRoleSource()
 	 * @generated
 	 * @ordered
 	 */
-	protected String roleA = ROLE_A_EDEFAULT;
+	protected String roleSource = ROLE_SOURCE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRoleB() <em>Role B</em>}' attribute.
+	 * The default value of the '{@link #getRoleTarget() <em>Role Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoleB()
+	 * @see #getRoleTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_B_EDEFAULT = null;
+	protected static final String ROLE_TARGET_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getRoleB() <em>Role B</em>}' attribute.
+	 * The cached value of the '{@link #getRoleTarget() <em>Role Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoleB()
+	 * @see #getRoleTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected String roleB = ROLE_B_EDEFAULT;
+	protected String roleTarget = ROLE_TARGET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMultiplicityA() <em>Multiplicity A</em>}' attribute.
+	 * The default value of the '{@link #getMultiplicitySource() <em>Multiplicity Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMultiplicityA()
+	 * @see #getMultiplicitySource()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MULTIPLICITY_A_EDEFAULT = null;
+	protected static final String MULTIPLICITY_SOURCE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMultiplicityA() <em>Multiplicity A</em>}' attribute.
+	 * The cached value of the '{@link #getMultiplicitySource() <em>Multiplicity Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMultiplicityA()
+	 * @see #getMultiplicitySource()
 	 * @generated
 	 * @ordered
 	 */
-	protected String multiplicityA = MULTIPLICITY_A_EDEFAULT;
+	protected String multiplicitySource = MULTIPLICITY_SOURCE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMultiplicityB() <em>Multiplicity B</em>}' attribute.
+	 * The default value of the '{@link #getMultiplicityTarget() <em>Multiplicity Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMultiplicityB()
+	 * @see #getMultiplicityTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MULTIPLICITY_B_EDEFAULT = null;
+	protected static final String MULTIPLICITY_TARGET_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMultiplicityB() <em>Multiplicity B</em>}' attribute.
+	 * The cached value of the '{@link #getMultiplicityTarget() <em>Multiplicity Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMultiplicityB()
+	 * @see #getMultiplicityTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected String multiplicityB = MULTIPLICITY_B_EDEFAULT;
+	protected String multiplicityTarget = MULTIPLICITY_TARGET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isNavigabilityA() <em>Navigability A</em>}' attribute.
+	 * The default value of the '{@link #isNavigabilitySource() <em>Navigability Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isNavigabilityA()
+	 * @see #isNavigabilitySource()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean NAVIGABILITY_A_EDEFAULT = false;
+	protected static final boolean NAVIGABILITY_SOURCE_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isNavigabilityA() <em>Navigability A</em>}' attribute.
+	 * The cached value of the '{@link #isNavigabilitySource() <em>Navigability Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isNavigabilityA()
+	 * @see #isNavigabilitySource()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean navigabilityA = NAVIGABILITY_A_EDEFAULT;
+	protected boolean navigabilitySource = NAVIGABILITY_SOURCE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isNavigabilityB() <em>Navigability B</em>}' attribute.
+	 * The default value of the '{@link #isNavigabilityTarget() <em>Navigability Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isNavigabilityB()
+	 * @see #isNavigabilityTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean NAVIGABILITY_B_EDEFAULT = false;
+	protected static final boolean NAVIGABILITY_TARGET_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isNavigabilityB() <em>Navigability B</em>}' attribute.
+	 * The cached value of the '{@link #isNavigabilityTarget() <em>Navigability Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isNavigabilityB()
+	 * @see #isNavigabilityTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean navigabilityB = NAVIGABILITY_B_EDEFAULT;
+	protected boolean navigabilityTarget = NAVIGABILITY_TARGET_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
@@ -346,8 +346,8 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRoleA() {
-		return roleA;
+	public String getRoleSource() {
+		return roleSource;
 	}
 
 	/**
@@ -355,11 +355,11 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoleA(String newRoleA) {
-		String oldRoleA = roleA;
-		roleA = newRoleA;
+	public void setRoleSource(String newRoleSource) {
+		String oldRoleSource = roleSource;
+		roleSource = newRoleSource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__ROLE_A, oldRoleA, roleA));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__ROLE_SOURCE, oldRoleSource, roleSource));
 	}
 
 	/**
@@ -367,8 +367,8 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRoleB() {
-		return roleB;
+	public String getRoleTarget() {
+		return roleTarget;
 	}
 
 	/**
@@ -376,11 +376,11 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoleB(String newRoleB) {
-		String oldRoleB = roleB;
-		roleB = newRoleB;
+	public void setRoleTarget(String newRoleTarget) {
+		String oldRoleTarget = roleTarget;
+		roleTarget = newRoleTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__ROLE_B, oldRoleB, roleB));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__ROLE_TARGET, oldRoleTarget, roleTarget));
 	}
 
 	/**
@@ -388,8 +388,8 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMultiplicityA() {
-		return multiplicityA;
+	public String getMultiplicitySource() {
+		return multiplicitySource;
 	}
 
 	/**
@@ -397,11 +397,11 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMultiplicityA(String newMultiplicityA) {
-		String oldMultiplicityA = multiplicityA;
-		multiplicityA = newMultiplicityA;
+	public void setMultiplicitySource(String newMultiplicitySource) {
+		String oldMultiplicitySource = multiplicitySource;
+		multiplicitySource = newMultiplicitySource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__MULTIPLICITY_A, oldMultiplicityA, multiplicityA));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__MULTIPLICITY_SOURCE, oldMultiplicitySource, multiplicitySource));
 	}
 
 	/**
@@ -409,8 +409,8 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMultiplicityB() {
-		return multiplicityB;
+	public String getMultiplicityTarget() {
+		return multiplicityTarget;
 	}
 
 	/**
@@ -418,11 +418,11 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMultiplicityB(String newMultiplicityB) {
-		String oldMultiplicityB = multiplicityB;
-		multiplicityB = newMultiplicityB;
+	public void setMultiplicityTarget(String newMultiplicityTarget) {
+		String oldMultiplicityTarget = multiplicityTarget;
+		multiplicityTarget = newMultiplicityTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__MULTIPLICITY_B, oldMultiplicityB, multiplicityB));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__MULTIPLICITY_TARGET, oldMultiplicityTarget, multiplicityTarget));
 	}
 
 	/**
@@ -430,8 +430,8 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isNavigabilityA() {
-		return navigabilityA;
+	public boolean isNavigabilitySource() {
+		return navigabilitySource;
 	}
 
 	/**
@@ -439,11 +439,11 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNavigabilityA(boolean newNavigabilityA) {
-		boolean oldNavigabilityA = navigabilityA;
-		navigabilityA = newNavigabilityA;
+	public void setNavigabilitySource(boolean newNavigabilitySource) {
+		boolean oldNavigabilitySource = navigabilitySource;
+		navigabilitySource = newNavigabilitySource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__NAVIGABILITY_A, oldNavigabilityA, navigabilityA));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__NAVIGABILITY_SOURCE, oldNavigabilitySource, navigabilitySource));
 	}
 
 	/**
@@ -451,8 +451,8 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isNavigabilityB() {
-		return navigabilityB;
+	public boolean isNavigabilityTarget() {
+		return navigabilityTarget;
 	}
 
 	/**
@@ -460,11 +460,11 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNavigabilityB(boolean newNavigabilityB) {
-		boolean oldNavigabilityB = navigabilityB;
-		navigabilityB = newNavigabilityB;
+	public void setNavigabilityTarget(boolean newNavigabilityTarget) {
+		boolean oldNavigabilityTarget = navigabilityTarget;
+		navigabilityTarget = newNavigabilityTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__NAVIGABILITY_B, oldNavigabilityB, navigabilityB));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.RELATION_MSE__NAVIGABILITY_TARGET, oldNavigabilityTarget, navigabilityTarget));
 	}
 
 	/**
@@ -618,18 +618,18 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 				return getType();
 			case SpecificPartPackage.RELATION_MSE__STATE:
 				return getState();
-			case SpecificPartPackage.RELATION_MSE__ROLE_A:
-				return getRoleA();
-			case SpecificPartPackage.RELATION_MSE__ROLE_B:
-				return getRoleB();
-			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_A:
-				return getMultiplicityA();
-			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_B:
-				return getMultiplicityB();
-			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_A:
-				return isNavigabilityA();
-			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_B:
-				return isNavigabilityB();
+			case SpecificPartPackage.RELATION_MSE__ROLE_SOURCE:
+				return getRoleSource();
+			case SpecificPartPackage.RELATION_MSE__ROLE_TARGET:
+				return getRoleTarget();
+			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_SOURCE:
+				return getMultiplicitySource();
+			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_TARGET:
+				return getMultiplicityTarget();
+			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_SOURCE:
+				return isNavigabilitySource();
+			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_TARGET:
+				return isNavigabilityTarget();
 			case SpecificPartPackage.RELATION_MSE__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
@@ -660,23 +660,23 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 			case SpecificPartPackage.RELATION_MSE__STATE:
 				setState((String)newValue);
 				return;
-			case SpecificPartPackage.RELATION_MSE__ROLE_A:
-				setRoleA((String)newValue);
+			case SpecificPartPackage.RELATION_MSE__ROLE_SOURCE:
+				setRoleSource((String)newValue);
 				return;
-			case SpecificPartPackage.RELATION_MSE__ROLE_B:
-				setRoleB((String)newValue);
+			case SpecificPartPackage.RELATION_MSE__ROLE_TARGET:
+				setRoleTarget((String)newValue);
 				return;
-			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_A:
-				setMultiplicityA((String)newValue);
+			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_SOURCE:
+				setMultiplicitySource((String)newValue);
 				return;
-			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_B:
-				setMultiplicityB((String)newValue);
+			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_TARGET:
+				setMultiplicityTarget((String)newValue);
 				return;
-			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_A:
-				setNavigabilityA((Boolean)newValue);
+			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_SOURCE:
+				setNavigabilitySource((Boolean)newValue);
 				return;
-			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_B:
-				setNavigabilityB((Boolean)newValue);
+			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_TARGET:
+				setNavigabilityTarget((Boolean)newValue);
 				return;
 			case SpecificPartPackage.RELATION_MSE__SOURCE:
 				setSource((ClassMSE)newValue);
@@ -711,23 +711,23 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 			case SpecificPartPackage.RELATION_MSE__STATE:
 				setState(STATE_EDEFAULT);
 				return;
-			case SpecificPartPackage.RELATION_MSE__ROLE_A:
-				setRoleA(ROLE_A_EDEFAULT);
+			case SpecificPartPackage.RELATION_MSE__ROLE_SOURCE:
+				setRoleSource(ROLE_SOURCE_EDEFAULT);
 				return;
-			case SpecificPartPackage.RELATION_MSE__ROLE_B:
-				setRoleB(ROLE_B_EDEFAULT);
+			case SpecificPartPackage.RELATION_MSE__ROLE_TARGET:
+				setRoleTarget(ROLE_TARGET_EDEFAULT);
 				return;
-			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_A:
-				setMultiplicityA(MULTIPLICITY_A_EDEFAULT);
+			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_SOURCE:
+				setMultiplicitySource(MULTIPLICITY_SOURCE_EDEFAULT);
 				return;
-			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_B:
-				setMultiplicityB(MULTIPLICITY_B_EDEFAULT);
+			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_TARGET:
+				setMultiplicityTarget(MULTIPLICITY_TARGET_EDEFAULT);
 				return;
-			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_A:
-				setNavigabilityA(NAVIGABILITY_A_EDEFAULT);
+			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_SOURCE:
+				setNavigabilitySource(NAVIGABILITY_SOURCE_EDEFAULT);
 				return;
-			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_B:
-				setNavigabilityB(NAVIGABILITY_B_EDEFAULT);
+			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_TARGET:
+				setNavigabilityTarget(NAVIGABILITY_TARGET_EDEFAULT);
 				return;
 			case SpecificPartPackage.RELATION_MSE__SOURCE:
 				setSource((ClassMSE)null);
@@ -760,18 +760,18 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case SpecificPartPackage.RELATION_MSE__STATE:
 				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
-			case SpecificPartPackage.RELATION_MSE__ROLE_A:
-				return ROLE_A_EDEFAULT == null ? roleA != null : !ROLE_A_EDEFAULT.equals(roleA);
-			case SpecificPartPackage.RELATION_MSE__ROLE_B:
-				return ROLE_B_EDEFAULT == null ? roleB != null : !ROLE_B_EDEFAULT.equals(roleB);
-			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_A:
-				return MULTIPLICITY_A_EDEFAULT == null ? multiplicityA != null : !MULTIPLICITY_A_EDEFAULT.equals(multiplicityA);
-			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_B:
-				return MULTIPLICITY_B_EDEFAULT == null ? multiplicityB != null : !MULTIPLICITY_B_EDEFAULT.equals(multiplicityB);
-			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_A:
-				return navigabilityA != NAVIGABILITY_A_EDEFAULT;
-			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_B:
-				return navigabilityB != NAVIGABILITY_B_EDEFAULT;
+			case SpecificPartPackage.RELATION_MSE__ROLE_SOURCE:
+				return ROLE_SOURCE_EDEFAULT == null ? roleSource != null : !ROLE_SOURCE_EDEFAULT.equals(roleSource);
+			case SpecificPartPackage.RELATION_MSE__ROLE_TARGET:
+				return ROLE_TARGET_EDEFAULT == null ? roleTarget != null : !ROLE_TARGET_EDEFAULT.equals(roleTarget);
+			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_SOURCE:
+				return MULTIPLICITY_SOURCE_EDEFAULT == null ? multiplicitySource != null : !MULTIPLICITY_SOURCE_EDEFAULT.equals(multiplicitySource);
+			case SpecificPartPackage.RELATION_MSE__MULTIPLICITY_TARGET:
+				return MULTIPLICITY_TARGET_EDEFAULT == null ? multiplicityTarget != null : !MULTIPLICITY_TARGET_EDEFAULT.equals(multiplicityTarget);
+			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_SOURCE:
+				return navigabilitySource != NAVIGABILITY_SOURCE_EDEFAULT;
+			case SpecificPartPackage.RELATION_MSE__NAVIGABILITY_TARGET:
+				return navigabilityTarget != NAVIGABILITY_TARGET_EDEFAULT;
 			case SpecificPartPackage.RELATION_MSE__SOURCE:
 				return source != null;
 			case SpecificPartPackage.RELATION_MSE__TARGET:
@@ -800,18 +800,18 @@ public class RelationMSEImpl extends EObjectImpl implements RelationMSE {
 		result.append(type);
 		result.append(", state: ");
 		result.append(state);
-		result.append(", roleA: ");
-		result.append(roleA);
-		result.append(", roleB: ");
-		result.append(roleB);
-		result.append(", multiplicityA: ");
-		result.append(multiplicityA);
-		result.append(", multiplicityB: ");
-		result.append(multiplicityB);
-		result.append(", navigabilityA: ");
-		result.append(navigabilityA);
-		result.append(", navigabilityB: ");
-		result.append(navigabilityB);
+		result.append(", roleSource: ");
+		result.append(roleSource);
+		result.append(", roleTarget: ");
+		result.append(roleTarget);
+		result.append(", multiplicitySource: ");
+		result.append(multiplicitySource);
+		result.append(", multiplicityTarget: ");
+		result.append(multiplicityTarget);
+		result.append(", navigabilitySource: ");
+		result.append(navigabilitySource);
+		result.append(", navigabilityTarget: ");
+		result.append(navigabilityTarget);
 		result.append(", path: ");
 		result.append(path);
 		result.append(", location: ");

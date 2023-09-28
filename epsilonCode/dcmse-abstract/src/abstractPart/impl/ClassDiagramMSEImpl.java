@@ -4,25 +4,20 @@ package abstractPart.impl;
 
 import abstractPart.AbstractPartPackage;
 import abstractPart.ClassDiagramMSE;
-import abstractPart.ClassMSE;
 import abstractPart.HashCodeClassMSE;
-import abstractPart.PackageMSE;
-import abstractPart.RelationMSE;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,8 +28,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.impl.ClassDiagramMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.ClassDiagramMSEImpl#getName <em>Name</em>}</li>
+ *   <li>{@link abstractPart.impl.ClassDiagramMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.ClassDiagramMSEImpl#getPath <em>Path</em>}</li>
  *   <li>{@link abstractPart.impl.ClassDiagramMSEImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link abstractPart.impl.ClassDiagramMSEImpl#getDocumentation <em>Documentation</em>}</li>
@@ -44,26 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE {
-	/**
-	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getState()
-	 * @generated
-	 * @ordered
-	 */
-	protected String state = STATE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -83,6 +58,26 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected String state = STATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
@@ -145,7 +140,7 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	protected String documentation = DOCUMENTATION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLstIdentifierClass() <em>Lst Identifier Class</em>}' containment reference list.
+	 * The cached value of the '{@link #getLstIdentifierClass() <em>Lst Identifier Class</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLstIdentifierClass()
@@ -220,6 +215,27 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_DIAGRAM_MSE__PATH, oldPath, path));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getLocation() {
 		return location;
 	}
@@ -264,44 +280,9 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	 */
 	public EList<HashCodeClassMSE> getLstIdentifierClass() {
 		if (lstIdentifierClass == null) {
-			lstIdentifierClass = new EObjectContainmentEList<HashCodeClassMSE>(HashCodeClassMSE.class, this, AbstractPartPackage.CLASS_DIAGRAM_MSE__LST_IDENTIFIER_CLASS);
+			lstIdentifierClass = new EObjectResolvingEList<HashCodeClassMSE>(HashCodeClassMSE.class, this, AbstractPartPackage.CLASS_DIAGRAM_MSE__LST_IDENTIFIER_CLASS);
 		}
 		return lstIdentifierClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPath() {
-		return path;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.CLASS_DIAGRAM_MSE__PATH, oldPath, path));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case AbstractPartPackage.CLASS_DIAGRAM_MSE__LST_IDENTIFIER_CLASS:
-				return ((InternalEList<?>)getLstIdentifierClass()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -312,10 +293,10 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AbstractPartPackage.CLASS_DIAGRAM_MSE__STATE:
-				return getState();
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__NAME:
 				return getName();
+			case AbstractPartPackage.CLASS_DIAGRAM_MSE__STATE:
+				return getState();
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__PATH:
 				return getPath();
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__LOCATION:
@@ -337,11 +318,11 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AbstractPartPackage.CLASS_DIAGRAM_MSE__STATE:
-				setState((String)newValue);
-				return;
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__NAME:
 				setName((String)newValue);
+				return;
+			case AbstractPartPackage.CLASS_DIAGRAM_MSE__STATE:
+				setState((String)newValue);
 				return;
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__PATH:
 				setPath((String)newValue);
@@ -368,11 +349,11 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.CLASS_DIAGRAM_MSE__STATE:
-				setState(STATE_EDEFAULT);
-				return;
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case AbstractPartPackage.CLASS_DIAGRAM_MSE__STATE:
+				setState(STATE_EDEFAULT);
 				return;
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__PATH:
 				setPath(PATH_EDEFAULT);
@@ -398,10 +379,10 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AbstractPartPackage.CLASS_DIAGRAM_MSE__STATE:
-				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AbstractPartPackage.CLASS_DIAGRAM_MSE__STATE:
+				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case AbstractPartPackage.CLASS_DIAGRAM_MSE__LOCATION:
@@ -424,10 +405,10 @@ public class ClassDiagramMSEImpl extends EObjectImpl implements ClassDiagramMSE 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (state: ");
-		result.append(state);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
+		result.append(", state: ");
+		result.append(state);
 		result.append(", path: ");
 		result.append(path);
 		result.append(", location: ");

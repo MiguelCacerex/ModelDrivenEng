@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.HashCodeClassMSE#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.HashCodeClassMSE#getCode <em>Code</em>}</li>
+ *   <li>{@link abstractPart.HashCodeClassMSE#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.HashCodeClassMSE#getPath <em>Path</em>}</li>
  *   <li>{@link abstractPart.HashCodeClassMSE#getLocation <em>Location</em>}</li>
  * </ul>

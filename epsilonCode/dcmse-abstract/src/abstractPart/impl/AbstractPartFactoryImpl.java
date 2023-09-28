@@ -57,10 +57,13 @@ public class AbstractPartFactoryImpl extends EFactoryImpl implements AbstractPar
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case AbstractPartPackage.MODEL_FACTORY_ABSTRACT: return createModelFactoryAbstract();
-			case AbstractPartPackage.CLASS_DIAGRAM_MSE: return createClassDiagramMSE();
 			case AbstractPartPackage.PACKAGE_MSE: return createPackageMSE();
-			case AbstractPartPackage.HASH_CODE_CLASS_MSE: return createHashCodeClassMSE();
+			case AbstractPartPackage.CLASS_DIAGRAM_MSE: return createClassDiagramMSE();
 			case AbstractPartPackage.CLASS_MSE: return createClassMSE();
+			case AbstractPartPackage.METHOD_MSE: return createMethodMSE();
+			case AbstractPartPackage.ATTRIBUTE_MSE: return createAttributeMSE();
+			case AbstractPartPackage.ATTRIBUTE_RELATION_MSE: return createAttributeRelationMSE();
+			case AbstractPartPackage.HASH_CODE_CLASS_MSE: return createHashCodeClassMSE();
 			case AbstractPartPackage.ASSOCIATIONS_MSE: return createAssociationsMSE();
 			case AbstractPartPackage.RELATION_MSE: return createRelationMSE();
 			case AbstractPartPackage.INHERITANCE_MSE: return createInheritanceMSE();
@@ -68,8 +71,6 @@ public class AbstractPartFactoryImpl extends EFactoryImpl implements AbstractPar
 			case AbstractPartPackage.AGREGATION_MSE: return createAgregationMSE();
 			case AbstractPartPackage.ASSOCIATION_MSE: return createAssociationMSE();
 			case AbstractPartPackage.IMPLEMENTATION_MSE: return createImplementationMSE();
-			case AbstractPartPackage.METHOD_MSE: return createMethodMSE();
-			case AbstractPartPackage.ATTRIBUTE_MSE: return createAttributeMSE();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -90,16 +91,6 @@ public class AbstractPartFactoryImpl extends EFactoryImpl implements AbstractPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassDiagramMSE createClassDiagramMSE() {
-		ClassDiagramMSEImpl classDiagramMSE = new ClassDiagramMSEImpl();
-		return classDiagramMSE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public PackageMSE createPackageMSE() {
 		PackageMSEImpl packageMSE = new PackageMSEImpl();
 		return packageMSE;
@@ -110,9 +101,9 @@ public class AbstractPartFactoryImpl extends EFactoryImpl implements AbstractPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HashCodeClassMSE createHashCodeClassMSE() {
-		HashCodeClassMSEImpl hashCodeClassMSE = new HashCodeClassMSEImpl();
-		return hashCodeClassMSE;
+	public ClassDiagramMSE createClassDiagramMSE() {
+		ClassDiagramMSEImpl classDiagramMSE = new ClassDiagramMSEImpl();
+		return classDiagramMSE;
 	}
 
 	/**
@@ -123,6 +114,46 @@ public class AbstractPartFactoryImpl extends EFactoryImpl implements AbstractPar
 	public ClassMSE createClassMSE() {
 		ClassMSEImpl classMSE = new ClassMSEImpl();
 		return classMSE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MethodMSE createMethodMSE() {
+		MethodMSEImpl methodMSE = new MethodMSEImpl();
+		return methodMSE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeMSE createAttributeMSE() {
+		AttributeMSEImpl attributeMSE = new AttributeMSEImpl();
+		return attributeMSE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeRelationMSE createAttributeRelationMSE() {
+		AttributeRelationMSEImpl attributeRelationMSE = new AttributeRelationMSEImpl();
+		return attributeRelationMSE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HashCodeClassMSE createHashCodeClassMSE() {
+		HashCodeClassMSEImpl hashCodeClassMSE = new HashCodeClassMSEImpl();
+		return hashCodeClassMSE;
 	}
 
 	/**
@@ -193,26 +224,6 @@ public class AbstractPartFactoryImpl extends EFactoryImpl implements AbstractPar
 	public ImplementationMSE createImplementationMSE() {
 		ImplementationMSEImpl implementationMSE = new ImplementationMSEImpl();
 		return implementationMSE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MethodMSE createMethodMSE() {
-		MethodMSEImpl methodMSE = new MethodMSEImpl();
-		return methodMSE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AttributeMSE createAttributeMSE() {
-		AttributeMSEImpl attributeMSE = new AttributeMSEImpl();
-		return attributeMSE;
 	}
 
 	/**

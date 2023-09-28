@@ -24,8 +24,8 @@ import specificPart.SpecificPartPackage;
  * <ul>
  *   <li>{@link specificPart.impl.InheritanceMSEImpl#getType <em>Type</em>}</li>
  *   <li>{@link specificPart.impl.InheritanceMSEImpl#getState <em>State</em>}</li>
- *   <li>{@link specificPart.impl.InheritanceMSEImpl#getSource <em>Source</em>}</li>
- *   <li>{@link specificPart.impl.InheritanceMSEImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link specificPart.impl.InheritanceMSEImpl#getChild <em>Child</em>}</li>
+ *   <li>{@link specificPart.impl.InheritanceMSEImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link specificPart.impl.InheritanceMSEImpl#getPath <em>Path</em>}</li>
  *   <li>{@link specificPart.impl.InheritanceMSEImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link specificPart.impl.InheritanceMSEImpl#getDocumentation <em>Documentation</em>}</li>
@@ -75,24 +75,24 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	protected String state = STATE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * The cached value of the '{@link #getChild() <em>Child</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSource()
+	 * @see #getChild()
 	 * @generated
 	 * @ordered
 	 */
-	protected ClassMSE source;
+	protected ClassMSE child;
 
 	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTarget()
+	 * @see #getParent()
 	 * @generated
 	 * @ordered
 	 */
-	protected ClassMSE target;
+	protected ClassMSE parent;
 
 	/**
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
@@ -220,16 +220,16 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassMSE getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (ClassMSE)eResolveProxy(oldSource);
-			if (source != oldSource) {
+	public ClassMSE getChild() {
+		if (child != null && child.eIsProxy()) {
+			InternalEObject oldChild = (InternalEObject)child;
+			child = (ClassMSE)eResolveProxy(oldChild);
+			if (child != oldChild) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecificPartPackage.INHERITANCE_MSE__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecificPartPackage.INHERITANCE_MSE__CHILD, oldChild, child));
 			}
 		}
-		return source;
+		return child;
 	}
 
 	/**
@@ -237,8 +237,8 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassMSE basicGetSource() {
-		return source;
+	public ClassMSE basicGetChild() {
+		return child;
 	}
 
 	/**
@@ -246,11 +246,11 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(ClassMSE newSource) {
-		ClassMSE oldSource = source;
-		source = newSource;
+	public void setChild(ClassMSE newChild) {
+		ClassMSE oldChild = child;
+		child = newChild;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.INHERITANCE_MSE__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.INHERITANCE_MSE__CHILD, oldChild, child));
 	}
 
 	/**
@@ -258,16 +258,16 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassMSE getTarget() {
-		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject)target;
-			target = (ClassMSE)eResolveProxy(oldTarget);
-			if (target != oldTarget) {
+	public ClassMSE getParent() {
+		if (parent != null && parent.eIsProxy()) {
+			InternalEObject oldParent = (InternalEObject)parent;
+			parent = (ClassMSE)eResolveProxy(oldParent);
+			if (parent != oldParent) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecificPartPackage.INHERITANCE_MSE__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecificPartPackage.INHERITANCE_MSE__PARENT, oldParent, parent));
 			}
 		}
-		return target;
+		return parent;
 	}
 
 	/**
@@ -275,8 +275,8 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassMSE basicGetTarget() {
-		return target;
+	public ClassMSE basicGetParent() {
+		return parent;
 	}
 
 	/**
@@ -284,11 +284,11 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(ClassMSE newTarget) {
-		ClassMSE oldTarget = target;
-		target = newTarget;
+	public void setParent(ClassMSE newParent) {
+		ClassMSE oldParent = parent;
+		parent = newParent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.INHERITANCE_MSE__TARGET, oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificPartPackage.INHERITANCE_MSE__PARENT, oldParent, parent));
 	}
 
 	/**
@@ -366,12 +366,12 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 				return getType();
 			case SpecificPartPackage.INHERITANCE_MSE__STATE:
 				return getState();
-			case SpecificPartPackage.INHERITANCE_MSE__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case SpecificPartPackage.INHERITANCE_MSE__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
+			case SpecificPartPackage.INHERITANCE_MSE__CHILD:
+				if (resolve) return getChild();
+				return basicGetChild();
+			case SpecificPartPackage.INHERITANCE_MSE__PARENT:
+				if (resolve) return getParent();
+				return basicGetParent();
 			case SpecificPartPackage.INHERITANCE_MSE__PATH:
 				return getPath();
 			case SpecificPartPackage.INHERITANCE_MSE__LOCATION:
@@ -396,11 +396,11 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 			case SpecificPartPackage.INHERITANCE_MSE__STATE:
 				setState((String)newValue);
 				return;
-			case SpecificPartPackage.INHERITANCE_MSE__SOURCE:
-				setSource((ClassMSE)newValue);
+			case SpecificPartPackage.INHERITANCE_MSE__CHILD:
+				setChild((ClassMSE)newValue);
 				return;
-			case SpecificPartPackage.INHERITANCE_MSE__TARGET:
-				setTarget((ClassMSE)newValue);
+			case SpecificPartPackage.INHERITANCE_MSE__PARENT:
+				setParent((ClassMSE)newValue);
 				return;
 			case SpecificPartPackage.INHERITANCE_MSE__PATH:
 				setPath((String)newValue);
@@ -429,11 +429,11 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 			case SpecificPartPackage.INHERITANCE_MSE__STATE:
 				setState(STATE_EDEFAULT);
 				return;
-			case SpecificPartPackage.INHERITANCE_MSE__SOURCE:
-				setSource((ClassMSE)null);
+			case SpecificPartPackage.INHERITANCE_MSE__CHILD:
+				setChild((ClassMSE)null);
 				return;
-			case SpecificPartPackage.INHERITANCE_MSE__TARGET:
-				setTarget((ClassMSE)null);
+			case SpecificPartPackage.INHERITANCE_MSE__PARENT:
+				setParent((ClassMSE)null);
 				return;
 			case SpecificPartPackage.INHERITANCE_MSE__PATH:
 				setPath(PATH_EDEFAULT);
@@ -460,10 +460,10 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case SpecificPartPackage.INHERITANCE_MSE__STATE:
 				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
-			case SpecificPartPackage.INHERITANCE_MSE__SOURCE:
-				return source != null;
-			case SpecificPartPackage.INHERITANCE_MSE__TARGET:
-				return target != null;
+			case SpecificPartPackage.INHERITANCE_MSE__CHILD:
+				return child != null;
+			case SpecificPartPackage.INHERITANCE_MSE__PARENT:
+				return parent != null;
 			case SpecificPartPackage.INHERITANCE_MSE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case SpecificPartPackage.INHERITANCE_MSE__LOCATION:

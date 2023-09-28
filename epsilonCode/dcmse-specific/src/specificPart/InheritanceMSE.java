@@ -15,15 +15,15 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link specificPart.InheritanceMSE#getType <em>Type</em>}</li>
  *   <li>{@link specificPart.InheritanceMSE#getState <em>State</em>}</li>
- *   <li>{@link specificPart.InheritanceMSE#getSource <em>Source</em>}</li>
- *   <li>{@link specificPart.InheritanceMSE#getTarget <em>Target</em>}</li>
+ *   <li>{@link specificPart.InheritanceMSE#getChild <em>Child</em>}</li>
+ *   <li>{@link specificPart.InheritanceMSE#getParent <em>Parent</em>}</li>
  *   <li>{@link specificPart.InheritanceMSE#getPath <em>Path</em>}</li>
  *   <li>{@link specificPart.InheritanceMSE#getLocation <em>Location</em>}</li>
  *   <li>{@link specificPart.InheritanceMSE#getDocumentation <em>Documentation</em>}</li>
  * </ul>
  *
  * @see specificPart.SpecificPartPackage#getInheritanceMSE()
- * @model annotation="gmf.link source='source' target='target' target.decoration='closedarrow' style='solid' width='3'"
+ * @model annotation="gmf.link source='child' target='parent' target.decoration='closedarrow' style='solid' width='3'"
  * @generated
  */
 public interface InheritanceMSE extends EObject {
@@ -80,56 +80,56 @@ public interface InheritanceMSE extends EObject {
 	void setState(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * Returns the value of the '<em><b>Child</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * If the meaning of the '<em>Child</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' reference.
-	 * @see #setSource(ClassMSE)
-	 * @see specificPart.SpecificPartPackage#getInheritanceMSE_Source()
+	 * @return the value of the '<em>Child</em>' reference.
+	 * @see #setChild(ClassMSE)
+	 * @see specificPart.SpecificPartPackage#getInheritanceMSE_Child()
 	 * @model
 	 * @generated
 	 */
-	ClassMSE getSource();
+	ClassMSE getChild();
 
 	/**
-	 * Sets the value of the '{@link specificPart.InheritanceMSE#getSource <em>Source</em>}' reference.
+	 * Sets the value of the '{@link specificPart.InheritanceMSE#getChild <em>Child</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' reference.
-	 * @see #getSource()
+	 * @param value the new value of the '<em>Child</em>' reference.
+	 * @see #getChild()
 	 * @generated
 	 */
-	void setSource(ClassMSE value);
+	void setChild(ClassMSE value);
 
 	/**
-	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * Returns the value of the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Target</em>' reference isn't clear,
+	 * If the meaning of the '<em>Parent</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target</em>' reference.
-	 * @see #setTarget(ClassMSE)
-	 * @see specificPart.SpecificPartPackage#getInheritanceMSE_Target()
+	 * @return the value of the '<em>Parent</em>' reference.
+	 * @see #setParent(ClassMSE)
+	 * @see specificPart.SpecificPartPackage#getInheritanceMSE_Parent()
 	 * @model
 	 * @generated
 	 */
-	ClassMSE getTarget();
+	ClassMSE getParent();
 
 	/**
-	 * Sets the value of the '{@link specificPart.InheritanceMSE#getTarget <em>Target</em>}' reference.
+	 * Sets the value of the '{@link specificPart.InheritanceMSE#getParent <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target</em>' reference.
-	 * @see #getTarget()
+	 * @param value the new value of the '<em>Parent</em>' reference.
+	 * @see #getParent()
 	 * @generated
 	 */
-	void setTarget(ClassMSE value);
+	void setParent(ClassMSE value);
 
 	/**
 	 * Returns the value of the '<em><b>Path</b></em>' attribute.

@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.PackageMSE#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.PackageMSE#getName <em>Name</em>}</li>
+ *   <li>{@link abstractPart.PackageMSE#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.PackageMSE#getAssociations <em>Associations</em>}</li>
  *   <li>{@link abstractPart.PackageMSE#getPath <em>Path</em>}</li>
  *   <li>{@link abstractPart.PackageMSE#getLocation <em>Location</em>}</li>
@@ -84,30 +84,56 @@ public interface PackageMSE extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Associations</b></em>' reference.
+	 * Returns the value of the '<em><b>Associations</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Associations</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Associations</em>' reference.
+	 * @return the value of the '<em>Associations</em>' containment reference.
 	 * @see #setAssociations(AssociationsMSE)
 	 * @see abstractPart.AbstractPartPackage#getPackageMSE_Associations()
-	 * @model
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	AssociationsMSE getAssociations();
 
 	/**
-	 * Sets the value of the '{@link abstractPart.PackageMSE#getAssociations <em>Associations</em>}' reference.
+	 * Sets the value of the '{@link abstractPart.PackageMSE#getAssociations <em>Associations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Associations</em>' reference.
+	 * @param value the new value of the '<em>Associations</em>' containment reference.
 	 * @see #getAssociations()
 	 * @generated
 	 */
 	void setAssociations(AssociationsMSE value);
+
+	/**
+	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Path</em>' attribute.
+	 * @see #setPath(String)
+	 * @see abstractPart.AbstractPartPackage#getPackageMSE_Path()
+	 * @model
+	 * @generated
+	 */
+	String getPath();
+
+	/**
+	 * Sets the value of the '{@link abstractPart.PackageMSE#getPath <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Path</em>' attribute.
+	 * @see #getPath()
+	 * @generated
+	 */
+	void setPath(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Location</b></em>' attribute.
@@ -160,32 +186,6 @@ public interface PackageMSE extends EObject {
 	 * @generated
 	 */
 	void setDocumentation(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Path</em>' attribute.
-	 * @see #setPath(String)
-	 * @see abstractPart.AbstractPartPackage#getPackageMSE_Path()
-	 * @model
-	 * @generated
-	 */
-	String getPath();
-
-	/**
-	 * Sets the value of the '{@link abstractPart.PackageMSE#getPath <em>Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Path</em>' attribute.
-	 * @see #getPath()
-	 * @generated
-	 */
-	void setPath(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Lst Class</b></em>' containment reference list.

@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getName <em>Name</em>}</li>
  *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getType <em>Type</em>}</li>
- *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getName <em>Name</em>}</li>
- *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getSource <em>Source</em>}</li>
- *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getChild <em>Child</em>}</li>
+ *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getPath <em>Path</em>}</li>
  *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link abstractPart.impl.InheritanceMSEImpl#getDocumentation <em>Documentation</em>}</li>
@@ -35,6 +35,26 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @generated
  */
 public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,44 +96,24 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	protected String type = TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getChild() <em>Child</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getChild()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected ClassMSE child;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getParent()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected ClassMSE source;
-
-	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected ClassMSE target;
+	protected ClassMSE parent;
 
 	/**
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
@@ -199,69 +199,6 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getLocation() {
-		return location;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLocation(String newLocation) {
-		String oldLocation = location;
-		location = newLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__LOCATION, oldLocation, location));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPath() {
-		return path;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__PATH, oldPath, path));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getState() {
 		return state;
 	}
@@ -276,27 +213,6 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 		state = newState;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__STATE, oldState, state));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDocumentation() {
-		return documentation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDocumentation(String newDocumentation) {
-		String oldDocumentation = documentation;
-		documentation = newDocumentation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__DOCUMENTATION, oldDocumentation, documentation));
 	}
 
 	/**
@@ -325,16 +241,16 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassMSE getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (ClassMSE)eResolveProxy(oldSource);
-			if (source != oldSource) {
+	public ClassMSE getChild() {
+		if (child != null && child.eIsProxy()) {
+			InternalEObject oldChild = (InternalEObject)child;
+			child = (ClassMSE)eResolveProxy(oldChild);
+			if (child != oldChild) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbstractPartPackage.INHERITANCE_MSE__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbstractPartPackage.INHERITANCE_MSE__CHILD, oldChild, child));
 			}
 		}
-		return source;
+		return child;
 	}
 
 	/**
@@ -342,8 +258,8 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassMSE basicGetSource() {
-		return source;
+	public ClassMSE basicGetChild() {
+		return child;
 	}
 
 	/**
@@ -351,11 +267,11 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(ClassMSE newSource) {
-		ClassMSE oldSource = source;
-		source = newSource;
+	public void setChild(ClassMSE newChild) {
+		ClassMSE oldChild = child;
+		child = newChild;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__CHILD, oldChild, child));
 	}
 
 	/**
@@ -363,16 +279,16 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassMSE getTarget() {
-		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject)target;
-			target = (ClassMSE)eResolveProxy(oldTarget);
-			if (target != oldTarget) {
+	public ClassMSE getParent() {
+		if (parent != null && parent.eIsProxy()) {
+			InternalEObject oldParent = (InternalEObject)parent;
+			parent = (ClassMSE)eResolveProxy(oldParent);
+			if (parent != oldParent) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbstractPartPackage.INHERITANCE_MSE__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbstractPartPackage.INHERITANCE_MSE__PARENT, oldParent, parent));
 			}
 		}
-		return target;
+		return parent;
 	}
 
 	/**
@@ -380,8 +296,8 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassMSE basicGetTarget() {
-		return target;
+	public ClassMSE basicGetParent() {
+		return parent;
 	}
 
 	/**
@@ -389,11 +305,95 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(ClassMSE newTarget) {
-		ClassMSE oldTarget = target;
-		target = newTarget;
+	public void setParent(ClassMSE newParent) {
+		ClassMSE oldParent = parent;
+		parent = newParent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__TARGET, oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__PARENT, oldParent, parent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__PATH, oldPath, path));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLocation(String newLocation) {
+		String oldLocation = location;
+		location = newLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__LOCATION, oldLocation, location));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDocumentation() {
+		return documentation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDocumentation(String newDocumentation) {
+		String oldDocumentation = documentation;
+		documentation = newDocumentation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractPartPackage.INHERITANCE_MSE__DOCUMENTATION, oldDocumentation, documentation));
 	}
 
 	/**
@@ -404,18 +404,18 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AbstractPartPackage.INHERITANCE_MSE__NAME:
+				return getName();
 			case AbstractPartPackage.INHERITANCE_MSE__STATE:
 				return getState();
 			case AbstractPartPackage.INHERITANCE_MSE__TYPE:
 				return getType();
-			case AbstractPartPackage.INHERITANCE_MSE__NAME:
-				return getName();
-			case AbstractPartPackage.INHERITANCE_MSE__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case AbstractPartPackage.INHERITANCE_MSE__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
+			case AbstractPartPackage.INHERITANCE_MSE__CHILD:
+				if (resolve) return getChild();
+				return basicGetChild();
+			case AbstractPartPackage.INHERITANCE_MSE__PARENT:
+				if (resolve) return getParent();
+				return basicGetParent();
 			case AbstractPartPackage.INHERITANCE_MSE__PATH:
 				return getPath();
 			case AbstractPartPackage.INHERITANCE_MSE__LOCATION:
@@ -434,20 +434,20 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AbstractPartPackage.INHERITANCE_MSE__NAME:
+				setName((String)newValue);
+				return;
 			case AbstractPartPackage.INHERITANCE_MSE__STATE:
 				setState((String)newValue);
 				return;
 			case AbstractPartPackage.INHERITANCE_MSE__TYPE:
 				setType((String)newValue);
 				return;
-			case AbstractPartPackage.INHERITANCE_MSE__NAME:
-				setName((String)newValue);
+			case AbstractPartPackage.INHERITANCE_MSE__CHILD:
+				setChild((ClassMSE)newValue);
 				return;
-			case AbstractPartPackage.INHERITANCE_MSE__SOURCE:
-				setSource((ClassMSE)newValue);
-				return;
-			case AbstractPartPackage.INHERITANCE_MSE__TARGET:
-				setTarget((ClassMSE)newValue);
+			case AbstractPartPackage.INHERITANCE_MSE__PARENT:
+				setParent((ClassMSE)newValue);
 				return;
 			case AbstractPartPackage.INHERITANCE_MSE__PATH:
 				setPath((String)newValue);
@@ -470,20 +470,20 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AbstractPartPackage.INHERITANCE_MSE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case AbstractPartPackage.INHERITANCE_MSE__STATE:
 				setState(STATE_EDEFAULT);
 				return;
 			case AbstractPartPackage.INHERITANCE_MSE__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
-			case AbstractPartPackage.INHERITANCE_MSE__NAME:
-				setName(NAME_EDEFAULT);
+			case AbstractPartPackage.INHERITANCE_MSE__CHILD:
+				setChild((ClassMSE)null);
 				return;
-			case AbstractPartPackage.INHERITANCE_MSE__SOURCE:
-				setSource((ClassMSE)null);
-				return;
-			case AbstractPartPackage.INHERITANCE_MSE__TARGET:
-				setTarget((ClassMSE)null);
+			case AbstractPartPackage.INHERITANCE_MSE__PARENT:
+				setParent((ClassMSE)null);
 				return;
 			case AbstractPartPackage.INHERITANCE_MSE__PATH:
 				setPath(PATH_EDEFAULT);
@@ -506,16 +506,16 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AbstractPartPackage.INHERITANCE_MSE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AbstractPartPackage.INHERITANCE_MSE__STATE:
 				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case AbstractPartPackage.INHERITANCE_MSE__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case AbstractPartPackage.INHERITANCE_MSE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AbstractPartPackage.INHERITANCE_MSE__SOURCE:
-				return source != null;
-			case AbstractPartPackage.INHERITANCE_MSE__TARGET:
-				return target != null;
+			case AbstractPartPackage.INHERITANCE_MSE__CHILD:
+				return child != null;
+			case AbstractPartPackage.INHERITANCE_MSE__PARENT:
+				return parent != null;
 			case AbstractPartPackage.INHERITANCE_MSE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case AbstractPartPackage.INHERITANCE_MSE__LOCATION:
@@ -536,12 +536,12 @@ public class InheritanceMSEImpl extends EObjectImpl implements InheritanceMSE {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (state: ");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", state: ");
 		result.append(state);
 		result.append(", type: ");
 		result.append(type);
-		result.append(", name: ");
-		result.append(name);
 		result.append(", path: ");
 		result.append(path);
 		result.append(", location: ");

@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link abstractPart.ModelFactoryAbstract#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.ModelFactoryAbstract#getName <em>Name</em>}</li>
+ *   <li>{@link abstractPart.ModelFactoryAbstract#getState <em>State</em>}</li>
  *   <li>{@link abstractPart.ModelFactoryAbstract#getPath <em>Path</em>}</li>
  *   <li>{@link abstractPart.ModelFactoryAbstract#getLocation <em>Location</em>}</li>
  *   <li>{@link abstractPart.ModelFactoryAbstract#getDocumentation <em>Documentation</em>}</li>

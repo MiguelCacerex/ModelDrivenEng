@@ -10,7 +10,7 @@ package specificPart;
  *
  *
  * @see specificPart.SpecificPartPackage#getContainmentMSE()
- * @model annotation="gmf.link source='source' target='target' target.decoration='filledrhomb' style='solid' width='3' label='multiplicityB'"
+ * @model annotation="gmf.link source='source' target='target' target.decoration='filledrhomb' style='solid' width='3'"
  * @generated
  */
 public interface ContainmentMSE extends RelationMSE {

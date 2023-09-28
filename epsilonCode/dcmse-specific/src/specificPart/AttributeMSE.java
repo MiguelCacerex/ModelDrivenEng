@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see specificPart.SpecificPartPackage#getAttributeMSE()
- * @model annotation="gmf.node label='name' border.color='252,243,207' color='252,243,207'"
+ * @model annotation="gmf.node label='name,type' border.color='252,243,207' color='252,243,207' label.pattern='{0}  [ {1} ]'"
  * @generated
  */
 public interface AttributeMSE extends EObject {

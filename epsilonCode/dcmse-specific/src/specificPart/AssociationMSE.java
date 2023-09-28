@@ -10,7 +10,7 @@ package specificPart;
  *
  *
  * @see specificPart.SpecificPartPackage#getAssociationMSE()
- * @model annotation="gmf.link source='source' target='target' style='solid' width='3' label='multiplicityB'"
+ * @model annotation="gmf.link source='source' target='target' style='solid' width='3'"
  * @generated
  */
 public interface AssociationMSE extends RelationMSE {
