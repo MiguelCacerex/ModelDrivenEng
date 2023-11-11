@@ -1,0 +1,92 @@
+@namespace(uri="uidiagrampart", prefix="uidiagrampart")
+@gmf
+package uidiagrampart;
+
+class ModelFactoryUIdiagram {
+	attr String state;
+	attr String name;
+  	val ProjectBoard[*] lstProjectBoard;	
+}	
+
+@gmf.diagram
+class ProjectBoard {
+	attr String state;
+	attr String name;
+	attr String description;
+	val Frame[*] lstFrames;	
+}
+
+@gmf.node(label="name",label.icon="false")
+class Frame extends PropertiesElement{
+	attr String uniqueID;
+	@gmf.compartment(collapsible="true")
+	val GraphicElement[*] lstGraphicElement;	
+}
+
+class GraphicElement extends PropertiesElement{
+	attr String uniqueID;
+}
+
+@gmf.node(label = "name",label.icon="false")
+class Group extends GraphicElement {
+	@gmf.compartment(collapsible="true")
+	val GraphicElement[*] lstGraphicElement;
+}
+@gmf.node(label = "name",label.icon="false",color="191,201,202")
+class Button extends GraphicElement {
+	
+}
+@gmf.node(label.placement="none",label.icon="false",figure="svg",svg.uri="platform:/plugin/uimse-diagram.diagram/icons/imgUI.svg")
+class Image extends GraphicElement {
+	
+	
+}
+@gmf.node(label ="name", label.placement="external",label.icon="false")
+class CheckBox extends GraphicElement {
+	
+	
+}
+@gmf.node(label = "name",label.placement="external",label.icon="false")
+class Switch extends GraphicElement {
+	
+	
+}
+@gmf.node(label = "name",label.icon="false")
+class ComboBox extends GraphicElement {
+	
+	
+}
+@gmf.node(label = "name",border.color="255,255,255",label.icon="false")
+class Label extends GraphicElement {
+	
+	
+}
+@gmf.node(label = "name",label.icon="false",label.text="TextField")
+class TextField extends GraphicElement {
+	
+	
+}
+@gmf.node(label = "name",label.icon="false")
+class TableView extends GraphicElement {
+	@gmf.compartment(collapsible="false",layout = "list")
+	val TableColumn[*] lstColumns;	
+}
+@gmf.node(label = "name",label.icon="false")
+class TableColumn extends PropertiesElement {
+	attr String uniqueID;
+}
+
+
+
+class PropertiesElement {
+	attr String state;
+	attr String name;
+	attr String radius;
+	attr String positionX;
+	attr String positionY;
+	attr String width;
+	attr String height;
+	attr String stroke;
+	attr String opacity;
+	attr String background;
+}

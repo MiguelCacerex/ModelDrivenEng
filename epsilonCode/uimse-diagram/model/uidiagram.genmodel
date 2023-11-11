@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/uimse-diagram/src" modelPluginID="uimse-diagram"
+    modelName="Uidiagrampart" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>uidiagram.emf</foreignModel>
+  <genPackages prefix="Uidiagrampart" disposableProviderFactory="true" ecorePackage="uidiagram.ecore#/">
+    <genClasses ecoreClass="uidiagram.ecore#//ModelFactoryUIdiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//ModelFactoryUIdiagram/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//ModelFactoryUIdiagram/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uidiagram.ecore#//ModelFactoryUIdiagram/lstProjectBoard"/>
+    </genClasses>
+    <genClasses ecoreClass="uidiagram.ecore#//ProjectBoard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//ProjectBoard/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//ProjectBoard/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//ProjectBoard/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uidiagram.ecore#//ProjectBoard/lstFrames"/>
+    </genClasses>
+    <genClasses ecoreClass="uidiagram.ecore#//Frame">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//Frame/uniqueID"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uidiagram.ecore#//Frame/lstGraphicElement"/>
+    </genClasses>
+    <genClasses ecoreClass="uidiagram.ecore#//GraphicElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//GraphicElement/uniqueID"/>
+    </genClasses>
+    <genClasses ecoreClass="uidiagram.ecore#//Group">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uidiagram.ecore#//Group/lstGraphicElement"/>
+    </genClasses>
+    <genClasses ecoreClass="uidiagram.ecore#//Button"/>
+    <genClasses ecoreClass="uidiagram.ecore#//Image"/>
+    <genClasses ecoreClass="uidiagram.ecore#//CheckBox"/>
+    <genClasses ecoreClass="uidiagram.ecore#//Switch"/>
+    <genClasses ecoreClass="uidiagram.ecore#//ComboBox"/>
+    <genClasses ecoreClass="uidiagram.ecore#//Label"/>
+    <genClasses ecoreClass="uidiagram.ecore#//TextField"/>
+    <genClasses ecoreClass="uidiagram.ecore#//TableView">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uidiagram.ecore#//TableView/lstColumns"/>
+    </genClasses>
+    <genClasses ecoreClass="uidiagram.ecore#//TableColumn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//TableColumn/uniqueID"/>
+    </genClasses>
+    <genClasses ecoreClass="uidiagram.ecore#//PropertiesElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/radius"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/positionX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/positionY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/stroke"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/opacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uidiagram.ecore#//PropertiesElement/background"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
+  <gmfgraph:Canvas name="uidiagrampart">
+    <figures name="Default">
+      <descriptors name="FrameFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="FrameFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="FrameLabelFigure" text="Frame">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="FrameLstGraphicElementCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureFrameLabelFigure" figure="/0/@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+        <accessors accessor="getFrameLstGraphicElementCompartmentFigure" figure="/0/@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="GroupFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="GroupFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="GroupLabelFigure" text="Group">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="GroupLstGraphicElementCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureGroupLabelFigure" figure="/0/@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+        <accessors accessor="getGroupLstGraphicElementCompartmentFigure" figure="/0/@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="ButtonFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ButtonFigure">
+          <backgroundColor xsi:type="gmfgraph:RGBColor" red="191" green="201" blue="202"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ButtonLabelFigure" text="Button"/>
+        </actualFigure>
+        <accessors accessor="getFigureButtonLabelFigure" figure="/0/@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="ImageFigure">
+        <actualFigure xsi:type="gmfgraph:SVGFigure" name="ImageFigure" documentURI="platform:/plugin/uimse-diagram.diagram/icons/imgUI.svg">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+        </actualFigure>
+      </descriptors>
+      <descriptors name="CheckBoxFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CheckBoxFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+        </actualFigure>
+      </descriptors>
+      <descriptors name="CheckBoxLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="CheckBoxLabelFigure" text="CheckBox"/>
+      </descriptors>
+      <descriptors name="SwitchFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SwitchFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+        </actualFigure>
+      </descriptors>
+      <descriptors name="SwitchLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="SwitchLabelFigure" text="Switch"/>
+      </descriptors>
+      <descriptors name="ComboBoxFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ComboBoxFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ComboBoxLabelFigure" text="ComboBox"/>
+        </actualFigure>
+        <accessors accessor="getFigureComboBoxLabelFigure" figure="/0/@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="LabelFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LabelFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="LabelLabelFigure" text="Label"/>
+        </actualFigure>
+        <accessors accessor="getFigureLabelLabelFigure" figure="/0/@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="TextFieldFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="TextFieldFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="TextFieldLabelFigure" text="TextField"/>
+        </actualFigure>
+        <accessors accessor="getFigureTextFieldLabelFigure" figure="/0/@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="TableViewFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="TableViewFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="TableViewLabelFigure" text="TableView">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="TableViewLstColumnsCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureTableViewLabelFigure" figure="/0/@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+        <accessors accessor="getTableViewLstColumnsCompartmentFigure" figure="/0/@figures.0/@descriptors.11/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="TableColumnFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="TableColumnFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="TableColumnLabelFigure" text="TableColumn"/>
+        </actualFigure>
+        <accessors accessor="getFigureTableColumnLabelFigure" figure="/0/@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+      </descriptors>
+    </figures>
+    <nodes name="Frame" figure="FrameFigure"/>
+    <nodes name="Group" figure="GroupFigure"/>
+    <nodes name="Button" figure="ButtonFigure"/>
+    <nodes name="Image" figure="ImageFigure"/>
+    <nodes name="CheckBox" figure="CheckBoxFigure"/>
+    <nodes name="Switch" figure="SwitchFigure"/>
+    <nodes name="ComboBox" figure="ComboBoxFigure"/>
+    <nodes name="Label" figure="LabelFigure"/>
+    <nodes name="TextField" figure="TextFieldFigure"/>
+    <nodes name="TableView" figure="TableViewFigure"/>
+    <nodes name="TableColumn" figure="TableColumnFigure"/>
+    <compartments name="FrameLstGraphicElementCompartment" figure="FrameFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.0/@accessors.1"/>
+    <compartments name="GroupLstGraphicElementCompartment" figure="GroupFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.1/@accessors.1"/>
+    <compartments name="TableViewLstColumnsCompartment" figure="TableViewFigure" accessor="/0/@figures.0/@descriptors.11/@accessors.1"/>
+    <labels name="FrameLabel" figure="FrameFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.0/@accessors.0"/>
+    <labels name="GroupLabel" figure="GroupFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.1/@accessors.0"/>
+    <labels name="ButtonLabel" figure="ButtonFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.2/@accessors.0"/>
+    <labels name="CheckBoxLabel" figure="CheckBoxLabelFigure" elementIcon="false"/>
+    <labels name="SwitchLabel" figure="SwitchLabelFigure" elementIcon="false"/>
+    <labels name="ComboBoxLabel" figure="ComboBoxFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.8/@accessors.0"/>
+    <labels name="LabelLabel" figure="LabelFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.9/@accessors.0"/>
+    <labels name="TextFieldLabel" figure="TextFieldFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.10/@accessors.0"/>
+    <labels name="TableViewLabel" figure="TableViewFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.11/@accessors.0"/>
+    <labels name="TableColumnLabel" figure="TableColumnFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.12/@accessors.0"/>
+  </gmfgraph:Canvas>
+  <gmfgraph:Label name="ImageLabelFigure" text="Image"/>
+</xmi:XMI>

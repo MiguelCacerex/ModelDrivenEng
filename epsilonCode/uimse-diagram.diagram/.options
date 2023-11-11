@@ -1,0 +1,7 @@
+# Tracing options for the uimse-diagram.diagram plug-in
+
+# Common issues
+uimse-diagram.diagram/debug=false
+
+# Visual IDs
+uimse-diagram.diagram/debug/visualID=false

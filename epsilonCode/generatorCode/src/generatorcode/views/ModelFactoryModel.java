@@ -1,6 +1,7 @@
 package generatorcode.views;
 
 import java.io.File;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,6 +18,11 @@ import abstractPart.AssociationMSE;
 import abstractPart.AssociationsMSE;
 import abstractPart.HashCodeClassMSE;
 import abstractPart.ModelFactoryAbstract;
+import dblanguagepart.Column;
+import dblanguagepart.DblanguagepartFactory;
+import dblanguagepart.ModelFactoryRelationalModel;
+import dblanguagepart.Schema;
+import dblanguagepart.Table;
 import specificPart.AttributeMSE;
 import specificPart.ClassDiagramMSE;
 import specificPart.ClassMSE;
@@ -31,6 +37,7 @@ import specificPart.SpecificPartPackage;
 public class ModelFactoryModel {
 
 	// -------------------------------------------------------------------------- Singleton --------------------------------------------------------------------------
+	
 	// Clase estatica oculta. Tan solo se instanciara el singleton una vez
 	private static class SingletonHolder {
 		// El constructor de Singleton puede ser llamado desde aqui al ser protected
@@ -42,18 +49,24 @@ public class ModelFactoryModel {
 		return SingletonHolder.eINSTANCE;
 	}
 
+	//Creacion de las factories 
 	ModelFactorySpecific modelFactorySpecific = SpecificPartFactory.eINSTANCE.createModelFactorySpecific();
 	ModelFactoryAbstract modelFactoryAbstract = AbstractPartFactory.eINSTANCE.createModelFactoryAbstract();
+	ModelFactoryRelationalModel modelFactoryAbstract_MR = DblanguagepartFactory.eINSTANCE.createModelFactoryRelationalModel();
 
 	public ModelFactoryModel() {
 		modelFactorySpecific = loadSpecificPart();
 		modelFactoryAbstract = loadAbstractPart();
+		modelFactoryAbstract_MR = loadAbstractPart_MR();
 	}
 
-	//-----------------------------------------------------------------Load and Save ModelFactorys ----------------------------------------------------------------
 	
+	
+	
+	// -----------------------------------------------------------------Load and Save ModelFactorys ---------------------------------------------------------------
+
 	/**
-	 * Este metodo permite cargar el modelfactoryspecific
+	 * Este metodo permite cargar el modelfactoryspecific del diagrama de clases
 	 * @return El modelFactorySpecific cargada
 	 */
 	public ModelFactorySpecific loadSpecificPart() {
@@ -73,9 +86,31 @@ public class ModelFactoryModel {
 		}
 		return modelFactorySpecific;
 	}
-	
+
 	/**
-	 * Este metodo permite cargar el modelFactoryAbstract 
+	 * Este metodo permite cargar el modelFactoryAbstract del diagrama de clases
+	 * @return
+	 */
+	public ModelFactoryRelationalModel loadAbstractPart_MR() {
+		ModelFactoryRelationalModel modelFactoryAbstracta_MR = null;
+		DblanguagepartFactory whoownmePackage = DblanguagepartFactory.eINSTANCE;
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI
+				.createURI("platform:/resource/test/src/model/model.dblanguagepart");
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+		try {
+			resource.load(null);
+			modelFactoryAbstracta_MR = (ModelFactoryRelationalModel) resource.getContents().get(0);
+			System.out.println("loaded: " + modelFactoryAbstracta_MR);
+		} catch (java.io.IOException e) {
+			System.out.println("failed to read " + uri);
+			System.out.println(e);
+		}
+		return modelFactoryAbstracta_MR;
+	}
+
+	/**
+	 * Este metodo permite cargar el modelFactoryAbstract del diagrama de clases
 	 * @return
 	 */
 	public ModelFactoryAbstract loadAbstractPart() {
@@ -95,9 +130,9 @@ public class ModelFactoryModel {
 		}
 		return modelFactoryAbstracta;
 	}
-	
+
 	/**
-	 * Este metodo permite guardar el ModelFactorySpecific
+	 * Este metodo permite guardar el ModelFactorySpecific del diagrama de clases
 	 */
 	public void saveSpecificPart() {
 
@@ -117,7 +152,27 @@ public class ModelFactoryModel {
 	}
 
 	/**
-	 * Este metodo permite guardar el ModelFactoryAbstract
+	 * Este metodo permite guardar el ModelFactorySpecific del diagrama de clases
+	 */
+	public void saveSpecificPart_MR() {
+
+		// EXISTEN 2 FORMAS DE GUARDAR EL RECURSO
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI
+				.createURI("platform:/resource/test/src/model/model.dblanguagepart");
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+		resource.getContents().add(modelFactoryAbstract_MR);
+		try {
+			resource.save(java.util.Collections.EMPTY_MAP);
+		} catch (java.io.IOException e) {
+			// TO-DO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Este metodo permite guardar el ModelFactoryAbstract del diagrama de clases
 	 */
 	public void saveAbstractPart() {
 
@@ -135,9 +190,12 @@ public class ModelFactoryModel {
 			e.printStackTrace();
 		}
 	}
+
 	
-	//------------------------------------------------------ Generacion de rutas de la parte especifica -----------------------------------------------------------------
 	
+	
+	// -------------------------------- Generacion de rutas de la parte especifica del diagrama de clases -----------------------------
+
 	/**
 	 * Genera las rutas de cada uno de los paquetes y diagramas de la raiz del proyecto
 	 * @param lstPackages
@@ -176,7 +234,7 @@ public class ModelFactoryModel {
 	}
 
 	/**
-	 * Genera o actualiza las paths de los diagramas internos
+	 * Genera o actualiza las rutas de los diagramas internos
 	 * @param diagram
 	 */
 	public void genereatePathsDiagrams(ClassDiagramMSE diagram) {
@@ -199,7 +257,7 @@ public class ModelFactoryModel {
 	}
 
 	/**
-	 * Genera o actualiza las paths de las relaciones en los diagramas
+	 * Genera o actualiza las rutas de las relaciones en los diagramas
 	 * @param diagram
 	 */
 	private void generatePathRelations(ClassDiagramMSE diagram) {
@@ -220,7 +278,7 @@ public class ModelFactoryModel {
 	}
 
 	/**
-	 * Genera o actualiza las paths de las clases de un diagrama
+	 * Genera o actualiza las rutas de las clases de un diagrama
 	 * @param diagram
 	 */
 	private void generatePathClass(ClassDiagramMSE diagram) {
@@ -242,29 +300,33 @@ public class ModelFactoryModel {
 		}
 	}
 
-
-	//--------------------------------------------------------------- Tranformation Model to Model -------------------------------------------------------------------
 	
+	
+	
+	// ----------------------------------------- Tranformacion M2M de parte especifica a parte a abstracta -------------------------------------------
+
 	/**
-	 * Este metodo realiza la transformacion del modelo especifico a el modelo abstracto
+	 * Este metodo realiza la transformacion del modelo especifico a el modelo
+	 * abstracto
 	 */
 	public void transformationM2M() {
-		
+
 		loadAbstractPart();
 		saveSpecificPart();
 
+		//Genera las rutas de los paquetes, diagramas y realaciones
 		generatePathsFactorySpecific(modelFactorySpecific.getLstPackages(), modelFactorySpecific.getLstDiagrams());
 
-		//Creacion de la carpeta principal del proyecto
-		
+		// Creacion de la carpeta principal del proyecto
+
 		String nameProject = ingresarInput();
 
 		abstractPart.PackageMSE packageMain = AbstractPartFactory.eINSTANCE.createPackageMSE();
 		packageMain.setName(nameProject);
 		packageMain.setPath("/" + packageMain.getName());
 
-		//Recorrido de los paquetes de la raiz del proyecto
-		
+		// Recorrido de los paquetes de la raiz del proyecto
+
 		for (specificPart.PackageMSE packageSpc : modelFactorySpecific.getLstPackages()) {
 			abstractPart.PackageMSE newPackageAbs = AbstractPartFactory.eINSTANCE.createPackageMSE();
 			newPackageAbs.setPath(packageMain.getPath() + "/");
@@ -275,9 +337,9 @@ public class ModelFactoryModel {
 			generateProjectPacketsM2M(newPackageAbs, packageSpc);
 			packageMain.getLstPackages().add(newPackageAbs);
 		}
-		
-		//Recorrido de los diagamas de la raiz del proyecto
-		
+
+		// Recorrido de los diagamas de la raiz del proyecto
+
 		for (ClassDiagramMSE diagramSpc : modelFactorySpecific.getLstDiagrams()) {
 			abstractPart.ClassDiagramMSE newDiagramAbs = AbstractPartFactory.eINSTANCE.createClassDiagramMSE();
 			newDiagramAbs.setPath("/");
@@ -289,12 +351,14 @@ public class ModelFactoryModel {
 			packageMain.getLstDiagrams().add(newDiagramAbs);
 		}
 
+		//Se añade el paquete principal a el modelfactory de la parte abstracta
+		
 		modelFactoryAbstract.getLstPackages().add(packageMain);
 		saveAbstractPart();
 	}
 
 	/**
-	 * Este metodo permite la transformacion M2M de los paquetes
+	 * Este metodo permite la transformacion M2M de los paquetes y recorre los diagramas de los paquetes
 	 * @param newPackageAbs
 	 * @param packageSpc
 	 */
@@ -307,16 +371,16 @@ public class ModelFactoryModel {
 
 		if (!packageSpc.getLstDiagrams().isEmpty()) {
 			for (ClassDiagramMSE diagramSpc : packageSpc.getLstDiagrams()) {
-			
+
 				abstractPart.ClassDiagramMSE newDiagramAbs = AbstractPartFactory.eINSTANCE.createClassDiagramMSE();
-				
+
 				newDiagramAbs.setState(diagramSpc.getState());
 				newDiagramAbs.setName(diagramSpc.getName());
 				newDiagramAbs.setPath(newPackageAbs.getPath() + "/" + newDiagramAbs.getName());
 				newDiagramAbs.setLocation(diagramSpc.getLocation());
 				newDiagramAbs.setDocumentation(diagramSpc.getDocumentation());
 				generatePackageDiagramsM2M(diagramSpc, newPackageAbs, newDiagramAbs);
-			
+
 				newPackageAbs.getLstDiagrams().add(newDiagramAbs);
 
 				if (!diagramSpc.getLstRelations().isEmpty() || !diagramSpc.getLstInheritances().isEmpty()) {
@@ -328,15 +392,16 @@ public class ModelFactoryModel {
 	}
 
 	/**
-	 * Este metodo permite la transformacion M2M de los diagramas
+	 * Este metodo permite la transformacion M2M de los diagramas y recorre las clases del diagrama
 	 * @param diagramSpc
 	 * @param newPackageAbs
 	 * @param newDiagramAbs
 	 */
-	private void generatePackageDiagramsM2M(ClassDiagramMSE diagramSpc, abstractPart.PackageMSE newPackageAbs, abstractPart.ClassDiagramMSE newDiagramAbs) {
+	private void generatePackageDiagramsM2M(ClassDiagramMSE diagramSpc, abstractPart.PackageMSE newPackageAbs,
+			abstractPart.ClassDiagramMSE newDiagramAbs) {
 
-		//Creacion de las clases del diagrama
-		
+		// Creacion de las clases del diagrama
+
 		if (!diagramSpc.getLstClass().isEmpty()) {
 			generateClassesPacketsM2M(diagramSpc, newPackageAbs, newDiagramAbs);
 		}
@@ -358,7 +423,7 @@ public class ModelFactoryModel {
 	}
 
 	/**
-	 * Este metodo permite la transformacion M2M de las relaciones 
+	 * Este metodo permite la transformacion M2M de las relaciones para el diagrama de clases
 	 * @param diagramSpc
 	 * @param associationPackage
 	 */
@@ -367,14 +432,9 @@ public class ModelFactoryModel {
 		for (specificPart.RelationMSE relation : diagramSpc.getLstRelations()) {
 			if (relation instanceof specificPart.AgregationMSE) {
 				abstractPart.AgregationMSE agregation = AbstractPartFactory.eINSTANCE.createAgregationMSE();
-				agregation.setName("(" + relation.getRoleSource() + ":" + relation.getSource().getClass().getName()
-						+ ")(" + relation.getRoleTarget() + ":" + relation.getTarget().getClass().getName() + ")");
+				agregation.setName("(" + relation.getRoleSource() + ":" + relation.getSource().getClass().getName()+ ")(" + relation.getRoleTarget() + ":" + relation.getTarget().getClass().getName() + ")");
 				agregation.setType(relation.getType());
-				// agregation.setTarget(convertirClassAbsToSpc(relation.getTarget(),
-				// associationPackage.getPath()));
 				agregation.setState(relation.getState());
-				// agregation.setSource(convertirClassAbsToSpc(relation.getSource(),
-				// associationPackage.getPath()));
 				agregation.setRoleTarget(relation.getRoleTarget());
 				agregation.setRoleSource(relation.getRoleSource());
 				agregation.setPath(associationPackage.getPath() + "/" + agregation.getName());
@@ -388,15 +448,9 @@ public class ModelFactoryModel {
 			}
 			if (relation instanceof specificPart.ContainmentMSE) {
 				abstractPart.ContainmentMSE newRlContainment = AbstractPartFactory.eINSTANCE.createContainmentMSE();
-				newRlContainment
-						.setName("(" + relation.getRoleSource() + ":" + relation.getSource().getClass().getName() + ")("
-								+ relation.getRoleTarget() + ":" + relation.getTarget().getClass().getName() + ")");
+				newRlContainment.setName("(" + relation.getRoleSource() + ":" + relation.getSource().getClass().getName() + ")("+ relation.getRoleTarget() + ":" + relation.getTarget().getClass().getName() + ")");
 				newRlContainment.setType(relation.getType());
-				// newRlContainment.setTarget(convertirClassAbsToSpc(relation.getTarget(),
-				// associationPackage.getPath()));
 				newRlContainment.setState(relation.getState());
-				// newRlContainment.setSource(convertirClassAbsToSpc(relation.getSource(),
-				// associationPackage.getPath()));
 				newRlContainment.setRoleTarget(relation.getRoleTarget());
 				newRlContainment.setRoleSource(relation.getRoleSource());
 				newRlContainment.setPath(associationPackage.getPath() + "/" + newRlContainment.getName());
@@ -410,15 +464,9 @@ public class ModelFactoryModel {
 			}
 			if (relation instanceof specificPart.AssociationMSE) {
 				abstractPart.AssociationMSE newRlAssociation = AbstractPartFactory.eINSTANCE.createAssociationMSE();
-				newRlAssociation
-						.setName("(" + relation.getRoleSource() + ":" + relation.getSource().getClass().getName() + ")("
-								+ relation.getRoleTarget() + ":" + relation.getTarget().getClass().getName() + ")");
+				newRlAssociation.setName("(" + relation.getRoleSource() + ":" + relation.getSource().getClass().getName() + ")("+ relation.getRoleTarget() + ":" + relation.getTarget().getClass().getName() + ")");
 				newRlAssociation.setType(relation.getType());
-				// newRlAssociation.setTarget(convertirClassAbsToSpc(relation.getTarget(),
-				// associationPackage.getPath()));
 				newRlAssociation.setState(relation.getState());
-				// newRlAssociation.setSource(convertirClassAbsToSpc(relation.getSource(),
-				// associationPackage.getPath()));
 				newRlAssociation.setRoleTarget(relation.getRoleTarget());
 				newRlAssociation.setRoleSource(relation.getRoleSource());
 				newRlAssociation.setPath(associationPackage.getPath() + "/" + newRlAssociation.getName());
@@ -431,17 +479,10 @@ public class ModelFactoryModel {
 				associationPackage.getLstAssociations().add(newRlAssociation);
 			}
 			if (relation instanceof specificPart.ImplementationMSE) {
-				abstractPart.ImplementationMSE newRlImplementation = AbstractPartFactory.eINSTANCE
-						.createImplementationMSE();
-				newRlImplementation
-						.setName("(" + relation.getRoleSource() + ":" + relation.getSource().getClass().getName() + ")("
-								+ relation.getRoleTarget() + ":" + relation.getTarget().getClass().getName() + ")");
+				abstractPart.ImplementationMSE newRlImplementation = AbstractPartFactory.eINSTANCE.createImplementationMSE();
+				newRlImplementation.setName("(" + relation.getRoleSource() + ":" + relation.getSource().getClass().getName() + ")("+ relation.getRoleTarget() + ":" + relation.getTarget().getClass().getName() + ")");
 				newRlImplementation.setType(relation.getType());
-				// newRlImplementation.setTarget(convertirClassAbsToSpc(relation.getTarget(),
-				// associationPackage.getPath()));
 				newRlImplementation.setState(relation.getState());
-				// newRlImplementation.setSource(convertirClassAbsToSpc(relation.getSource(),
-				// associationPackage.getPath()));
 				newRlImplementation.setRoleTarget(relation.getRoleTarget());
 				newRlImplementation.setRoleSource(relation.getRoleSource());
 				newRlImplementation.setPath(associationPackage.getPath() + "/" + newRlImplementation.getName());
@@ -457,14 +498,9 @@ public class ModelFactoryModel {
 		}
 		for (specificPart.InheritanceMSE relation : diagramSpc.getLstInheritances()) {
 			abstractPart.InheritanceMSE newRlInheritanceMSE = AbstractPartFactory.eINSTANCE.createInheritanceMSE();
-			newRlInheritanceMSE.setName("Inheritance:(" + relation.getChild().getClass().getName() + ":"
-					+ relation.getParent().getClass().getName() + ")");
+			newRlInheritanceMSE.setName("Inheritance:(" + relation.getChild().getClass().getName() + ":"+ relation.getParent().getClass().getName() + ")");
 			newRlInheritanceMSE.setType(relation.getType());
-			// newRlInheritanceMSE.setChild(convertirClassAbsToSpc(relation.getChild(),
-			// associationPackage.getPath()));
 			newRlInheritanceMSE.setState(relation.getState());
-			// newRlInheritanceMSE.setParent(convertirClassAbsToSpc(relation.getParent(),
-			// associationPackage.getPath()));
 			newRlInheritanceMSE.setPath(associationPackage.getPath() + "/" + newRlInheritanceMSE.getName());
 			newRlInheritanceMSE.setLocation("location");
 			newRlInheritanceMSE.setDocumentation(relation.getDocumentation());
@@ -472,28 +508,9 @@ public class ModelFactoryModel {
 		}
 	}
 
-	/**
-	 * 
-	 * @param classAux
-	 * @param path
-	 * @return
-	 */
-	private abstractPart.ClassMSE convertirClassAbsToSpc(ClassMSE classAux, String path) {
-		abstractPart.ClassMSE sourceAbs = AbstractPartFactory.eINSTANCE.createClassMSE();
-		sourceAbs.setName(classAux.getName());
-		sourceAbs.setAbsrtact(classAux.isAbsrtact());
-		sourceAbs.setDocumentation(classAux.getDocumentation());
-		sourceAbs.setLocation(classAux.getLocation());
-		sourceAbs.setModifier(classAux.getModifier());
-		sourceAbs.setPath(path);
-		sourceAbs.setLocation("location");
-		sourceAbs.setState(classAux.getState());
-		sourceAbs.setType(classAux.getType());
-		return sourceAbs;
-	}
 
 	/**
-	 * Este metodo permite la transformacion M2M de las clases
+	 * Este metodo permite la transformacion M2M de las clases para el diagrama de clases
 	 * @param diagramSpc
 	 * @param newPackageAbs
 	 * @param newDiagramAbs
@@ -598,11 +615,11 @@ public class ModelFactoryModel {
 								newAttributeRelation.setPath(newClass.getPath() + "/" + newAttributeRelation.getName());
 								newAttributeRelation.setInitialValue("null");
 								System.out.println(relation.getParent().getName());
-								newAttributeRelation.setTypeParent(relation.getParent().getName()+"");
+								newAttributeRelation.setTypeParent(relation.getParent().getName() + "");
 								newAttributeRelation.setState("active");
 								newAttributeRelation.setLocation("location");
 								newAttributeRelation.setType(relation.getParent().getClass().getName());
-								
+
 								newAttributeRelation
 										.setDocumentation("Este atributo representa la herencia entre dos clases");
 								newClass.getLstAttributesRelations().add(newAttributeRelation);
@@ -619,7 +636,7 @@ public class ModelFactoryModel {
 	}
 
 	/**
-	 * Este metodo permite crear un identificador unico para una clase del modelo
+	 * Este metodo permite crear un identificador unico para cada clase del modelo
 	 * @param path
 	 * @return el codigo unico de la clase
 	 */
@@ -635,10 +652,9 @@ public class ModelFactoryModel {
 		return newHashCode;
 	}
 
-	// Metodos para obtener las herencias
 
 	/**
-	 * Este metodo permite obtener las herencias de una clase
+	 * Este metodo permite obtener las herencias que tiene una clase
 	 * @param classAux
 	 * @return
 	 */
@@ -672,13 +688,14 @@ public class ModelFactoryModel {
 	}
 
 	/**
-	 * Este metodo permite recorrer los diagramas para obtener las herencias de un clase
+	 * Este metodo permite recorrer los diagramas para obtener las herencias de un clase 
 	 * @param diagram
 	 * @param listInheritanceClass
 	 * @param classAux
 	 */
-	private void obtenerInheritanceDiagram(ClassDiagramMSE diagram, EList<InheritanceMSE> listInheritanceClass, ClassMSE classAux) {
-		
+	private void obtenerInheritanceDiagram(ClassDiagramMSE diagram, EList<InheritanceMSE> listInheritanceClass,
+			ClassMSE classAux) {
+
 		if (!diagram.getLstRelations().isEmpty()) {
 			for (InheritanceMSE relation : diagram.getLstInheritances()) {
 				if (relation.getParent().equals(classAux) == true || relation.getChild().equals(classAux)) {
@@ -692,8 +709,6 @@ public class ModelFactoryModel {
 			}
 		}
 	}
-
-	// Metodos para obtener las relaciones
 
 	/**
 	 * Este metodo permite obtener las relaciones de una clase
@@ -751,7 +766,7 @@ public class ModelFactoryModel {
 	}
 
 	/**
-	 * Este metodo permite  abrir un cuadro de dialogo para ingresar el nomber del proyecto
+	 * Este metodo permite abrir un cuadro de dialogo para ingresar el nomber del proyecto
 	 * @return el nombre del proyecto
 	 */
 	public String ingresarInput() {
@@ -766,123 +781,487 @@ public class ModelFactoryModel {
 		}
 	}
 
-	//-------------------------------------------------------------- Tranformacion Model to Text  -----------------------------------------------------------------------
 	
+	
+	
+	
+	// -------------------------------- Tranformacion M2T de parte abstracta a archivos de texto -----------------------------------------------
+
+	/**
+	 * Este metodo permite tranformar la parte abstacta del diagrama de clases a archivos de python
+	 */
 	public void transformationM2T() {
-		
+
+		//Ruta donde se van a crear los archivos
 		String path = "C:\\Users\\Universidad\\Documents\\Universidad\\IngenierioPorModelos\\data";
-		
+
+		//Recorre los paquetes de la parte abstracta del diagrama de clases
 		for (abstractPart.PackageMSE packageRoot : modelFactoryAbstract.getLstPackages()) {
-			
+
 			generatePackageM2T(path, packageRoot);
 		}
-		
+
 	}
-	
+
+	/**
+	 * Este metodo permite crear las carpetas por cada paquete del diagrama de clases
+	 * @param path
+	 * @param packageAux
+	 */
 	private void generatePackageM2T(String path, abstractPart.PackageMSE packageAux) {
 
 		createFolderWindows(path, packageAux.getName());
 
-		String pathAux = path + "\\" +packageAux.getName();
-		
-		if(!packageAux.getLstClass().isEmpty()) {
+		String pathAux = path + "\\" + packageAux.getName();
+
+		if (!packageAux.getLstClass().isEmpty()) {
 			for (abstractPart.ClassMSE classAux : packageAux.getLstClass()) {
-				
+
 				String content = createStructClassPY(classAux);
-				
+
 				createFileWindows(pathAux, classAux.getName(), content);
 			}
 		}
-		
-		
+
 		if (!packageAux.getLstPackages().isEmpty()) {
 			for (abstractPart.PackageMSE packageNow : packageAux.getLstPackages()) {
-			
-				generatePackageM2T(pathAux,packageNow);
+
+				generatePackageM2T(pathAux, packageNow);
 			}
 		}
 	}
-	
+
+	/**
+	 * Este metodo permite crear la estructura de un clase en python 
+	 * @param classAux
+	 * @return
+	 */
 	private String createStructClassPY(abstractPart.ClassMSE classAux) {
-		
+
 		String content = "";
-		String header = "class "+classAux.getName()+":\n";
+		String header = "class " + classAux.getName() + ":\n";
 		for (abstractPart.AttributeRelationMSE attAux : classAux.getLstAttributesRelations()) {
-			if(attAux.getName().contains("Inheritance")) {
-				header = "class "+classAux.getName()+"("+attAux.getTypeParent()+"):\n";
+			if (attAux.getName().contains("Inheritance")) {
+				header = "class " + classAux.getName() + "(" + attAux.getTypeParent() + "):\n";
 			}
 		}
 		String constructor = "\tdef __init__(self";
 		String methods = "";
-		
+
 		for (abstractPart.AttributeMSE attAux : classAux.getLstAttributes()) {
-			constructor+=","+attAux.getName();
+			constructor += "," + attAux.getName();
 		}
 		for (abstractPart.AttributeRelationMSE attAux : classAux.getLstAttributesRelations()) {
-			if(!attAux.getName().contains("Inheritance")) {
-				constructor+=","+attAux.getName();				
+			if (!attAux.getName().contains("Inheritance")) {
+				constructor += "," + attAux.getName();
 			}
 		}
-		constructor+="):\n";
-		
+		constructor += "):\n";
+
 		for (abstractPart.AttributeMSE attAux : classAux.getLstAttributes()) {
-			constructor+="\t\tself."+attAux.getName()+" = "+attAux.getName()+"\n";
+			constructor += "\t\tself." + attAux.getName() + " = " + attAux.getName() + "\n";
 		}
 		for (abstractPart.AttributeRelationMSE attAux : classAux.getLstAttributesRelations()) {
-			if(!attAux.getName().contains("Inheritance")) {
-				constructor+="\t\tself."+attAux.getName()+" = "+attAux.getName()+"\n";
+			if (!attAux.getName().contains("Inheritance")) {
+				constructor += "\t\tself." + attAux.getName() + " = " + attAux.getName() + "\n";
 			}
 		}
-		
-		for (abstractPart.MethodMSE method: classAux.getLstMethods()) {
-			methods+="\n\tdef "+method.getName()+"(self):\n\t\tpass";
+
+		for (abstractPart.MethodMSE method : classAux.getLstMethods()) {
+			methods += "\n\tdef " + method.getName() + "(self):\n\t\tpass";
 		}
-		
-		content = header+constructor+methods;
-		
+
+		content = header + constructor + methods;
+
 		return content;
 	}
 
-	private void createFolderWindows (String path, String nameFolder) {
+	/**
+	 * Este metodo permite crear una carpeta en el sistema de windows
+	 * @param path
+	 * @param nameFolder
+	 */
+	private void createFolderWindows(String path, String nameFolder) {
 
-        // Crea un objeto File que representa la carpeta
-        File newFolder = new File(path, nameFolder);
+		// Crea un objeto File que representa la carpeta
+		File newFolder = new File(path, nameFolder);
 
-        // Verifica si la carpeta ya existe
-        if (!newFolder.exists()) {
-            // Intenta crear la carpeta
-            boolean creado = newFolder.mkdirs();
-            if (creado) {
-                System.out.println("La carpeta se creó exitosamente.");
-            } else {
-                System.out.println("No se pudo crear la carpeta.");
-            }
-        } else {
-            System.out.println("La carpeta ya existe.");
-        }
-	}
-	
-	private void createFileWindows (String path, String nameFile, String content) {
-
-        // Combinar la ruta y el nombre del archivo
-        String absolutePath = path + "\\" + nameFile+".py";
-
-        try {
-            // Crear un objeto FileWriter para escribir en el archivo
-            FileWriter fileWriter = new FileWriter(absolutePath);
-
-            // Crear un objeto PrintWriter para escribir en el archivo de manera más conveniente
-            PrintWriter printWriter = new PrintWriter(fileWriter);
-
-            // Agregar contenido al archivo (por ejemplo, un programa Python simple)
-            printWriter.println(content);
-            printWriter.close();
-
-            System.out.println("El archivo se creó exitosamente.");
-        } catch (IOException e) {
-            System.out.println("Error al crear el archivo: " + e.getMessage());
-        }
+		// Verifica si la carpeta ya existe
+		if (!newFolder.exists()) {
+			// Intenta crear la carpeta
+			boolean creado = newFolder.mkdirs();
+			if (creado) {
+				System.out.println("La carpeta se creó exitosamente.");
+			} else {
+				System.out.println("No se pudo crear la carpeta.");
+			}
+		} else {
+			System.out.println("La carpeta ya existe.");
+		}
 	}
 
+	/**
+	 * Este metodo permite crear un archivo en el sistema de windows
+	 * @param path
+	 * @param nameFile
+	 * @param content
+	 */
+	private void createFileWindows(String path, String nameFile, String content) {
+
+		// Combinar la ruta y el nombre del archivo
+		String absolutePath = path + "\\" + nameFile + ".py";
+
+		try {
+			// Crear un objeto FileWriter para escribir en el archivo
+			FileWriter fileWriter = new FileWriter(absolutePath);
+
+			// Crear un objeto PrintWriter para escribir en el archivo de manera más
+			// conveniente
+			PrintWriter printWriter = new PrintWriter(fileWriter);
+
+			// Agregar contenido al archivo (por ejemplo, un programa Python simple)
+			printWriter.println(content);
+			printWriter.close();
+
+			System.out.println("El archivo se creó exitosamente.");
+		} catch (IOException e) {
+			System.out.println("Error al crear el archivo: " + e.getMessage());
+		}
+	}
+
 	
+	
+	
+	// -------------Tranformacion M2M de la parte especifica del diagrama de clases a la parte abstracta del modelo relacional ---------------------
+
+	/**
+	 * Este metodo permite realizar la tranformacion al  modelo relacional
+	 */
+	public void transformationM2M_MR() {
+
+		loadAbstractPart_MR();
+		saveSpecificPart_MR();
+
+		// Recorrido de los paquetes de la raiz del proyecto
+
+		for (specificPart.PackageMSE packageSpc : modelFactorySpecific.getLstPackages()) {
+			dblanguagepart.Schema newSchema = DblanguagepartFactory.eINSTANCE.createSchema();
+			newSchema.setNameSchema(packageSpc.getName());
+			recorrerProjectPacketsM2M_DB(packageSpc, newSchema, modelFactoryAbstract_MR);
+
+			modelFactoryAbstract_MR.getLstSchemas().add(newSchema);
+		}
+
+		saveAbstractPart();
+		loadAbstractPart_MR();
+	}
+
+	/**
+	 * Este metodo recorre los paquetes del diagrama de clases para la transformacion al modelo relacional
+	 * @param packageSpc
+	 * @param newSchema
+	 * @param modelFactoryAbstract_MR2
+	 */
+	private void recorrerProjectPacketsM2M_DB(PackageMSE packageSpc, Schema newSchema,
+			ModelFactoryRelationalModel modelFactoryAbstract_MR2) {
+
+		if (!packageSpc.getLstDiagrams().isEmpty()) {
+			for (ClassDiagramMSE diagramSpc : packageSpc.getLstDiagrams()) {
+
+				recorrerPackageDiagramsM2M_DB(diagramSpc, newSchema, modelFactoryAbstract_MR2);
+
+				if (!diagramSpc.getLstRelations().isEmpty() || !diagramSpc.getLstInheritances().isEmpty()) {
+					generateRelationshipsM2M_DB(diagramSpc, newSchema);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Este metodo recorre los diagramas de los paquetes
+	 * @param diagramSpc
+	 * @param newSchema
+	 * @param modelFactoryAbstract_MR2
+	 */
+	private void recorrerPackageDiagramsM2M_DB(ClassDiagramMSE diagramSpc, Schema newSchema,
+			ModelFactoryRelationalModel modelFactoryAbstract_MR2) {
+
+		// Creacion de las clases del diagrama
+
+		if (!diagramSpc.getLstClass().isEmpty()) {
+			generateTables_MR(diagramSpc, newSchema);
+		}
+
+		if (!diagramSpc.getLstPackages().isEmpty()) {
+			for (PackageMSE packageAux : diagramSpc.getLstPackages()) {
+
+				dblanguagepart.Schema newSchemaAux = DblanguagepartFactory.eINSTANCE.createSchema();
+				newSchema.setNameSchema(packageAux.getName());
+				recorrerProjectPacketsM2M_DB(packageAux, newSchemaAux, modelFactoryAbstract_MR2);
+				modelFactoryAbstract_MR2.getLstSchemas().add(newSchemaAux);
+			}
+		}
+	}
+
+	/**
+	 * Este metodo permite generar una tabla del modelo realcional por cada clase del diagrama de clases
+	 * @param diagramSpc
+	 * @param newSchema
+	 */
+	private void generateTables_MR(ClassDiagramMSE diagramSpc, Schema newSchema) {
+
+		for (ClassMSE classAux : diagramSpc.getLstClass()) {
+
+			dblanguagepart.Table newTable = DblanguagepartFactory.eINSTANCE.createTable();
+			newTable.setNameTable(classAux.getName());
+
+			dblanguagepart.Column newColumnPrimaryKey = DblanguagepartFactory.eINSTANCE.createColumn();
+			newColumnPrimaryKey.setDataType("NUMERIC");
+			newColumnPrimaryKey.setIsMandatory(true);
+			newColumnPrimaryKey.setName("codigo" + classAux.getName());
+			newColumnPrimaryKey.setSize(5);
+
+			dblanguagepart.PrimaryKeyConstraint primaryKey = DblanguagepartFactory.eINSTANCE
+					.createPrimaryKeyConstraint();
+
+			primaryKey.setNameConstraint(newColumnPrimaryKey.getName() + "_PK");
+			primaryKey.getColumnConstraint().add(newColumnPrimaryKey);
+			newTable.setPrimaryKeyConstrains(primaryKey);
+			newTable.getLstColumns().add(newColumnPrimaryKey);
+
+			if (!classAux.getLstAttributes().isEmpty()) {
+				for (AttributeMSE attributeAux : classAux.getLstAttributes()) {
+					dblanguagepart.Column newColumnTable = DblanguagepartFactory.eINSTANCE.createColumn();
+
+					if (attributeAux.getType().equals("String")) {
+						newColumnTable.setDataType("VARCHAR");
+						newColumnTable.setIsMandatory(true);
+						newColumnTable.setName(attributeAux.getName());
+						newColumnTable.setSize(20);
+					} else {
+						newColumnTable.setDataType("NUMERIC");
+						newColumnTable.setIsMandatory(true);
+						newColumnTable.setName(attributeAux.getName());
+						newColumnTable.setSize(5);
+					}
+
+					newTable.getLstColumns().add(newColumnTable);
+				}
+			}
+			newSchema.getLstTable().add(newTable);
+		}
+	}
+
+	/**
+	 * Este metodo transforma las herencias y las relaciones del diagrama de clases al modelo relacional
+	 * @param diagramSpc
+	 * @param schema
+	 */
+	private void generateRelationshipsM2M_DB(ClassDiagramMSE diagramSpc, Schema schema) {
+
+		for (InheritanceMSE herencia : diagramSpc.getLstInheritances()) {
+			Table tableChild = null;
+			Table tableParent = null;
+			for (Table table : schema.getLstTable()) {
+				if (table.getNameTable().equals(herencia.getChild().getName())) {
+					tableChild = table;
+				}
+				if (table.getNameTable().equals(herencia.getParent().getName())) {
+					tableParent = table;
+				}
+			}
+			for (Column columAux : tableParent.getLstColumns()) {
+				if (!columAux.getName().equals("codigo" + tableParent.getNameTable())) {
+					dblanguagepart.Column newColumn = DblanguagepartFactory.eINSTANCE.createColumn();
+
+					newColumn.setDataType(columAux.getDataType());
+					newColumn.setIsDesuso(columAux.isIsDesuso());
+					newColumn.setIsMandatory(columAux.isIsMandatory());
+					newColumn.setName(columAux.getName());
+					newColumn.setSize(columAux.getSize());
+
+					tableChild.getLstColumns().add(newColumn);
+				}
+			}
+		}
+
+		for (RelationMSE relation : diagramSpc.getLstRelations()) {
+			createRealtionMaM(relation, schema);
+			createRelationUaM(relation, schema);
+			createRelationUaU(relation, schema);
+		}
+	}
+
+	/**
+	 * Este metodo permite transformar las relaciones uno a uno al modelo relacional
+	 * @param relation
+	 * @param schema
+	 */
+	private void createRelationUaU(RelationMSE relation, Schema schema) {
+		if (relation.getMultiplicitySource().equals("1")) {
+			if (relation.getMultiplicityTarget().equals("1")) {
+
+				Table tablaSource = null;
+				Table tablaTarget = null;
+
+				for (Table tablaAux : schema.getLstTable()) {
+					if (tablaAux.getNameTable().equals(relation.getSource().getName())) {
+						tablaSource = tablaAux;
+					}
+					if (tablaAux.getNameTable().equals(relation.getTarget().getName())) {
+						tablaTarget = tablaAux;
+					}
+				}
+
+				dblanguagepart.Column column = DblanguagepartFactory.eINSTANCE.createColumn();
+
+				column.setDataType(tablaTarget.getLstColumns().get(0).getDataType());
+				column.setIsMandatory(true);
+				column.setName("codigo_" + tablaTarget.getNameTable());
+				column.setSize(tablaTarget.getLstColumns().get(0).getSize());
+
+				dblanguagepart.ForeignConstraint fk_column1 = DblanguagepartFactory.eINSTANCE.createForeignConstraint();
+
+				fk_column1.setNameConstraint(tablaSource.getNameTable() + "_" + tablaTarget.getNameTable() + "_FK");
+				fk_column1.setSourceTable(tablaTarget);
+				fk_column1.setSourceColumn(tablaTarget.getLstColumns().get(0));
+				fk_column1.setTargetColumnName(column.getName());
+
+				tablaSource.getLstColumns().add(column);
+				tablaSource.getLstForeignConstraint().add(fk_column1);
+
+
+				dblanguagepart.IndexConstraint idx_unique = DblanguagepartFactory.eINSTANCE.createIndexConstraint();
+
+				idx_unique.setIsDesuso(false);
+				idx_unique.setIsGenerate(true);
+				idx_unique.setIsRealizable(true);
+				idx_unique.setIsUnique(true);
+				idx_unique.setNameIndex(tablaTarget.getLstColumns().get(0).getName() + "_IDX");
+				idx_unique.getColumnIndex().add(column);
+		
+
+				tablaSource.getLstIndexConstrains().add(idx_unique);
+			}
+		}
+
+	}
+
+	/**
+	 * Este metodo permite transformar las relaciones uno a muchos al modelo relacional
+	 * @param relation
+	 * @param schema
+	 */
+	private void createRelationUaM(RelationMSE relation, Schema schema) {
+		if (relation.getMultiplicitySource().equals("*")) {
+			if (relation.getMultiplicityTarget().equals("1")) {
+
+				Table tablaSource = null;
+				Table tablaTarget = null;
+
+				for (Table tablaAux : schema.getLstTable()) {
+					if (tablaAux.getNameTable().equals(relation.getSource().getName())) {
+						tablaSource = tablaAux;
+					}
+					if (tablaAux.getNameTable().equals(relation.getTarget().getName())) {
+						tablaTarget = tablaAux;
+					}
+				}
+
+				dblanguagepart.Column column = DblanguagepartFactory.eINSTANCE.createColumn();
+
+				column.setDataType(tablaTarget.getLstColumns().get(0).getDataType());
+				column.setIsMandatory(true);
+				column.setName("codigo_" + tablaTarget.getNameTable());
+				column.setSize(tablaTarget.getLstColumns().get(0).getSize());
+
+				dblanguagepart.ForeignConstraint fk_column1 = DblanguagepartFactory.eINSTANCE.createForeignConstraint();
+
+				fk_column1.setNameConstraint(tablaSource.getNameTable() + "_" + tablaTarget.getNameTable() + "_FK");
+				fk_column1.setSourceTable(tablaTarget);
+				fk_column1.setSourceColumn(tablaTarget.getLstColumns().get(0));
+				fk_column1.setTargetColumnName(column.getName());
+
+				tablaSource.getLstColumns().add(column);
+				tablaSource.getLstForeignConstraint().add(fk_column1);
+			}
+		}
+
+	}
+
+	/**
+	 * Este metodo permite transformar las relaciones muchos a muchos al modelo relacional
+	 * @param relation
+	 * @param schema
+	 */
+	private void createRealtionMaM(RelationMSE relation, Schema schema) {
+		if (relation.getMultiplicitySource().equals("*")) {
+			if (relation.getMultiplicityTarget().equals("*")) {
+
+				Table tablaSource1 = null;
+				Table tablaSource2 = null;
+
+				for (Table tablaAux : schema.getLstTable()) {
+					if (tablaAux.getNameTable().equals(relation.getSource().getName())) {
+						tablaSource1 = tablaAux;
+					}
+					if (tablaAux.getNameTable().equals(relation.getTarget().getName())) {
+						tablaSource2 = tablaAux;
+					}
+				}
+
+				dblanguagepart.Table newTable = DblanguagepartFactory.eINSTANCE.createTable();
+				newTable.setNameTable(tablaSource1.getNameTable() + "_" + tablaSource2.getNameTable());
+
+				dblanguagepart.Column newColumnPrimaryKey = DblanguagepartFactory.eINSTANCE.createColumn();
+				newColumnPrimaryKey.setDataType("NUMERIC");
+				newColumnPrimaryKey.setIsMandatory(true);
+				newColumnPrimaryKey.setName("codigo" + newTable.getNameTable());
+				newColumnPrimaryKey.setSize(5);
+
+				dblanguagepart.PrimaryKeyConstraint primaryKey = DblanguagepartFactory.eINSTANCE
+						.createPrimaryKeyConstraint();
+
+				primaryKey.setNameConstraint(newColumnPrimaryKey.getName() + "_PK");
+				primaryKey.getColumnConstraint().add(newColumnPrimaryKey);
+				newTable.setPrimaryKeyConstrains(primaryKey);
+				newTable.getLstColumns().add(newColumnPrimaryKey);
+
+				dblanguagepart.Column column1 = DblanguagepartFactory.eINSTANCE.createColumn();
+				dblanguagepart.Column column2 = DblanguagepartFactory.eINSTANCE.createColumn();
+
+				column1.setDataType("NUMERIC");
+				column1.setIsMandatory(true);
+				column1.setName("codigo_" + tablaSource1.getNameTable());
+				column1.setSize(5);
+
+				column2.setDataType("NUMERIC");
+				column2.setIsMandatory(true);
+				column2.setName("codigo_" + tablaSource2.getNameTable());
+				column2.setSize(5);
+
+				dblanguagepart.ForeignConstraint fk_column1 = DblanguagepartFactory.eINSTANCE.createForeignConstraint();
+				dblanguagepart.ForeignConstraint fk_column2 = DblanguagepartFactory.eINSTANCE.createForeignConstraint();
+
+				fk_column1.setNameConstraint(newTable.getNameTable() + "_" + tablaSource1.getNameTable() + "_FK");
+				fk_column1.setSourceTable(tablaSource1);
+				fk_column1.setSourceColumn(tablaSource1.getLstColumns().get(0));
+				fk_column1.setTargetColumnName(column1.getName());
+
+				fk_column2.setNameConstraint(newTable.getNameTable() + "_" + tablaSource2.getNameTable() + "_FK");
+				fk_column2.setSourceTable(tablaSource2);
+				fk_column2.setSourceColumn(tablaSource2.getLstColumns().get(0));
+				fk_column2.setTargetColumnName(column2.getName());
+
+				newTable.getLstColumns().add(column1);
+				newTable.getLstColumns().add(column2);
+				newTable.getLstForeignConstraint().add(fk_column1);
+				newTable.getLstForeignConstraint().add(fk_column2);
+
+				schema.getLstTable().add(newTable);
+			}
+		}
+
+	}
+
 }

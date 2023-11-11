@@ -64,7 +64,7 @@ public class Generator extends ViewPart {
 			}
 		});
 		btnNewButton.setBounds(149, 43, 266, 64);
-		btnNewButton.setText("Transformation M2M");
+		btnNewButton.setText("Transformation-DC M2M");
 		
 		Button btnTransformationMt = new Button(grpGeneratorCode, SWT.NONE);
 		btnTransformationMt.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.BOLD));
@@ -75,9 +75,22 @@ public class Generator extends ViewPart {
 				mfm.transformationM2T();
 			}
 		});
-		btnTransformationMt.setText("Transformation M2T");
+		btnTransformationMt.setText("Transformation-DC M2T");
 		btnTransformationMt.setForeground(SWTResourceManager.getColor(SWT.COLOR_LINK_FOREGROUND));
 		btnTransformationMt.setBounds(149, 144, 266, 64);
+		
+		Button btnTransformationdbMm = new Button(grpGeneratorCode, SWT.NONE);
+		btnTransformationdbMm.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				ModelFactoryModel mfm = ModelFactoryModel.getInstance();
+				mfm.transformationM2M_MR();
+			}
+		});
+		btnTransformationdbMm.setText("Transformation-DB M2M");
+		btnTransformationdbMm.setForeground(SWTResourceManager.getColor(SWT.COLOR_LINK_FOREGROUND));
+		btnTransformationdbMm.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.BOLD));
+		btnTransformationdbMm.setBounds(149, 274, 266, 64);
 	
 		
 	}

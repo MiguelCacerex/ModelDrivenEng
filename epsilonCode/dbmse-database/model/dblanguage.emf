@@ -1,0 +1,68 @@
+@namespace(uri="http://dblanguage", prefix="dblanguagepart")
+@gmf
+package dblanguagepart;
+
+class ModelFactoryRelationalModel {
+	attr String nameFactory;
+	val Schema[*] lstSchemas;		
+}
+
+class Schema {
+	attr String nameSchema;
+	val Table[*] lstTable;		
+}
+
+
+class Table {
+	attr String nameTable;
+	val Column[*] lstColumns;		
+	val PrimaryKeyConstraint[1] primaryKeyConstrains;
+	val UniqueConstraint[*] lstUniqueConstrains;
+	val IndexConstraint[*] lstIndexConstrains;
+	val ForeignConstraint[*] lstForeignConstraint;
+	val Trigger[*] lstTriggers;
+}
+
+class ForeignConstraint	 {
+	attr String nameConstraint;
+	ref Table sourceTable;
+	ref Column sourceColumn;
+	attr String targetColumnName;
+}
+
+class Column {
+	attr String  name;
+	attr String  dataType;
+	attr int     size;
+	attr boolean isMandatory;
+	attr boolean isDesuso;
+}
+
+class PrimaryKeyConstraint {
+	attr String type = "PrimaryKey";
+	attr String nameConstraint;
+	ref  Column[*] columnConstraint;
+}
+
+class UniqueConstraint {
+	attr String type = "Unique";
+	attr String nameConstraint;
+	ref  Column[*] columnConstraint;
+}
+
+
+class IndexConstraint {
+	attr String nameIndex;
+	attr boolean isUnique;
+	attr boolean isGenerate;
+	attr boolean isSpecial;
+	attr boolean isDesuso;
+	attr boolean isRealizable;
+	ref Column[*] columnIndex;
+}
+
+class Trigger {
+	attr String nameTrigger;
+	ref Column[*] columns;
+}
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dblanguage -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="dblanguagepart.presentation.DblanguagepartModelWizardID"
+            name="%_UI_DblanguagepartModelWizard_label"
+            class="dblanguagepart.presentation.DblanguagepartModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DblanguagepartModelFile.gif">
+         <description>%_UI_DblanguagepartModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dblanguage -->
+      <editor
+            id="dblanguagepart.presentation.DblanguagepartEditorID"
+            name="%_UI_DblanguagepartEditor_label"
+            icon="icons/full/obj16/DblanguagepartModelFile.gif"
+            extensions="dblanguagepart"
+            class="dblanguagepart.presentation.DblanguagepartEditor"
+            contributorClass="dblanguagepart.presentation.DblanguagepartActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
